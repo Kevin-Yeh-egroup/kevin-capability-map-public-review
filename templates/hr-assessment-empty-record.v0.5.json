@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.5",
+  "record_classification": "internal",
+  "person": {
+    "person_id": "",
+    "source_type": "unknown",
+    "internal_name_ref": "",
+    "public_alias": "",
+    "status": "staging",
+    "data_source": "",
+    "consent_scope": "unknown",
+    "retention_until": "",
+    "created_at": "",
+    "updated_at": ""
+  },
+  "contact_profile": {
+    "preferred_contact_ref": "",
+    "residence_area": "",
+    "commute_area": "",
+    "available_days": [],
+    "available_hours_per_week": null,
+    "availability_notes": ""
+  },
+  "talent_profile": {
+    "role_interest": [],
+    "experience_summary": "",
+    "skill_tags": [],
+    "language_tags": [],
+    "portfolio_refs": [],
+    "missing_fields": []
+  },
+  "work_history": {
+    "covered_months": [],
+    "total_hours": null,
+    "task_types": [],
+    "attendance_signal": "unknown",
+    "reliability_notes": "",
+    "amounts_excluded": true
+  },
+  "application_input": {
+    "raw_source_ref": "",
+    "parsed_summary": "",
+    "evidence_items": [],
+    "confidence_level": "C",
+    "review_required": true
+  },
+  "evaluation_run": {
+    "evaluation_id": "",
+    "model_version": "hr-evaluation-v0.5",
+    "role_template_id": "first_partner",
+    "scores": {
+      "d1": 1,
+      "d2": 1,
+      "d3": 1,
+      "d4": 1,
+      "d5": 1,
+      "d6": 1,
+      "d7": 1,
+      "d8": 1,
+      "weighted_score": 1
+    },
+    "compensation_fit": "not_evaluated",
+    "planning_value": "unknown",
+    "risk_flags": [],
+    "human_review_required": true,
+    "ai_summary": ""
+  },
+  "decision_record": {
+    "stage": "staging",
+    "recommended_next_step": "collect_more_data",
+    "decision_owner": "",
+    "final_decision": "none",
+    "decision_reason": "",
+    "override_reason": "",
+    "reviewed_at": ""
+  },
+  "redaction_status": {
+    "public_allowed": false,
+    "history_amounts_excluded": true,
+    "sensitive_field_scan": "not_run",
+    "public_output_notes": ""
+  }
+}

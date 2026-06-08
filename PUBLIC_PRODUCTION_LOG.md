@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-08 12:11:55 +08:00
+Updated: 2026-06-08 12:20:15 +08:00
 
 ## Artifact
 
@@ -24,6 +24,7 @@ Updated: 2026-06-08 12:11:55 +08:00
 - v0.2: Added workflow responsibility matrix with owner tag, frequency, risk, trainability, first-partner handoff percentage, and initial delegation notes.
 - v0.3: Added task package checkpoint table for six priority workflows, G0-G3 approval gates, done-proof requirements, and first-partner 30/60/90 handoff ladder.
 - v0.4: Added HR evaluation model, role-weighted scoring, salary-band guidance, internal assessment layer, workforce-war-room integration design, and public/internal/restricted data split.
+- v0.5: Added a fillable HR assessment JSON schema, blank internal record template, Sheet-ready field template, and internal workforce-war-room assessment workbench specification.
 
 ## Indexing Controls
 

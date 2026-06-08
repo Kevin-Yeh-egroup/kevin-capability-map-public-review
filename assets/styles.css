@@ -410,7 +410,8 @@ td:first-child {
 }
 
 .hr-note-grid,
-.flow-steps {
+.flow-steps,
+.artifact-grid {
   display: grid;
   gap: 16px;
 }
@@ -444,6 +445,11 @@ td:first-child {
   margin-bottom: 18px;
 }
 
+.artifact-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
 .flow-steps span {
   display: inline-flex;
   width: 32px;
@@ -460,6 +466,32 @@ td:first-child {
 
 .flow-steps article:nth-child(2n) span { background: var(--blue); }
 .flow-steps article:nth-child(3n) span { background: var(--coral); }
+
+.artifact-grid article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue);
+  border-radius: 8px;
+  background: white;
+}
+
+.artifact-grid article:nth-child(2) { border-top-color: var(--teal); }
+.artifact-grid article:nth-child(3) { border-top-color: var(--coral); }
+.artifact-grid article:nth-child(4) { border-top-color: var(--plum); }
+
+.artifact-grid h3 {
+  margin-top: 0;
+}
+
+.artifact-grid p {
+  color: var(--muted);
+}
+
+.artifact-grid a {
+  font-weight: 800;
+  color: var(--teal);
+}
 
 .lane-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -565,7 +597,8 @@ li + li {
   .decision-strip,
   .gate-grid,
   .hr-note-grid,
-  .flow-steps {
+  .flow-steps,
+  .artifact-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -596,7 +629,8 @@ li + li {
   .decision-strip,
   .gate-grid,
   .hr-note-grid,
-  .flow-steps {
+  .flow-steps,
+  .artifact-grid {
     grid-template-columns: 1fr;
   }
 

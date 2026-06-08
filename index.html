@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.4 HR 評估模型</dd></div>
+        <div><dt>版本</dt><dd>v0.5 HR schema / workbench</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -856,17 +856,94 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="schema-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Schema and templates / v0.5</p>
+          <h2 id="schema-title">可填寫的 HR 評估模板</h2>
+          <p>v0.5 把 HR 評估模型轉成可被 Sheet、JSON 與人力情報站 internal assessment layer 使用的安全模板。這些檔案只包含欄位與空白結構，不包含任何真實求職者或工讀生資料。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>JSON Schema</h3>
+            <p>定義 person、application input、evaluation run、decision record、redaction status。</p>
+            <a href="schemas/hr-assessment-v0.5.schema.json">開啟 schema</a>
+          </article>
+          <article>
+            <h3>空白 JSON Record</h3>
+            <p>可作為 internal assessment record 的空白範本，預設 public_allowed=false。</p>
+            <a href="templates/hr-assessment-empty-record.v0.5.json">開啟空白 record</a>
+          </article>
+          <article>
+            <h3>Sheet 欄位模板</h3>
+            <p>Google Sheets / Excel 可用的 tab 與欄位清單，含分類、必填、公開邊界。</p>
+            <a href="templates/hr-assessment-sheet-template.v0.5.csv">開啟 CSV template</a>
+          </article>
+          <article>
+            <h3>Internal Workbench Spec</h3>
+            <p>描述人力情報站的 staging、evaluation、Kanban、redaction preview 與 restricted review。</p>
+            <a href="docs/internal-assessment-workbench-v0.5.md">開啟工作台規格</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="schema-map-table">
+            <thead>
+              <tr>
+                <th>模組</th>
+                <th>目的</th>
+                <th>安全邊界</th>
+                <th>下一步實作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Staging Queue</td>
+                <td>接求職表單、履歷、工讀訊息、既有人才池紀錄。</td>
+                <td>不直接覆蓋正式人才池；先標示來源與同意範圍。</td>
+                <td>建立匯入表單與缺漏欄位檢查。</td>
+              </tr>
+              <tr>
+                <td>Evaluation Workbench</td>
+                <td>依 D1-D8 與角色權重產出評估素材。</td>
+                <td>AI summary 只做輔助摘要，不做最終人事命令。</td>
+                <td>建立 role template 與 weighted_score 計算。</td>
+              </tr>
+              <tr>
+                <td>Decision Record</td>
+                <td>記錄 reviewer、decision reason、override reason、下一步。</td>
+                <td>錄用、淘汰、薪資、offer 都是 G3。</td>
+                <td>建立人審流程與不可跳過欄位。</td>
+              </tr>
+              <tr>
+                <td>Redaction Preview</td>
+                <td>預覽哪些欄位會進 public snapshot。</td>
+                <td>phone、Email、薪資金額、完整地址、身分證、銀行資料出現即 fail。</td>
+                <td>建立 public build 前敏感欄位掃描。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v0.5 實作邊界：</strong>
+          這次建立的是 schema、Sheet-ready 欄位與工作台規格；尚未接入真實人力情報站資料，也未建立任何自動錄取、淘汰、定薪或公開發布流程。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.5</p>
+          <p class="eyebrow">Next version / v0.6</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把 HR 評估模型轉成可填寫的 Sheet / JSON schema。</li>
-          <li>在人力情報站建立 internal assessment layer 與 redaction preview。</li>
-          <li>把 6 條優先工作線轉成可複製的 Notion / Sheet 任務模板。</li>
+          <li>在人力情報站建立 internal assessment layer 的實際資料管線。</li>
+          <li>新增 public redaction scan script，防止敏感欄位進 public build。</li>
           <li>把第一位夥伴 JD、試作題、30/60/90 驗收表寫成可招募版本。</li>
+          <li>把 6 條優先工作線轉成可複製的 Notion / Sheet 任務模板。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

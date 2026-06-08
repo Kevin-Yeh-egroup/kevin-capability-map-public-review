@@ -18,3 +18,7 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 
 - Main page: `index.html`
 - Visual map: `assets/capability-map.svg`
+- HR assessment schema: `schemas/hr-assessment-v0.5.schema.json`
+- Empty HR assessment record: `templates/hr-assessment-empty-record.v0.5.json`
+- Sheet-ready HR assessment template: `templates/hr-assessment-sheet-template.v0.5.csv`
+- Internal assessment workbench spec: `docs/internal-assessment-workbench-v0.5.md`

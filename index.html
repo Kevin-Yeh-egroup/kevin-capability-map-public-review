@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.2 分工矩陣</dd></div>
+        <div><dt>版本</dt><dd>v0.3 任務檢核點</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -464,16 +464,250 @@
       </div>
     </section>
 
+    <section class="section tinted" aria-labelledby="checkpoint-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Task package checkpoints / v0.3</p>
+          <h2 id="checkpoint-title">任務包與工作檢核點</h2>
+          <p>v0.3 先深拆 6 條最適合第一位夥伴接手、Codex 放大、自動化支援的工作線。每個任務包都要能回報、重跑、判斷 done / no-op / blocked。</p>
+        </div>
+
+        <div class="gate-grid" aria-label="批准 gate 分級">
+          <article>
+            <strong>G0 Read-only</strong>
+            <p>查詢、摘要、比對、整理，不改外部狀態。</p>
+          </article>
+          <article>
+            <strong>G1 Local draft</strong>
+            <p>本機草稿、檢核表、候選清單，可供 Kevin 審。</p>
+          </article>
+          <article>
+            <strong>G2 External write</strong>
+            <p>外部寫入、發送、發布、公開頁更新，需批准。</p>
+          </article>
+          <article>
+            <strong>G3 Sensitive decision</strong>
+            <p>薪資、任用、個資、金流、法律/財務定論，需 Kevin 決策。</p>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="checkpoint-schema-table">
+            <thead>
+              <tr>
+                <th>共用欄位</th>
+                <th>每個檢核點要回答的問題</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>觸發條件</td><td>日期、事件、表單新增、信件到達、資料更新或週/月結束。</td></tr>
+              <tr><td>Source of truth</td><td>正式來源是 Sheet、Form、Gmail、repo、JSON、報表頁或人工確認。</td></tr>
+              <tr><td>起始 gate</td><td>開始前先檢查權限、來源、上次 checkpoint 與是否已完成。</td></tr>
+              <tr><td>執行範圍</td><td>這次做什麼，也要寫清楚不做什麼。</td></tr>
+              <tr><td>主責與狀態</td><td>Kevin、夥伴、Codex、自動化；狀態為 todo / running / blocked / done / no-op。</td></tr>
+              <tr><td>Done proof</td><td>連結、檔案、數字、檢查結果、log、截圖、commit、訊息 ID 或人工確認紀錄。</td></tr>
+              <tr><td>Approval gate</td><td>何時要 Kevin 核准，特別是 G2/G3。</td></tr>
+              <tr><td>Next checkpoint</td><td>下一步、下一次檢查日期、owner、或 no-op 規則。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap workflow-table-wrap">
+          <table class="task-package-table">
+            <thead>
+              <tr>
+                <th>優先工作線</th>
+                <th>任務包</th>
+                <th>30/60/90 接手</th>
+                <th>Done proof</th>
+                <th>Gate / 禁止事項 / 升級條件</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>課務 / 表單 / 核銷 / 提醒</td>
+                <td>班期與名單盤點</td>
+                <td>30 天：照表檢查</td>
+                <td>課程日期、班別、報名人數、缺漏欄位、來源時間。</td>
+                <td>LINE 只能當提醒；正式紀錄以 Form/Sheet 或可稽核資料為準。</td>
+              </tr>
+              <tr>
+                <td>課務 / 表單 / 核銷 / 提醒</td>
+                <td>表單完整性與缺件追蹤</td>
+                <td>60 天：主動追缺件</td>
+                <td>重複、缺欄、格式錯誤、待補件清單與 owner。</td>
+                <td>不自動補完、不代送正式核銷；例外放行升級 Kevin。</td>
+              </tr>
+              <tr>
+                <td>課務 / 表單 / 核銷 / 提醒</td>
+                <td>課前提醒與收尾包</td>
+                <td>90 天：穩定 owner 例行營運</td>
+                <td>T-4 週、T-2 週、T-1 週、T-3 到 5 天提醒佇列與收尾清單。</td>
+                <td>外寄、核銷通過、薪資/補助影響進 G3。</td>
+              </tr>
+              <tr>
+                <td>公共資料 / 政策 / 福利資源站</td>
+                <td>來源清單與 allowlist</td>
+                <td>30 天：來源與欄位整理</td>
+                <td>來源清單、允許清單、最後檢查日、停用或失效來源。</td>
+                <td>不爬未核准來源；新增來源或公開部署需批准。</td>
+              </tr>
+              <tr>
+                <td>公共資料 / 政策 / 福利資源站</td>
+                <td>擷取、結構化、新鮮度檢查</td>
+                <td>60 天：做人審與 freshness triage</td>
+                <td>資料筆數、欄位覆蓋率、官方連結、freshness report、失敗 log。</td>
+                <td>來源衝突、schema 失敗、counts/filter 對不上時 blocked。</td>
+              </tr>
+              <tr>
+                <td>公共資料 / 政策 / 福利資源站</td>
+                <td>民眾可讀卡片審查</td>
+                <td>90 天：維護 reviewed card 佇列</td>
+                <td>reviewed card 數量、分類、適用對象、申請條件、官方連結。</td>
+                <td>不把模糊或過期資料寫成確定資格；不收集民眾個資。</td>
+              </tr>
+              <tr>
+                <td>新知 / AI / 社福財務蒐集</td>
+                <td>主題與來源掃描</td>
+                <td>30 天：整理 radar 摘要</td>
+                <td>本期主題、來源池、收錄/排除理由、日期範圍。</td>
+                <td>不把單一來源當政策；不長篇複製付費或版權內容。</td>
+              </tr>
+              <tr>
+                <td>新知 / AI / 社福財務蒐集</td>
+                <td>可信度與台灣適用性檢查</td>
+                <td>60 天：轉訓練卡與 SOP 初稿</td>
+                <td>claim table、來源日期、台灣適用程度、需修正或弱化敘述。</td>
+                <td>涉及法律、醫療、財務、HR 或公開說法時升級 Kevin/Codex。</td>
+              </tr>
+              <tr>
+                <td>新知 / AI / 社福財務蒐集</td>
+                <td>素材卡與採用判斷</td>
+                <td>90 天：owner 每週 radar 產線</td>
+                <td>素材卡、使用情境、限制、adopt / validate / pause、下一步。</td>
+                <td>不自動變更 workflow、skill、automation 或 durable memory。</td>
+              </tr>
+              <tr>
+                <td>日 / 週 / 月報</td>
+                <td>來源 readiness 與 fallback</td>
+                <td>30 天：蒐集數字與異常點</td>
+                <td>來源矩陣、direct-read 嘗試、gateStatus、fallbackReason。</td>
+                <td>不把缺資料當 0；不抹平 Ads/Gmail/backend 差異。</td>
+              </tr>
+              <tr>
+                <td>日 / 週 / 月報</td>
+                <td>日報合併與週報彙整</td>
+                <td>60 天：產初稿與異常摘要</td>
+                <td>日報檔、週期範圍、引用日報、重要決策、待辦與 index 更新。</td>
+                <td>敏感解讀、外部版本、正式結論仍需 Kevin。</td>
+              </tr>
+              <tr>
+                <td>日 / 週 / 月報</td>
+                <td>月報與 companion sync</td>
+                <td>90 天：owner 例行初版</td>
+                <td>自然月範圍、趨勢/KPI、timeline、ledger、publish-ready build。</td>
+                <td>外部 push/deploy/share 進 G2；缺資料與 index 不同步時 blocked。</td>
+              </tr>
+              <tr>
+                <td>Gmail 最新報告 read-only</td>
+                <td>上次 checkpoint gate</td>
+                <td>30 天：read-only 監看摘要</td>
+                <td>上次 message id、timestamp、permalink、查詢起點。</td>
+                <td>只允許 search/read/batch-read；不測 draft/send。</td>
+              </tr>
+              <tr>
+                <td>Gmail 最新報告 read-only</td>
+                <td>精準週報與較廣相關查詢</td>
+                <td>60 天：區分 weekly / daily</td>
+                <td>query、結果數、最新 message id/time、無 mailbox 寫入聲明。</td>
+                <td>不 delete/archive/label/move/star/mark read；多封候選不混成一封。</td>
+              </tr>
+              <tr>
+                <td>Gmail 最新報告 read-only</td>
+                <td>摘要與 checkpoint 更新</td>
+                <td>90 天：owner 固定檢查節奏</td>
+                <td>短摘要、Gmail 原始連結、信件時間、主旨、checkpoint 或 no-op。</td>
+                <td>沒新 weekly 但有 newer daily 時，要兩件事都明講。</td>
+              </tr>
+              <tr>
+                <td>人力情報 / 人才池 / 薪資素材</td>
+                <td>試算表匯入與欄位整理</td>
+                <td>30 天：維護欄位與缺漏</td>
+                <td>月份、來源檔、成功/略過列數、欄位錯誤。</td>
+                <td>不公開候選人個資、薪資、身分證、銀行、完整地址。</td>
+              </tr>
+              <tr>
+                <td>人力情報 / 人才池 / 薪資素材</td>
+                <td>人才池重建與初篩素材</td>
+                <td>60 天：初篩與訪談紀錄摘要</td>
+                <td>internal/public 分流、人數、active/paused、covered months。</td>
+                <td>不由 AI 或夥伴做最終聘用、淘汰、薪資判斷。</td>
+              </tr>
+              <tr>
+                <td>人力情報 / 人才池 / 薪資素材</td>
+                <td>薪資評估素材與 radar 週更</td>
+                <td>90 天：準備面談包與 shortlist</td>
+                <td>評估指標、來源月份、redaction log、radar-week、no-op 或更新。</td>
+                <td>薪資區間、任用、夥伴管理、對外發布都進 G3。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="staffing-table">
+            <thead>
+              <tr>
+                <th>人力階梯</th>
+                <th>30 天</th>
+                <th>60 天</th>
+                <th>90 天</th>
+                <th>仍保留給 Kevin / Codex / 自動化</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>第一位夥伴</td>
+                <td>資料齊備、缺件、來源日期、QA 截圖、read-only 摘要。</td>
+                <td>主動追缺件、產初稿、初篩摘要、severity 初判。</td>
+                <td>owner 例行營運、工作台、checkpoint、阻塞清單。</td>
+                <td>不決定產品方向、外部發布、薪資任用、刪除資料或高風險 close。</td>
+              </tr>
+              <tr>
+                <td>Codex</td>
+                <td>表格、摘要、比對、草稿、proof 格式化。</td>
+                <td>WBS、風險、驗收、事實查核、異常分類。</td>
+                <td>治理規則、複雜 proof、報表/任務包持續改版。</td>
+                <td>不替代 Kevin 的倫理、薪資、任用、公開與敏感決策。</td>
+              </tr>
+              <tr>
+                <td>自動化</td>
+                <td>固定查詢、提醒、freshness check、no-op gate。</td>
+                <td>資料同步、週期報表、初步異常偵測。</td>
+                <td>穩定 proof 與 blocked checkpoint 記錄。</td>
+                <td>不做外部 mutation、公開發布、mailbox mutation 或金流/薪資決策。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>blocked checkpoint 格式：</strong>
+          last successful checkpoint、session state、project context state、exact blocked step、fallback checks completed、proof artifacts、decision、next retry gate。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.3</p>
+          <p class="eyebrow">Next version / v0.4</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
           <li>把第一位夥伴的職缺寫成正式職務說明與 30/60/90 天驗收表。</li>
           <li>把能力樹轉成候選人評估表，對應職等、薪資區間與試作題。</li>
-          <li>把高風險工作線拆成批准 gate、資料來源、驗證 proof 與禁止事項。</li>
+          <li>把 6 條優先工作線轉成可複製的 Notion / Sheet 任務模板。</li>
           <li>補上專案規劃能力與帶領夥伴能力的成熟度指標。</li>
         </ol>
         <div class="notice">

@@ -202,7 +202,8 @@ h3 {
 .lane-grid,
 .product-lines,
 .timeline,
-.matrix {
+.matrix,
+.gate-grid {
   display: grid;
   gap: 16px;
 }
@@ -215,7 +216,8 @@ h3 {
 .lane-grid article,
 .product-lines article,
 .timeline article,
-.matrix article {
+.matrix article,
+.gate-grid article {
   min-width: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -256,6 +258,22 @@ table {
 
 .workflow-table {
   min-width: 1120px;
+}
+
+.checkpoint-schema-table {
+  min-width: 780px;
+}
+
+.task-package-table {
+  min-width: 1280px;
+}
+
+.staffing-table {
+  min-width: 1080px;
+}
+
+.compact-table-wrap {
+  margin-bottom: 18px;
 }
 
 th,
@@ -343,6 +361,40 @@ td:first-child {
 .decision-strip p {
   margin: 0;
   color: var(--muted);
+}
+
+.gate-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.gate-grid article {
+  border-top: 5px solid var(--teal);
+}
+
+.gate-grid article:nth-child(2) { border-top-color: var(--blue); }
+.gate-grid article:nth-child(3) { border-top-color: var(--coral); }
+.gate-grid article:nth-child(4) { border-top-color: var(--plum); }
+
+.gate-grid strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.gate-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.task-package-table td:nth-child(1),
+.task-package-table td:nth-child(2),
+.task-package-table td:nth-child(3),
+.staffing-table td:first-child {
+  font-weight: 700;
+}
+
+.task-package-table td:first-child {
+  color: var(--ink);
 }
 
 .lane-grid {
@@ -446,7 +498,8 @@ li + li {
   .product-lines,
   .timeline,
   .matrix,
-  .decision-strip {
+  .decision-strip,
+  .gate-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -474,7 +527,8 @@ li + li {
   .product-lines,
   .timeline,
   .matrix,
-  .decision-strip {
+  .decision-strip,
+  .gate-grid {
     grid-template-columns: 1fr;
   }
 

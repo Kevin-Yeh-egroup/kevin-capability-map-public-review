@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-08 11:32:15 +08:00
+Updated: 2026-06-08 11:49:11 +08:00
 
 ## Artifact
 
@@ -22,6 +22,7 @@ Updated: 2026-06-08 11:32:15 +08:00
 ## Revisions
 
 - v0.2: Added workflow responsibility matrix with owner tag, frequency, risk, trainability, first-partner handoff percentage, and initial delegation notes.
+- v0.3: Added task package checkpoint table for six priority workflows, G0-G3 approval gates, done-proof requirements, and first-partner 30/60/90 handoff ladder.
 
 ## Indexing Controls
 

@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.5",
+  "record_classification": "internal",
+  "person": {
+    "person_id": "fictional-person-a-v0.7",
+    "source_type": "applicant",
+    "internal_name_ref": "fictional-ref-a",
+    "public_alias": "Fictional Candidate A",
+    "status": "needs_review",
+    "data_source": "fictional-pilot-v0.7",
+    "consent_scope": "evaluation_only",
+    "retention_until": "2026-07-08",
+    "created_at": "2026-06-08T13:09:54+08:00",
+    "updated_at": "2026-06-08T13:09:54+08:00"
+  },
+  "contact_profile": {
+    "preferred_contact_ref": "fictional-contact-ref-none",
+    "residence_area": "fictional northern Taiwan area",
+    "commute_area": "remote-first with occasional Taipei-area availability",
+    "available_days": ["weekday_mornings", "weekday_afternoons"],
+    "available_hours_per_week": 12,
+    "availability_notes": "Fictional availability only; no real contact or location data is included."
+  },
+  "talent_profile": {
+    "role_interest": ["first_partner", "operations_support"],
+    "experience_summary": "Fictional candidate shows comfort with checklist-based operations, evidence summaries, and redaction review. Domain depth is still unproven.",
+    "skill_tags": ["workflow_checklist", "evidence_summary", "redaction_review", "codex_collaboration"],
+    "language_tags": ["traditional_chinese", "plain_language_summary"],
+    "portfolio_refs": ["fictional-workflow-checklist-sample", "fictional-redaction-review-sample"],
+    "missing_fields": ["real_trial_submission", "kevin_interview_notes", "approved_reference_context"]
+  },
+  "work_history": {
+    "covered_months": ["2026-04", "2026-05"],
+    "total_hours": null,
+    "task_types": ["fictional_form_check", "fictional_report_summary", "fictional_redaction_review"],
+    "attendance_signal": "insufficient",
+    "reliability_notes": "Only simulated work signals are available; reliability must be tested with a controlled trial task.",
+    "amounts_excluded": true
+  },
+  "application_input": {
+    "raw_source_ref": "fictional-pilot-input-v0.7",
+    "parsed_summary": "Fictional applicant profile created to test the assessment pipeline. It is not a real person, application, intern record, or salary case.",
+    "evidence_items": [
+      {
+        "evidence_type": "fictional_workflow_checklist",
+        "evidence_ref": "fictional-task-t1",
+        "evidence_date": "2026-06-08",
+        "confidence": "C"
+      },
+      {
+        "evidence_type": "fictional_redaction_review",
+        "evidence_ref": "fictional-task-t4",
+        "evidence_date": "2026-06-08",
+        "confidence": "C"
+      }
+    ],
+    "confidence_level": "C",
+    "review_required": true
+  },
+  "evaluation_run": {
+    "evaluation_id": "fictional-eval-a-v0.7",
+    "model_version": "hr-evaluation-v0.5",
+    "role_template_id": "first_partner",
+    "scores": {
+      "d1": 3.4,
+      "d2": 4.1,
+      "d3": 3.8,
+      "d4": 4.0,
+      "d5": 4.2,
+      "d6": 4.5,
+      "d7": 3.3,
+      "d8": 3.0,
+      "weighted_score": 3.93
+    },
+    "compensation_fit": "not_evaluated",
+    "planning_value": "medium",
+    "risk_flags": ["fictional_data_only", "confidence_level_c", "no_real_trial_proof", "human_review_required"],
+    "human_review_required": true,
+    "ai_summary": "Evidence pattern suggests a possible first-partner trial candidate for structured operations work, but all evidence is fictional and confidence is C. The only valid next step is a controlled trial task reviewed by Kevin."
+  },
+  "decision_record": {
+    "stage": "screening",
+    "recommended_next_step": "trial_task",
+    "decision_owner": "Kevin",
+    "final_decision": "manual_review_required",
+    "decision_reason": "Fictional pilot recommends testing workflow reliability, redaction judgment, and Codex collaboration before any real HR decision.",
+    "override_reason": "none",
+    "reviewed_at": "2026-06-08T13:09:54+08:00"
+  },
+  "redaction_status": {
+    "public_allowed": false,
+    "history_amounts_excluded": true,
+    "sensitive_field_scan": "pass",
+    "public_output_notes": "This record is fictional and public-safe for review, but public_allowed remains false to preserve the default internal-record posture."
+  }
+}

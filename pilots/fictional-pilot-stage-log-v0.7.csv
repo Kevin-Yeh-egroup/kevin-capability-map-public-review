@@ -1,0 +1,9 @@
+stage_id,stage_name,fictional_input,owner,resolution,done_proof,next_gate
+P0,intake_staging,fictional applicant summary,partner,pass,source type and consent scope recorded,G1
+P1,source_normalization,fictional profile fields,codex,pass,record matches v0.5 required structure,G1
+P2,evidence_extraction,fictional workflow and redaction samples,codex,pass,evidence confidence marked C and missing fields listed,G1
+P3,draft_scoring,D1-D8 fictional score draft,codex,pass,weighted score computed and risk flags separated,G1
+P4,human_review,Kevin review placeholder,Kevin,manual_review_required,no hiring rejection or compensation decision,G3
+P5,trial_assignment,controlled fictional trial task,partner,proposed,trial task recommended but not sent,G2
+P6,decision_archive,screening result,Kevin,manual_review_required,decision owner and reason recorded,G3
+P7,public_redaction,public artifact scan,automation,pass,redaction scan passed and real data excluded,G2

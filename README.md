@@ -29,3 +29,9 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Public redaction scanner: `scripts/redaction-scan.mjs`
 - Public redaction scan report: `reports/public-redaction-scan-report.v0.6.json`
 - Governance expansion review card: `docs/governance-expansion-review-card-v0.6.md`
+- Fictional candidate assessment pilot: `pilots/fictional-candidate-assessment-v0.7.json`
+- Fictional P0-P7 pilot stage log: `pilots/fictional-pilot-stage-log-v0.7.csv`
+- Pilot review rubric: `templates/pilot-review-rubric-v0.7.csv`
+- Fictional pilot report: `docs/fictional-pilot-report-v0.7.md`
+- v0.7 governance expansion review card: `docs/governance-expansion-review-card-v0.7.md`
+- v0.7 public redaction scan report: `reports/public-redaction-scan-report.v0.7.json`

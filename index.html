@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.6 implementation layer</dd></div>
+        <div><dt>版本</dt><dd>v0.7 fictional pilot</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1030,17 +1030,104 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="pilot-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Fictional pilot / v0.7</p>
+          <h2 id="pilot-title">用虛構候選人測試 P0-P7 評估流程</h2>
+          <p>v0.7 用完全虛構的 Fictional Candidate A 跑一次 internal assessment pipeline。目的不是評估真人，而是檢查這套表格能否幫 Kevin 看到證據、缺口、風險與下一步。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Fictional Assessment JSON</h3>
+            <p>符合 v0.5 schema 的虛構評估紀錄，保留 public_allowed=false。</p>
+            <a href="pilots/fictional-candidate-assessment-v0.7.json">開啟 assessment JSON</a>
+          </article>
+          <article>
+            <h3>P0-P7 Stage Log</h3>
+            <p>每一階段的 owner、resolution、done proof 與下一個 gate。</p>
+            <a href="pilots/fictional-pilot-stage-log-v0.7.csv">開啟 stage log</a>
+          </article>
+          <article>
+            <h3>Pilot Rubric</h3>
+            <p>D1-D8 分數、訊號、理由與下一個檢核問題。</p>
+            <a href="templates/pilot-review-rubric-v0.7.csv">開啟 rubric CSV</a>
+          </article>
+          <article>
+            <h3>Pilot Report</h3>
+            <p>整理這次虛構 pilot 證明了什麼、沒有證明什麼、下一步怎麼試作。</p>
+            <a href="docs/fictional-pilot-report-v0.7.md">開啟 pilot report</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>說明 v0.7 為何仍是 public-review pilot，不是 automation 或真實 HR 流程。</p>
+            <a href="docs/governance-expansion-review-card-v0.7.md">開啟 v0.7 治理卡</a>
+          </article>
+          <article>
+            <h3>v0.7 Scan Report</h3>
+            <p>本版 public package 掃描結果：24 個檔案、0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v0.7.json">開啟 v0.7 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="pilot-table">
+            <thead>
+              <tr>
+                <th>檢查點</th>
+                <th>結果</th>
+                <th>對人力規劃的意義</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Schema fit</td>
+                <td>Pass</td>
+                <td>v0.5 schema 可以承載候選人類型、證據、D1-D8、decision record 與 redaction status。</td>
+              </tr>
+              <tr>
+                <td>P0-P7 flow</td>
+                <td>Pass</td>
+                <td>流程能把 intake、evidence、draft scoring、human review、trial task、redaction 串成檢核點。</td>
+              </tr>
+              <tr>
+                <td>Draft score</td>
+                <td>3.93 / confidence C</td>
+                <td>只能作為試作候選訊號；不能作為錄用、淘汰或薪資判斷。</td>
+              </tr>
+              <tr>
+                <td>Recommended next step</td>
+                <td>Trial task</td>
+                <td>若 Kevin 要繼續評估這類夥伴，下一步是低風險試作與回饋後修正。</td>
+              </tr>
+              <tr>
+                <td>Redaction posture</td>
+                <td>Pass</td>
+                <td>沒有真實個資、聯絡方式、薪資金額、mailbox URL、local path 或內部部署 ID。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v0.7 實作邊界：</strong>
+          Fictional Candidate A 不是候選人、不是工讀生、不是內部人才池紀錄；本頁只驗證流程是否可用。任何真實 HR 評估、試作邀請、任用、淘汰、薪資、offer 或人力情報站資料接入，都仍需 Kevin 另行批准。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.7</p>
+          <p class="eyebrow">Next version / v0.8</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>在真實 workforce-war-room repo 重新檢查現況後，建立 private internal assessment branch。</li>
-          <li>用 fictional 或完全去識別 sample 跑一次 P0-P7 pilot。</li>
+          <li>再跑一位不同型態的 fictional candidate，測試技術自動化或內容研究夥伴權重。</li>
+          <li>把 trial task 轉成正式可發給真人前的 private draft，不公開也不發送。</li>
+          <li>重新檢查真實 workforce-war-room repo 狀態後，設計 private internal assessment branch。</li>
           <li>把 task checklist 轉成可匯入 Notion / Google Sheets 的正式工作看板格式。</li>
-          <li>建立第一位夥伴招募頁或內部招募文件，並由 Kevin 決定是否開始收件。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

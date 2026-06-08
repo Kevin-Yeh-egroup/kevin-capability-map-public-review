@@ -1,0 +1,10 @@
+dimension,score,signal,reason,next_check
+D1,3.4,work-line understanding,Understands checklist operations and evidence packs but has not yet shown cross-line prioritization,Ask candidate to map one live workflow into trigger source gate owner proof no-op
+D2,4.1,execution reliability,Fictional outputs are complete and structured; real reliability remains untested,Run a controlled trial with due date and blocked checkpoint rule
+D3,3.8,data evidence quality,Marks dates sources and missing fields clearly; confidence remains C,Require one source-backed evidence card with limitations
+D4,4.0,communication,Summary is decision-oriented and short enough for Kevin to review,Ask for one revised summary after feedback
+D5,4.2,trainability,Fictional second-pass behavior suggests strong template learning,Check whether feedback improves next submission
+D6,4.5,risk gates,Stops before public personal data and HR decisions,Give redaction task with safe sample only
+D7,3.3,codex collaboration,Can use structured prompts but tool-review depth is still early,Ask candidate to review Codex output against a checklist
+D8,3.0,role depth,Operations fit is clearer than domain expertise,Test one social-welfare or life-finance tool evidence card
+weighted_score,3.93,first-partner draft score,Use only as planning signal; not a hiring or compensation decision,Kevin decides whether to run trial task

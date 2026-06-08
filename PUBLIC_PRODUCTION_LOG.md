@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-08 12:33:33 +08:00
+Updated: 2026-06-08 13:09:54 +08:00
 
 ## Artifact
 
@@ -26,6 +26,7 @@ Updated: 2026-06-08 12:33:33 +08:00
 - v0.4: Added HR evaluation model, role-weighted scoring, salary-band guidance, internal assessment layer, workforce-war-room integration design, and public/internal/restricted data split.
 - v0.5: Added a fillable HR assessment JSON schema, blank internal record template, Sheet-ready field template, and internal workforce-war-room assessment workbench specification.
 - v0.6: Added internal assessment pipeline spec, machine-readable workflow map, first-partner hiring pack, six-workflow task checklist, governance expansion card, public redaction scanner, and scan report.
+- v0.7: Added a fully fictional candidate assessment pilot, P0-P7 stage log, pilot rubric, pilot report, governance card, and v0.7 redaction scan report to test the HR workflow without real personal data.
 
 ## Indexing Controls
 

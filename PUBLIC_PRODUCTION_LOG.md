@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-08 11:21:03 +08:00
+Updated: 2026-06-08 11:32:15 +08:00
 
 ## Artifact
 
@@ -18,6 +18,10 @@ Updated: 2026-06-08 11:21:03 +08:00
 - Vercel inspect status: `Ready`
 - Vercel target: `production`
 - GitHub repository connected: yes
+
+## Revisions
+
+- v0.2: Added workflow responsibility matrix with owner tag, frequency, risk, trainability, first-partner handoff percentage, and initial delegation notes.
 
 ## Indexing Controls
 

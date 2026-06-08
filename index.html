@@ -16,11 +16,11 @@
         <p class="eyebrow">Public Review / noindex</p>
         <h1>Kevin 工作能力樹與人力架構盤點</h1>
         <p class="lead">
-          這份公開審閱版把一路累積在 Codex 裡的工作，整理成能力地圖、工作版圖、可委派範圍與第一階段夥伴需求。
+          這份公開審閱版把一路累積在 Codex 裡的工作，整理成能力地圖、工作版圖、分工矩陣與第一階段夥伴需求。
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.1 討論稿</dd></div>
+        <div><dt>版本</dt><dd>v0.2 分工矩陣</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -261,16 +261,219 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow responsibility map / v0.2</p>
+          <h2 id="workflow-title">目前偵測到的工作線分工</h2>
+          <p>這裡用「主標記」判斷長期主責，不代表其他角色完全不碰；實務上會由 Kevin 定方向，Codex 建結構，夥伴接穩定工作，自動化處理固定節奏。</p>
+        </div>
+        <div class="table-wrap workflow-table-wrap">
+          <table class="workflow-table">
+            <thead>
+              <tr>
+                <th>工作線</th>
+                <th>主標記</th>
+                <th>頻率</th>
+                <th>風險</th>
+                <th>可訓練</th>
+                <th>第一位夥伴可接</th>
+                <th>先拆出去的內容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>好理家在產品營運、社工可用工具</td>
+                <td><span class="role-badge role-kevin">Kevin 做</span></td>
+                <td>每週</td>
+                <td>高</td>
+                <td>中</td>
+                <td>20-30%</td>
+                <td>訪談整理、產品 QA、社工回饋歸納、需求初判。</td>
+              </tr>
+              <tr>
+                <td>一般民眾生活財務工具</td>
+                <td><span class="role-badge role-kevin">Kevin 做</span></td>
+                <td>每週</td>
+                <td>高</td>
+                <td>中</td>
+                <td>20-35%</td>
+                <td>案例分類、知識卡初稿、用語測試、使用者問題整理。</td>
+              </tr>
+              <tr>
+                <td>新知、AI 方法、社福與財務技能蒐集</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每週</td>
+                <td>中</td>
+                <td>高</td>
+                <td>50-70%</td>
+                <td>資料蒐集、摘要、比較表、轉成內部訓練素材。</td>
+              </tr>
+              <tr>
+                <td>專案規劃、任務拆解、驗收設計</td>
+                <td><span class="role-badge role-kevin">Kevin 做</span></td>
+                <td>每案</td>
+                <td>高</td>
+                <td>中</td>
+                <td>25-40%</td>
+                <td>夥伴維護進度表；Codex 產 WBS、風險與驗收清單。</td>
+              </tr>
+              <tr>
+                <td>夥伴帶領、訓練、品質管理</td>
+                <td><span class="role-badge role-kevin">Kevin 做</span></td>
+                <td>每週</td>
+                <td>高</td>
+                <td>中</td>
+                <td>20-35%</td>
+                <td>SOP、檢核表、訓練材料、交辦紀錄與回饋整理。</td>
+              </tr>
+              <tr>
+                <td>日報、週報、月報與工作紀錄系統</td>
+                <td><span class="role-badge role-auto">自動化</span></td>
+                <td>每日 / 每週 / 每月</td>
+                <td>中</td>
+                <td>高</td>
+                <td>70-85%</td>
+                <td>固定產出、同步、初檢、例外清單；Kevin 看摘要。</td>
+              </tr>
+              <tr>
+                <td>Google Ads 到 FamilyFin 時間軸</td>
+                <td><span class="role-badge role-auto">自動化</span></td>
+                <td>每日</td>
+                <td>中高</td>
+                <td>高</td>
+                <td>80-90%</td>
+                <td>讀取前日數據、寫入時間軸、驗證、no-op 判斷。</td>
+              </tr>
+              <tr>
+                <td>Gmail 最新 FamilyFin 統計報告檢查</td>
+                <td><span class="role-badge role-auto">自動化</span></td>
+                <td>每日 / 按需</td>
+                <td>中</td>
+                <td>高</td>
+                <td>75-90%</td>
+                <td>read-only 查詢、摘要、連結回報、checkpoint 更新。</td>
+              </tr>
+              <tr>
+                <td>Gmail 清理、指定回饋保護、safe-trash</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每週</td>
+                <td>高</td>
+                <td>中</td>
+                <td>35-55%</td>
+                <td>候選清單、脈絡閱讀、保護清單；刪除仍需明確授權。</td>
+              </tr>
+              <tr>
+                <td>InfoCenter 文章事實查核</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每篇 / 批次</td>
+                <td>中高</td>
+                <td>中</td>
+                <td>35-50%</td>
+                <td>即時查核、逐篇修正建議、引用整理、風險提示。</td>
+              </tr>
+              <tr>
+                <td>InfoCenter / LINE / Google Sheet 流程對照</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每週 / 專案</td>
+                <td>中</td>
+                <td>中高</td>
+                <td>45-65%</td>
+                <td>狀態比對、缺漏偵測、匯入檔、提醒與追蹤清單。</td>
+              </tr>
+              <tr>
+                <td>課務、表單、核銷、提醒、角色工作台</td>
+                <td><span class="role-badge role-partner">夥伴做</span></td>
+                <td>每週 / 課前</td>
+                <td>中</td>
+                <td>高</td>
+                <td>60-80%</td>
+                <td>資料確認、表單整理、提醒、回報、核銷證據初檢。</td>
+              </tr>
+              <tr>
+                <td>FamilyFin knowledge war-room、文章包 gate</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每週 / 雙週</td>
+                <td>高</td>
+                <td>中</td>
+                <td>30-45%</td>
+                <td>候選主題、品質 gate、歷史整理、阻擋原因回報。</td>
+              </tr>
+              <tr>
+                <td>公開成果發布、GitHub / Vercel / noindex</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每案</td>
+                <td>高</td>
+                <td>中</td>
+                <td>30-45%</td>
+                <td>打包、repo、Production deploy、header 與內容驗證。</td>
+              </tr>
+              <tr>
+                <td>公共資料、政策導覽、福利資源站</td>
+                <td><span class="role-badge role-auto">自動化</span></td>
+                <td>每週 / 每月</td>
+                <td>中高</td>
+                <td>高</td>
+                <td>65-85%</td>
+                <td>爬取、freshness check、資料格式化；夥伴做人審。</td>
+              </tr>
+              <tr>
+                <td>人力情報站、實習生 / 人才池、薪資評估</td>
+                <td><span class="role-badge role-partner">夥伴做</span></td>
+                <td>每週 / 每月</td>
+                <td>高</td>
+                <td>中高</td>
+                <td>55-75%</td>
+                <td>資料維護、初篩、訪談紀錄、評估表素材整理。</td>
+              </tr>
+              <tr>
+                <td>Agent OS / Codex 技能、記憶、任務路由治理</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>每週 / 變更時</td>
+                <td>高</td>
+                <td>中</td>
+                <td>20-35%</td>
+                <td>技能、記憶、路由、proof；全域規則由 Kevin 批准。</td>
+              </tr>
+              <tr>
+                <td>API、知識庫、Agent 190 文件與 prompt hardening</td>
+                <td><span class="role-badge role-codex">Codex 做</span></td>
+                <td>專案 / 批次</td>
+                <td>中高</td>
+                <td>中</td>
+                <td>40-60%</td>
+                <td>批次上傳、狀態紀錄、prompt 測試；技術夥伴可維護。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="decision-strip">
+          <article>
+            <strong>第一位夥伴優先接</strong>
+            <p>課務/表單/核銷、人力資料、知識 radar、產品 QA、報表素材與狀態追蹤。</p>
+          </article>
+          <article>
+            <strong>Kevin 暫時不能放手</strong>
+            <p>產品方向、服務倫理、敏感決策、夥伴管理、對外發布與薪資任用。</p>
+          </article>
+          <article>
+            <strong>下一個自動化焦點</strong>
+            <p>固定查詢、freshness check、週期報表、提醒 gate、no-op 判斷與驗證 proof。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version</p>
+          <p class="eyebrow">Next version / v0.3</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把每一條工作線標記為：Kevin 做、夥伴做、Codex 做、自動化。</li>
           <li>把第一位夥伴的職缺寫成正式職務說明與 30/60/90 天驗收表。</li>
-          <li>把能力樹轉成候選人評估表，對應職等與薪資區間。</li>
+          <li>把能力樹轉成候選人評估表，對應職等、薪資區間與試作題。</li>
+          <li>把高風險工作線拆成批准 gate、資料來源、驗證 proof 與禁止事項。</li>
           <li>補上專案規劃能力與帶領夥伴能力的成熟度指標。</li>
         </ol>
         <div class="notice">

@@ -260,6 +260,14 @@ table {
   min-width: 1120px;
 }
 
+.hr-score-table,
+.role-weight-table,
+.band-table,
+.data-split-table,
+.integration-table {
+  min-width: 980px;
+}
+
 .checkpoint-schema-table {
   min-width: 780px;
 }
@@ -397,6 +405,62 @@ td:first-child {
   color: var(--ink);
 }
 
+.hr-principle {
+  margin-bottom: 18px;
+}
+
+.hr-note-grid,
+.flow-steps {
+  display: grid;
+  gap: 16px;
+}
+
+.hr-note-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.hr-note-grid article,
+.flow-steps article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+.hr-note-grid h3 {
+  margin-top: 0;
+}
+
+.hr-note-grid p,
+.flow-steps p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.flow-steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.flow-steps span {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.flow-steps article:nth-child(2n) span { background: var(--blue); }
+.flow-steps article:nth-child(3n) span { background: var(--coral); }
+
 .lane-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -499,7 +563,9 @@ li + li {
   .timeline,
   .matrix,
   .decision-strip,
-  .gate-grid {
+  .gate-grid,
+  .hr-note-grid,
+  .flow-steps {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -528,7 +594,9 @@ li + li {
   .timeline,
   .matrix,
   .decision-strip,
-  .gate-grid {
+  .gate-grid,
+  .hr-note-grid,
+  .flow-steps {
     grid-template-columns: 1fr;
   }
 

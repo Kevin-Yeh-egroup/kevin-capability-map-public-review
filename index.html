@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.3 任務檢核點</dd></div>
+        <div><dt>版本</dt><dd>v0.4 HR 評估模型</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -698,17 +698,175 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="hr-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">HR evaluation model / v0.4</p>
+          <h2 id="hr-title">求職者與工讀生的 HR 評估模型</h2>
+          <p>這套模型用來整理能力證據、薪資素材與人力規劃，不做自動錄取、淘汰或定薪。所有薪資、任用、淘汰與敏感人事決策都保留在 G3，由 Kevin 或指定人審者決定。</p>
+        </div>
+
+        <div class="statement hr-principle">
+          <p>核心原則：AI 與 Codex 只提供「證據整理、風險提醒、待補資料、級距輔助」，不輸出最終人事命令。</p>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="hr-score-table">
+            <thead>
+              <tr>
+                <th>維度</th>
+                <th>預設權重</th>
+                <th>看什麼</th>
+                <th>低分限制</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>D1 Kevin 工作線理解</td><td>12</td><td>能否理解社福科技、產品營運、報表、人力情報站的實際任務。</td><td>低於 3：先做試作，不直接接跨線任務。</td></tr>
+              <tr><td>D2 任務包執行可靠度</td><td>18</td><td>能否照 checkpoint 做事、回報 done/no-op/blocked、穩定收尾。</td><td>低於 3：不給 owner 身分。</td></tr>
+              <tr><td>D3 資料與證據品質</td><td>14</td><td>來源日期、欄位完整、截圖/連結/log、缺漏標示。</td><td>低於 3：不處理高風險資料整理。</td></tr>
+              <tr><td>D4 溝通與回報</td><td>12</td><td>能否短、準、可追蹤地回報，讓 Kevin 可決策。</td><td>低於 3：只接明確單步任務。</td></tr>
+              <tr><td>D5 學習速度與可訓練性</td><td>14</td><td>30/60/90 天是否能從照表做到主動維護、初判、例外升級。</td><td>低於 3：延長試作，不升級任務權限。</td></tr>
+              <tr><td>D6 風險、個資、approval gate</td><td>12</td><td>是否知道薪資、任用、個資、外部發布都不能自行決定。</td><td>低於 3：不接觸候選人個資、薪資素材或任用流程。</td></tr>
+              <tr><td>D7 Codex / 工具協作</td><td>8</td><td>能否把任務拆成 Codex 可協助的 prompt、表格、比對、檢核清單。</td><td>低於 3：先用固定模板，不設計流程。</td></tr>
+              <tr><td>D8 角色專業深度</td><td>10</td><td>依角色看營運、技術自動化、內容研究等硬能力。</td><td>低於 3：不當專業夥伴，只能作助理或試作。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="role-weight-table">
+            <thead>
+              <tr>
+                <th>評估維度</th>
+                <th>第一位夥伴</th>
+                <th>技術 / 自動化夥伴</th>
+                <th>內容 / 研究夥伴</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>D1 工作線理解</td><td>12</td><td>6</td><td>16</td></tr>
+              <tr><td>D2 執行可靠度</td><td>20</td><td>12</td><td>8</td></tr>
+              <tr><td>D3 資料證據品質</td><td>15</td><td>12</td><td>16</td></tr>
+              <tr><td>D4 溝通回報</td><td>15</td><td>7</td><td>17</td></tr>
+              <tr><td>D5 學習可訓練</td><td>14</td><td>8</td><td>10</td></tr>
+              <tr><td>D6 風險 gate</td><td>14</td><td>12</td><td>12</td></tr>
+              <tr><td>D7 Codex / 工具</td><td>5</td><td>18</td><td>6</td></tr>
+              <tr><td>D8 專業深度</td><td>5</td><td>25</td><td>15</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="band-table">
+            <thead>
+              <tr>
+                <th>加權分數</th>
+                <th>人力判斷</th>
+                <th>薪資/職等用法</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1.0-1.9</td><td>不錄用或只保留觀察。</td><td>不進薪資評估。</td></tr>
+              <tr><td>2.0-2.6</td><td>短期試作 / 工讀候選，低風險任務。</td><td>試作或短期合約。</td></tr>
+              <tr><td>2.7-3.2</td><td>初階助理，可接 G0/G1 任務。</td><td>落在核准區間低段或試作段。</td></tr>
+              <tr><td>3.3-3.8</td><td>穩定工讀 / 助理 owner，可接明確任務包。</td><td>落在核准區間中段。</td></tr>
+              <tr><td>3.9-4.4</td><td>專業夥伴，可主責一條工作線。</td><td>可評估區間中高段，但需證據信心 A/B。</td></tr>
+              <tr><td>4.5-5.0</td><td>稀有核心夥伴候選，仍需試作與 Kevin 面談。</td><td>只能作高段參考，不自動定薪。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="hr-note-grid">
+          <article>
+            <h3>證據信心</h3>
+            <p>A：試作或實績證據；B：訪談加作品；C：履歷或自述。C 級證據即使分數高，也只給試作或短期合約建議。</p>
+          </article>
+          <article>
+            <h3>薪資表達</h3>
+            <p>只輸出「低於區間 / 符合區間 / 高於區間 / 需人工判斷」，不輸出單一薪資命令。</p>
+          </article>
+          <article>
+            <h3>風險旗標</h3>
+            <p>風險不混進平均分，要獨立顯示，例如資料不足、個資風險、評分信心低、需人審。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted" aria-labelledby="hr-integration-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Workforce war-room integration</p>
+          <h2 id="hr-integration-title">與人力情報站整合方式</h2>
+          <p>HR 評估不要直接併進公開人力情報站，而是在內部新增 assessment layer。公開站只顯示匿名、彙總、不可回推個人的統計與 redaction proof。</p>
+        </div>
+
+        <div class="flow-steps">
+          <article><span>1</span><strong>Staging</strong><p>履歷、求職表單、工讀訊息先進 staging，不直接覆蓋人才池。</p></article>
+          <article><span>2</span><strong>Normalize</strong><p>抽出技能、經驗、可上班時段、角色偏好、缺漏欄位與資料信心。</p></article>
+          <article><span>3</span><strong>Safety Filter</strong><p>排除身分證、銀行、完整地址、與工作無關的敏感特徵。</p></article>
+          <article><span>4</span><strong>Evaluation Run</strong><p>依角色模板產能力、適配、可靠度、可用工時、薪資區間輔助。</p></article>
+          <article><span>5</span><strong>Human Review</strong><p>錄用、淘汰、薪資、調度都要 reviewer、decision reason、override reason。</p></article>
+          <article><span>6</span><strong>Redacted Public</strong><p>公開輸出只保留彙總統計、coveredMonths、historyAmountsExcluded=true。</p></article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="data-split-table">
+            <thead>
+              <tr>
+                <th>Public snapshot</th>
+                <th>Internal assessment</th>
+                <th>Restricted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>人才總數、active/paused 數</td><td>真實姓名、電話、Email、居住區域、通勤範圍</td><td>薪資金額、offer、付款細節</td></tr>
+              <tr><td>匿名技能分布、角色類別供給量</td><td>個人技能、履歷摘要、作品、面談紀錄</td><td>身分證、銀行資料、完整地址</td></tr>
+              <tr><td>coveredMonths、缺口趨勢</td><td>工時訊號、任務類型、評估分數、下一步</td><td>薪資談判紀錄、例外核准</td></tr>
+              <tr><td>historyAmountsExcluded=true</td><td>risk flags、reviewer、override reason</td><td>核薪與財務授權紀錄</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="integration-table">
+            <thead>
+              <tr>
+                <th>既有資料</th>
+                <th>新模型用途</th>
+                <th>安全規則</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>active / paused</td><td>人才狀態與可用性。</td><td>可進 public 彙總，不顯示個人。</td></tr>
+              <tr><td>phone / Email</td><td>internal 聯絡欄位。</td><td>不進 public，不進一般公開 JSON。</td></tr>
+              <tr><td>residence</td><td>通勤或區域判斷。</td><td>只保留區域，不使用完整地址。</td></tr>
+              <tr><td>monthly work signals</td><td>可靠度、熟悉度、可用工時證據。</td><td>作營運證據，不直接當能力或薪資結論。</td></tr>
+              <tr><td>coveredMonths</td><td>資料覆蓋與信心分數。</td><td>可進 public 彙總。</td></tr>
+              <tr><td>paid / due</td><td>營運狀態。</td><td>不當作能力評分。</td></tr>
+              <tr><td>historyAmountsExcluded</td><td>public redaction 必備旗標。</td><td>若缺失，公開 build 應 fail。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>禁止事項：</strong>
+          不公開個人評分、薪資、身分證、銀行、完整地址、電話、Email、原始履歷或薪資談判紀錄；不使用 AI 分數作自動錄取、淘汰或定薪。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.4</p>
+          <p class="eyebrow">Next version / v0.5</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把第一位夥伴的職缺寫成正式職務說明與 30/60/90 天驗收表。</li>
-          <li>把能力樹轉成候選人評估表，對應職等、薪資區間與試作題。</li>
+          <li>把 HR 評估模型轉成可填寫的 Sheet / JSON schema。</li>
+          <li>在人力情報站建立 internal assessment layer 與 redaction preview。</li>
           <li>把 6 條優先工作線轉成可複製的 Notion / Sheet 任務模板。</li>
-          <li>補上專案規劃能力與帶領夥伴能力的成熟度指標。</li>
+          <li>把第一位夥伴 JD、試作題、30/60/90 驗收表寫成可招募版本。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

@@ -1,0 +1,124 @@
+{
+  "version": "0.6",
+  "name": "internal-assessment-pipeline",
+  "purpose": "Turn HR assessment inputs into evidence packs for human review while preserving public/internal/restricted data boundaries.",
+  "public_safety": {
+    "public_allowed_by_default": false,
+    "no_automatic_hiring": true,
+    "no_automatic_rejection": true,
+    "no_automatic_compensation": true,
+    "real_candidate_data_included": false
+  },
+  "source_contracts": [
+    {
+      "source": "application_or_resume_summary",
+      "classification": "internal",
+      "required_fields": ["source_type", "consent_scope", "parsed_summary"],
+      "restricted_fields": ["real_name", "contact_detail", "full_address"]
+    },
+    {
+      "source": "intern_or_talent_pool_record",
+      "classification": "internal",
+      "required_fields": ["person_id", "status", "covered_months"],
+      "restricted_fields": ["contact_detail", "salary_amount", "bank_data", "id_number"]
+    },
+    {
+      "source": "trial_task_result",
+      "classification": "internal",
+      "required_fields": ["task_id", "submitted_at", "proof_summary"],
+      "restricted_fields": ["private_message_url", "unapproved_portfolio_link"]
+    }
+  ],
+  "approval_gates": [
+    {
+      "gate": "G1",
+      "meaning": "Local draft, checklist, schema validation, or internal evidence pack.",
+      "kevin_approval_required": false
+    },
+    {
+      "gate": "G2",
+      "meaning": "External message, public deployment, public export, or repo push.",
+      "kevin_approval_required": true
+    },
+    {
+      "gate": "G3",
+      "meaning": "Hiring, rejection, salary, offer, people management, personal data, account, finance, or legal decision.",
+      "kevin_approval_required": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "name": "intake_staging",
+      "default_owner": "partner",
+      "support": ["codex"],
+      "gate": "G1",
+      "done_proof": ["source_type", "intake_date", "consent_scope_or_unknown"]
+    },
+    {
+      "id": "P1",
+      "name": "source_normalization",
+      "default_owner": "codex",
+      "support": ["partner"],
+      "gate": "G1",
+      "done_proof": ["schema_version", "required_fields_checked", "unknown_fields_marked"]
+    },
+    {
+      "id": "P2",
+      "name": "evidence_extraction",
+      "default_owner": "codex",
+      "support": ["partner"],
+      "gate": "G1",
+      "done_proof": ["evidence_summary", "confidence_level", "missing_data"]
+    },
+    {
+      "id": "P3",
+      "name": "draft_scoring",
+      "default_owner": "codex",
+      "support": ["kevin"],
+      "gate": "G1",
+      "done_proof": ["d1_d8_scores", "score_reasons", "risk_flags"]
+    },
+    {
+      "id": "P4",
+      "name": "human_review",
+      "default_owner": "kevin",
+      "support": ["partner", "codex"],
+      "gate": "G3",
+      "done_proof": ["reviewer", "decision_reason", "override_reason_if_any"]
+    },
+    {
+      "id": "P5",
+      "name": "trial_assignment",
+      "default_owner": "partner",
+      "support": ["kevin", "codex"],
+      "gate": "G2",
+      "done_proof": ["trial_task", "due_date", "expected_proof"]
+    },
+    {
+      "id": "P6",
+      "name": "decision_archive",
+      "default_owner": "kevin",
+      "support": ["codex"],
+      "gate": "G3",
+      "done_proof": ["final_decision", "next_step", "retention_until"]
+    },
+    {
+      "id": "P7",
+      "name": "public_redaction",
+      "default_owner": "automation",
+      "support": ["codex", "kevin"],
+      "gate": "G2",
+      "done_proof": ["redaction_scan_status", "public_allowed", "history_amounts_excluded"]
+    }
+  ],
+  "no_op_rule": "If consent is unknown, evidence is insufficient, or redaction scan fails, stop at a staging or blocked checkpoint and do not publish or decide.",
+  "related_artifacts": [
+    "schemas/hr-assessment-v0.5.schema.json",
+    "templates/hr-assessment-empty-record.v0.5.json",
+    "templates/hr-assessment-sheet-template.v0.5.csv",
+    "templates/first-partner-hiring-pack-v0.6.md",
+    "templates/workflow-task-checklist-v0.6.csv",
+    "scripts/redaction-scan.mjs"
+  ]
+}

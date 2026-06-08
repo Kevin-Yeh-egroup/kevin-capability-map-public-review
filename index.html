@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.5 HR schema / workbench</dd></div>
+        <div><dt>版本</dt><dd>v0.6 implementation layer</dd></div>
         <div><dt>日期</dt><dd>2026-06-08</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -933,17 +933,114 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="implementation-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Implementation layer / v0.6</p>
+          <h2 id="implementation-title">把 HR 模型轉成可執行工作層</h2>
+          <p>v0.6 將 v0.5 的 schema 延伸成 pipeline、招募包、工作檢核表與公開掃描工具。這一版仍不接真實人力資料；它先把未來可交給夥伴、Codex 與自動化的任務邊界做成可檢查的 artifacts。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Assessment Pipeline</h3>
+            <p>P0-P7 階段、owner、gate、done proof 與 no-op rule。</p>
+            <a href="docs/internal-assessment-pipeline-v0.6.md">開啟 pipeline spec</a>
+          </article>
+          <article>
+            <h3>Machine Workflow Map</h3>
+            <p>可給工具讀取的 internal assessment pipeline JSON。</p>
+            <a href="workflows/internal-assessment-pipeline.v0.6.json">開啟 workflow JSON</a>
+          </article>
+          <article>
+            <h3>First Partner Hiring Pack</h3>
+            <p>第一位夥伴 JD、試作題、D1-D8 評估、30/60/90 接手梯。</p>
+            <a href="templates/first-partner-hiring-pack-v0.6.md">開啟招募包</a>
+          </article>
+          <article>
+            <h3>Task Checklist CSV</h3>
+            <p>6 條工作線拆成 Sheet / Notion 可用的檢核點與分工欄位。</p>
+            <a href="templates/workflow-task-checklist-v0.6.csv">開啟任務 CSV</a>
+          </article>
+          <article>
+            <h3>Redaction Scanner</h3>
+            <p>掃描 public package 是否含 Email、手機、local path、內部 ID 或薪資金額實值。</p>
+            <a href="scripts/redaction-scan.mjs">開啟掃描 script</a>
+          </article>
+          <article>
+            <h3>Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v0.6.json">開啟掃描報告</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>新增 workflow / template / script 的觸發條件、owner、approval gate 與 proof。</p>
+            <a href="docs/governance-expansion-review-card-v0.6.md">開啟治理卡</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="pipeline-table">
+            <thead>
+              <tr>
+                <th>階段</th>
+                <th>Kevin 做</th>
+                <th>夥伴做</th>
+                <th>Codex 做</th>
+                <th>自動化做</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>P0 Intake</td>
+                <td>決定是否值得評估。</td>
+                <td>收齊來源、同意範圍、缺漏欄位。</td>
+                <td>整理欄位與未知項。</td>
+                <td>偵測新表單或新資料列。</td>
+              </tr>
+              <tr>
+                <td>P1-P3 Evidence</td>
+                <td>確認角色需求與評分方向。</td>
+                <td>補來源、作品、可用時間、試作 proof。</td>
+                <td>產 evidence pack、D1-D8 draft、risk flags。</td>
+                <td>驗 schema、計 weighted_score。</td>
+              </tr>
+              <tr>
+                <td>P4-P6 Decision</td>
+                <td>做人審、任用、淘汰、薪資、offer 決策。</td>
+                <td>協調低風險試作與回收 proof。</td>
+                <td>提供決策摘要與 override 記錄格式。</td>
+                <td>只能追蹤狀態，不做決策。</td>
+              </tr>
+              <tr>
+                <td>P7 Public redaction</td>
+                <td>批准是否公開。</td>
+                <td>檢查公開預覽。</td>
+                <td>解釋掃描結果與修正清單。</td>
+                <td>掃描敏感實值，失敗時阻止 public build。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v0.6 實作邊界：</strong>
+          這版建立可執行規格、招募包、任務模板與 public redaction scanner；尚未改動真實 workforce-war-room repo，尚未匯入任何求職者或工讀生資料，也未建立自動任用、淘汰或薪資流程。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.6</p>
+          <p class="eyebrow">Next version / v0.7</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>在人力情報站建立 internal assessment layer 的實際資料管線。</li>
-          <li>新增 public redaction scan script，防止敏感欄位進 public build。</li>
-          <li>把第一位夥伴 JD、試作題、30/60/90 驗收表寫成可招募版本。</li>
-          <li>把 6 條優先工作線轉成可複製的 Notion / Sheet 任務模板。</li>
+          <li>在真實 workforce-war-room repo 重新檢查現況後，建立 private internal assessment branch。</li>
+          <li>用 fictional 或完全去識別 sample 跑一次 P0-P7 pilot。</li>
+          <li>把 task checklist 轉成可匯入 Notion / Google Sheets 的正式工作看板格式。</li>
+          <li>建立第一位夥伴招募頁或內部招募文件，並由 Kevin 決定是否開始收件。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

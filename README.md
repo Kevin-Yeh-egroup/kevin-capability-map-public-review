@@ -22,3 +22,10 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Empty HR assessment record: `templates/hr-assessment-empty-record.v0.5.json`
 - Sheet-ready HR assessment template: `templates/hr-assessment-sheet-template.v0.5.csv`
 - Internal assessment workbench spec: `docs/internal-assessment-workbench-v0.5.md`
+- Internal assessment pipeline spec: `docs/internal-assessment-pipeline-v0.6.md`
+- Machine-readable pipeline map: `workflows/internal-assessment-pipeline.v0.6.json`
+- First-partner hiring pack: `templates/first-partner-hiring-pack-v0.6.md`
+- Workflow task checklist template: `templates/workflow-task-checklist-v0.6.csv`
+- Public redaction scanner: `scripts/redaction-scan.mjs`
+- Public redaction scan report: `reports/public-redaction-scan-report.v0.6.json`
+- Governance expansion review card: `docs/governance-expansion-review-card-v0.6.md`

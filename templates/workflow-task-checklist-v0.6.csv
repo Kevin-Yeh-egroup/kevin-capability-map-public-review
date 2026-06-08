@@ -1,0 +1,25 @@
+workflow_id,workflow_name,task_package,micro_task,owner_default,support_by,gate,done_proof,trainability,first_partner_phase,automation_candidate,notes
+W1,課務 / 表單 / 核銷 / 提醒,班期與名單盤點,確認課程日期與班別,夥伴,Codex,G1,日期班別來源時間,high,30 days,yes,正式紀錄以 Form 或 Sheet 為準
+W1,課務 / 表單 / 核銷 / 提醒,班期與名單盤點,比對報名人數與缺漏欄位,夥伴,Codex,G1,人數缺欄清單,high,30 days,yes,缺漏例外升級 Kevin
+W1,課務 / 表單 / 核銷 / 提醒,表單完整性與缺件追蹤,建立待補件清單,夥伴,Codex,G1,待補件 owner 狀態,high,60 days,yes,不自動補完
+W1,課務 / 表單 / 核銷 / 提醒,課前提醒與收尾包,準備提醒佇列與收尾清單,夥伴,Codex,G2,提醒草稿與收尾 checklist,medium,90 days,partial,外寄前需批准
+W2,公共資料 / 政策 / 福利資源站,來源清單與 allowlist,更新來源清單與最後檢查日,夥伴,Codex,G1,來源清單檢查日停用來源,high,30 days,yes,不爬未核准來源
+W2,公共資料 / 政策 / 福利資源站,擷取與結構化,檢查欄位覆蓋率與失敗 log,Codex,夥伴,G1,筆數覆蓋率失敗 log,medium,60 days,yes,schema 失敗需 blocked
+W2,公共資料 / 政策 / 福利資源站,新鮮度檢查,標記官方連結與更新日期,夥伴,Codex,G1,freshness report,medium,60 days,yes,過期來源不得寫成確定資訊
+W2,公共資料 / 政策 / 福利資源站,民眾可讀卡片審查,產出 reviewed card 待審包,夥伴,Codex,G2,卡片數分類官方連結,medium,90 days,partial,公開前需 Kevin review
+W3,新知 / AI / 社福財務蒐集,主題與來源掃描,建立本期主題與來源池,夥伴,Codex,G1,主題來源日期範圍,high,30 days,yes,不長篇複製付費內容
+W3,新知 / AI / 社福財務蒐集,可信度檢查,建立 claim table 與來源日期,夥伴,Codex,G1,claim table 限制與信心,medium,60 days,partial,單一來源不得當定論
+W3,新知 / AI / 社福財務蒐集,台灣適用性檢查,標示台灣制度與語境差異,Codex,夥伴,G1,台灣適用程度與修正建議,medium,60 days,no,必要時升級 Kevin
+W3,新知 / AI / 社福財務蒐集,素材卡與採用判斷,產出 adopt validate pause,Codex,夥伴,G1,素材卡下一步,medium,90 days,partial,不直接改 workflow 或 durable memory
+W4,日 / 週 / 月報,來源 readiness,建立來源矩陣與 fallback reason,夥伴,Codex,G1,來源矩陣 gateStatus fallbackReason,medium,30 days,yes,缺資料不等於 0
+W4,日 / 週 / 月報,日報合併,彙整週期內日報與異常點,Codex,夥伴,G1,引用日報重要決策待辦,medium,60 days,partial,敏感解讀仍需 Kevin
+W4,日 / 週 / 月報,週報彙整,建立週報初稿與 blocked checkpoint,Codex,夥伴,G1,週期範圍與 blocked proof,medium,60 days,partial,不抹平來源差異
+W4,日 / 週 / 月報,月報與 publish-ready,準備月報草稿與 companion sync,夥伴,Codex,G2,自然月範圍 timeline index,low,90 days,partial,外部 push deploy share 需批准
+W5,Gmail 最新報告 read-only,上次 checkpoint gate,確認上次查詢起點與 permalink,夥伴,Codex,G1,message timestamp permalink,high,30 days,yes,read-only only
+W5,Gmail 最新報告 read-only,精準週報查詢,區分 weekly 與 daily 候選,Codex,夥伴,G1,query 結果數最新時間,medium,60 days,partial,多封候選不可混成一封
+W5,Gmail 最新報告 read-only,摘要與 checkpoint,回報短摘要原始連結與 no-op,夥伴,Codex,G1,摘要原始連結 checkpoint,medium,90 days,partial,不得 label archive delete send
+W5,Gmail 最新報告 read-only,異常升級,標記缺信較新 daily 或來源衝突,夥伴,Codex,G1,異常原因與下一步,medium,90 days,no,明講 weekly daily 差異
+W6,人力情報 / 人才池 / 薪資素材,試算表匯入與欄位整理,檢查來源月份與欄位缺漏,夥伴,Codex,G1,月份成功略過列數欄位錯誤,high,30 days,yes,不公開個資薪資
+W6,人力情報 / 人才池 / 薪資素材,人才池重建與初篩素材,建立 internal public 分流摘要,Codex,夥伴,G1,人數 active paused covered months,medium,60 days,partial,AI 不做最終聘用淘汰
+W6,人力情報 / 人才池 / 薪資素材,薪資評估素材,整理 D1-D8 與 redaction log,Codex,Kevin,G3,評估指標來源月份 redaction log,low,90 days,no,薪資區間任用都進 G3
+W6,人力情報 / 人才池 / 薪資素材,radar 週更與 shortlist,準備面談包與 next step,夥伴,Codex,G3,面談包 shortlist no-op 或更新,low,90 days,partial,需 Kevin 人審

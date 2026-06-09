@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Social-worker resource finder prototype v1.4</title>
+  <desc id="desc">A public-safe prototype flow for collecting public sources, normalizing resource cards, reviewing boundaries, and checking freshness.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#17252B" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#617174"/>
+    </marker>
+    <style>
+      .bg { fill: #F8FAF7; }
+      .title { font: 700 34px Arial, sans-serif; fill: #18343B; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #526064; }
+      .card { filter: url(#shadow); }
+      .stepNum { font: 800 30px Arial, sans-serif; fill: #FFFFFF; }
+      .cardTitle { font: 700 19px Arial, sans-serif; fill: #18343B; }
+      .line { font: 400 14px Arial, sans-serif; fill: #2F4147; }
+      .tiny { font: 400 12px Arial, sans-serif; fill: #59686C; }
+      .badge { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .arrow { stroke: #617174; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .footer { font: 400 13px Arial, sans-serif; fill: #667174; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Social-worker Resource Finder Prototype v1.4</text>
+  <text class="sub" x="60" y="88">Public source cards, human review, freshness checks, and no-op checkpoints.</text>
+
+  <g class="card">
+    <rect x="60" y="135" width="200" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="100" cy="178" r="27" fill="#0F766E"/>
+    <text class="stepNum" x="100" y="188" text-anchor="middle">1</text>
+    <text class="cardTitle" x="84" y="230">Scope topic</text>
+    <text class="line" x="84" y="260">Kevin defines topic</text>
+    <text class="line" x="84" y="286">Target group</text>
+    <text class="line" x="84" y="312">Priority reason</text>
+  </g>
+
+  <path class="arrow" d="M270 230 H330"/>
+
+  <g class="card">
+    <rect x="340" y="135" width="200" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="380" cy="178" r="27" fill="#0369A1"/>
+    <text class="stepNum" x="380" y="188" text-anchor="middle">2</text>
+    <text class="cardTitle" x="364" y="230">Collect sources</text>
+    <text class="line" x="364" y="260">Partner finds public URLs</text>
+    <text class="line" x="364" y="286">Marks dates</text>
+    <text class="line" x="364" y="312">Flags missing fields</text>
+  </g>
+
+  <path class="arrow" d="M550 230 H610"/>
+
+  <g class="card">
+    <rect x="620" y="135" width="200" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="660" cy="178" r="27" fill="#7C3AED"/>
+    <text class="stepNum" x="660" y="188" text-anchor="middle">3</text>
+    <text class="cardTitle" x="644" y="230">Normalize card</text>
+    <text class="line" x="644" y="260">Codex structures fields</text>
+    <text class="line" x="644" y="286">Creates review questions</text>
+    <text class="line" x="644" y="312">Runs QA checklist</text>
+  </g>
+
+  <path class="arrow" d="M830 230 H890"/>
+
+  <g class="card">
+    <rect x="900" y="135" width="220" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="940" cy="178" r="27" fill="#BE123C"/>
+    <text class="stepNum" x="940" y="188" text-anchor="middle">4</text>
+    <text class="cardTitle" x="924" y="230">Human review</text>
+    <text class="line" x="924" y="260">Kevin confirms boundary</text>
+    <text class="line" x="924" y="286">Ready / needs review</text>
+    <text class="line" x="924" y="312">Blocked if private</text>
+  </g>
+
+  <g class="card">
+    <rect x="180" y="405" width="840" height="150" rx="8" fill="#18343B"/>
+    <rect x="210" y="430" width="120" height="26" rx="8" fill="#0F766E"/>
+    <text class="badge" x="270" y="448" text-anchor="middle">Refresh gate</text>
+    <text class="line" x="210" y="490" fill="#EAF4F1" style="fill:#EAF4F1">Automation may check links, last-seen dates, stale status, and no-op checkpoint drafts.</text>
+    <text class="line" x="210" y="520" fill="#EAF4F1" style="fill:#EAF4F1">It must not import private records, contact people, or make eligibility decisions.</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="610" width="1080" height="84" rx="8" fill="#FFFFFF"/>
+    <text class="cardTitle" x="90" y="646">Public safety rule</text>
+    <text class="tiny" x="90" y="676">Only public sources, blank templates, fictional examples, and high-level workflow notes. noindex blocks search indexing, not access.</text>
+  </g>
+
+  <text class="footer" x="60" y="728">v1.4 prototype · Kevin reviews decisions · Partner collects public sources · Codex packages · Automation reports only</text>
+</svg>

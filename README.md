@@ -85,3 +85,12 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Tool line roadmap visual v1.3: `assets/tool-line-roadmap-v1.3.svg`
 - v1.3 governance expansion review card: `docs/governance-expansion-review-card-v1.3.md`
 - v1.3 public redaction scan report: `reports/public-redaction-scan-report.v1.3.json`
+- Social-worker resource finder prototype v1.4: `weekly/social-worker-resource-finder-prototype-v1.4.json`
+- Social-worker resource finder prototype brief v1.4: `docs/social-worker-resource-finder-prototype-brief-v1.4.md`
+- Social-worker resource card empty record v1.4: `templates/social-worker-resource-card-empty-record-v1.4.json`
+- Social-worker resource card Sheet template v1.4: `templates/social-worker-resource-card-template-v1.4.csv`
+- Social-worker resource finder QA checklist v1.4: `weekly/social-worker-resource-finder-qa-checklist-v1.4.csv`
+- Taiwan tool-fit gate v1.4: `docs/social-worker-resource-finder-taiwan-fit-gate-v1.4.md`
+- Social-worker resource finder prototype visual v1.4: `assets/social-worker-resource-finder-prototype-v1.4.svg`
+- v1.4 governance expansion review card: `docs/governance-expansion-review-card-v1.4.md`
+- v1.4 public redaction scan report: `reports/public-redaction-scan-report.v1.4.json`

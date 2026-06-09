@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.4",
+  "artifact_type": "social_worker_resource_card_empty_record",
+  "resource_id": "",
+  "resource_topic": "",
+  "source_title": "",
+  "source_url": "",
+  "source_owner": "",
+  "intended_user_group": "",
+  "service_area": "",
+  "access_method": "",
+  "source_last_updated_public": "",
+  "last_seen_public": "",
+  "freshness_status": "unknown",
+  "summary_plain_language": "",
+  "missing_fields": [],
+  "review_questions": [],
+  "review_status": "draft",
+  "risk_boundary_note": "This card organizes public information only. It is not an eligibility, legal, medical, or service decision.",
+  "owner_split": {
+    "Kevin 做": "",
+    "夥伴做": "",
+    "Codex 做": "",
+    "自動化": ""
+  },
+  "done_proof": []
+}

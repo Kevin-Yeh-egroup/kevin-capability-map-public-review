@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.4",
+  "artifact_type": "public_safe_prototype_brief",
+  "line_id": "social_worker_tools",
+  "module_id": "sw_resource_finder",
+  "module_name": "公開資源查找與新鮮度卡",
+  "updated_at_public": "2026-06-09",
+  "selected_for_v1_4_reason": "This module is partner-ready, easy to verify with public sources, and useful before any private case-management work is considered.",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_case_data": false,
+    "contains_private_messages": false,
+    "contains_candidate_personal_data": false,
+    "contains_private_financial_records": false,
+    "public_export_rule": "Use only public sources, blank templates, fictional examples, and high-level workflow notes."
+  },
+  "prototype_intent": {
+    "plain_language_goal": "協助 Kevin 與夥伴把公開可查的社福、社區、課程、諮詢或轉介資源，整理成可檢核、可更新、可交辦的資料卡。",
+    "not_a_case_system": true,
+    "not_an_eligibility_decision_tool": true,
+    "target_users": ["Kevin", "內容 / 研究夥伴", "未來協助社工工具線的夥伴", "Codex 作業支援"]
+  },
+  "operator_flow": [
+    {
+      "step_id": "scope",
+      "step_name": "定義資源主題",
+      "owner_tag": "Kevin 做",
+      "input": "一個公開安全的資源主題或服務情境",
+      "output": "resource_topic, intended_user_group, priority_reason",
+      "done_proof": "主題、適用對象與優先理由已填寫"
+    },
+    {
+      "step_id": "collect",
+      "step_name": "蒐集公開來源",
+      "owner_tag": "夥伴做",
+      "input": "公開網頁、公開簡章、公開服務說明",
+      "output": "source_url, source_owner, source_last_seen_public",
+      "done_proof": "每筆來源都有公開來源與檢查日期"
+    },
+    {
+      "step_id": "normalize",
+      "step_name": "整理資料卡欄位",
+      "owner_tag": "Codex 做",
+      "input": "夥伴整理的來源摘錄與缺欄",
+      "output": "resource_card, missing_fields, review_questions",
+      "done_proof": "欄位符合模板且缺欄被標記"
+    },
+    {
+      "step_id": "review",
+      "step_name": "人工覆核與風險標記",
+      "owner_tag": "Kevin 做",
+      "input": "resource_card and review_questions",
+      "output": "review_status, risk_boundary, next_action",
+      "done_proof": "Kevin 或指定 reviewer 已標記可用、需補件、暫停或 blocked"
+    },
+    {
+      "step_id": "refresh",
+      "step_name": "新鮮度與 no-op 檢查",
+      "owner_tag": "自動化",
+      "input": "approved resource_card list",
+      "output": "freshness_status, link_status, no_op_checkpoint",
+      "done_proof": "連結與更新狀態已檢查；無變動時有 no-op"
+    }
+  ],
+  "resource_card_fields": [
+    {
+      "field": "resource_id",
+      "required": true,
+      "public_safe": true,
+      "description": "Stable ID for this public resource card."
+    },
+    {
+      "field": "resource_topic",
+      "required": true,
+      "public_safe": true,
+      "description": "Plain topic label such as food support, family service, learning resource, or consultation."
+    },
+    {
+      "field": "source_title",
+      "required": true,
+      "public_safe": true,
+      "description": "Title shown on the public source."
+    },
+    {
+      "field": "source_url",
+      "required": true,
+      "public_safe": true,
+      "description": "Public source URL only."
+    },
+    {
+      "field": "source_owner",
+      "required": false,
+      "public_safe": true,
+      "description": "Public organization or page owner, if available."
+    },
+    {
+      "field": "intended_user_group",
+      "required": false,
+      "public_safe": true,
+      "description": "Publicly stated target group; do not infer private eligibility."
+    },
+    {
+      "field": "service_area",
+      "required": false,
+      "public_safe": true,
+      "description": "Publicly stated city, district, or service area."
+    },
+    {
+      "field": "access_method",
+      "required": false,
+      "public_safe": true,
+      "description": "Publicly stated contact or application route; keep private contact notes out."
+    },
+    {
+      "field": "last_seen_public",
+      "required": true,
+      "public_safe": true,
+      "description": "Date this public source was last checked."
+    },
+    {
+      "field": "freshness_status",
+      "required": true,
+      "public_safe": true,
+      "allowed_values": ["fresh", "watch", "stale", "unknown"],
+      "description": "Source freshness state based on public evidence."
+    },
+    {
+      "field": "missing_fields",
+      "required": true,
+      "public_safe": true,
+      "description": "Fields that remain unclear from public material."
+    },
+    {
+      "field": "review_status",
+      "required": true,
+      "public_safe": true,
+      "allowed_values": ["draft", "needs_review", "ready_public_safe", "blocked_private"],
+      "description": "Human review state."
+    },
+    {
+      "field": "risk_boundary_note",
+      "required": true,
+      "public_safe": true,
+      "description": "Reminder that this card is information organization, not eligibility or service decision."
+    }
+  ],
+  "partner_trial_task": {
+    "title": "Public resource card trial",
+    "task_size": "one topic, three public sources, one review question list",
+    "time_box": "small_trial",
+    "inputs_allowed": ["public webpage", "public PDF", "public announcement", "blank template"],
+    "inputs_not_allowed": ["private case record", "private message", "personal contact list", "internal account page"],
+    "expected_outputs": [
+      "Three public resource cards",
+      "Missing-field list",
+      "Freshness status for each source",
+      "Questions that require Kevin review"
+    ],
+    "stop_conditions": [
+      "Source is not public",
+      "Source requires login",
+      "A real person's private details appear",
+      "The task starts making eligibility decisions"
+    ],
+    "review_rubric": [
+      "Source is public and traceable",
+      "Summary is plain and neutral",
+      "Missing fields are visible",
+      "Risk boundary is respected",
+      "Next action is clear"
+    ]
+  },
+  "taiwan_fit_gate": {
+    "verdict": "pass",
+    "wording_fit": "Uses natural Traditional Chinese labels such as 公開來源, 缺欄, 人工覆核, 新鮮度檢查, and 暫停.",
+    "workplace_habit_fit": "Keeps Kevin review visible and gives partners small source-card tasks instead of asking them to make service decisions.",
+    "mobile_readability_fit": "Uses compact cards, short labels, and table-ready fields that can wrap on mobile."
+  },
+  "next_version_candidates": [
+    {
+      "version": "v1.5",
+      "candidate": "Turn this prototype into a private Notion / Google Sheets workboard selection draft.",
+      "requires_approval": true
+    },
+    {
+      "version": "v1.5",
+      "candidate": "Build the citizen finance-life snapshot prototype brief.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.5",
+      "candidate": "Create a report-first freshness-check automation candidate.",
+      "requires_approval": true
+    }
+  ]
+}

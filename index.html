@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.3 tool line cards</dd></div>
+        <div><dt>版本</dt><dd>v1.4 social resource prototype</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1708,17 +1708,130 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="resource-prototype-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Prototype brief / v1.4</p>
+          <h2 id="resource-prototype-title">先把社工公開資源查找做成可試作工具</h2>
+          <p>v1.4 從社工工具線挑出「公開資源查找與新鮮度卡」做 prototype。這版只處理公開來源、空白模板、QA checklist 與人工覆核流程，不碰真實個案或 private records。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/social-worker-resource-finder-prototype-v1.4.svg" alt="Social-worker resource finder prototype v1.4：Kevin 定義主題、夥伴蒐集公開來源、Codex 整理資料卡、Kevin 人工覆核、自動化做新鮮度與 no-op 檢查。">
+          <figcaption>v1.4 prototype：把公開資源整理從「方向」變成可以交辦、覆核、週更的小工具流程。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Prototype JSON</h3>
+            <p>機器可讀 prototype brief，含流程、欄位、試作題、rubric、Taiwan fit gate 與 v1.5 候選。</p>
+            <a href="weekly/social-worker-resource-finder-prototype-v1.4.json">開啟 prototype JSON</a>
+          </article>
+          <article>
+            <h3>Prototype Brief</h3>
+            <p>人可讀說明，協助 Kevin 對夥伴解釋任務、輸入、輸出與停止條件。</p>
+            <a href="docs/social-worker-resource-finder-prototype-brief-v1.4.md">開啟 prototype brief</a>
+          </article>
+          <article>
+            <h3>Empty Record</h3>
+            <p>空白資源卡 JSON，不含任何真實個案或私人資料。</p>
+            <a href="templates/social-worker-resource-card-empty-record-v1.4.json">開啟空白 JSON</a>
+          </article>
+          <article>
+            <h3>Sheet Template</h3>
+            <p>可匯入 Notion / Google Sheets 的資源卡欄位模板。</p>
+            <a href="templates/social-worker-resource-card-template-v1.4.csv">開啟 CSV 模板</a>
+          </article>
+          <article>
+            <h3>QA Checklist</h3>
+            <p>檢查公開來源、白話摘要、缺欄、人工覆核、風險邊界、新鮮度與 no-op。</p>
+            <a href="weekly/social-worker-resource-finder-qa-checklist-v1.4.csv">開啟 QA checklist</a>
+          </article>
+          <article>
+            <h3>Taiwan Fit Gate</h3>
+            <p>確認用語、分工與操作習慣符合台灣小型團隊工作方式。</p>
+            <a href="docs/social-worker-resource-finder-taiwan-fit-gate-v1.4.md">開啟 Taiwan fit gate</a>
+          </article>
+          <article>
+            <h3>Prototype SVG</h3>
+            <p>可視覺說明 scope、collect、normalize、review、refresh 五步驟。</p>
+            <a href="assets/social-worker-resource-finder-prototype-v1.4.svg">開啟 v1.4 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.4 是 public-safe prototype package，不是個案系統或自動判定工具。</p>
+            <a href="docs/governance-expansion-review-card-v1.4.md">開啟 v1.4 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.4 Scan Report</h3>
+            <p>本版 public package 掃描報告，確認 0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.4.json">開啟 v1.4 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>步驟</th>
+                <th>Owner</th>
+                <th>輸出</th>
+                <th>停止條件</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>定義資源主題</td>
+                <td>Kevin 做</td>
+                <td>主題、適用對象、優先理由</td>
+                <td>主題需要私人資料才說得清楚</td>
+              </tr>
+              <tr>
+                <td>蒐集公開來源</td>
+                <td>夥伴做</td>
+                <td>source title、source URL、來源單位、檢查日期</td>
+                <td>來源需登入、來源不明或含私人資料</td>
+              </tr>
+              <tr>
+                <td>整理資料卡</td>
+                <td>Codex 做</td>
+                <td>resource card、missing fields、review questions</td>
+                <td>資料卡開始做資格、法律、醫療或個案判斷</td>
+              </tr>
+              <tr>
+                <td>人工覆核</td>
+                <td>Kevin 做</td>
+                <td>review status、risk note、next action</td>
+                <td>需要 private implementation 或外部聯絡</td>
+              </tr>
+              <tr>
+                <td>新鮮度檢查</td>
+                <td>自動化</td>
+                <td>freshness status、link status、no-op checkpoint</td>
+                <td>自動化想匯入私人紀錄或主動聯絡人</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.4 Taiwan fit gate：</strong>
+          結果為 pass。這版使用台灣工作場合易懂的「公開來源、缺欄、人工覆核、新鮮度檢查、暫停」等語彙，並把夥伴任務限制在公開來源整理，不讓夥伴替使用者做服務判斷。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.4</p>
+          <p class="eyebrow">Next version / v1.5</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>從社工工具線或財務生活工具線中選一個模組，做 public-safe prototype brief。</li>
-          <li>把 v1.3 CSV 轉成 private Notion / Google Sheets 工作板選型草案。</li>
-          <li>補上 private import checklist，但不接真實資料，先只設邊界與欄位。</li>
-          <li>把 weekly no-op checkpoint 轉成 report-first automation candidate。</li>
+          <li>把 v1.4 資源卡 prototype 轉成 private Notion / Google Sheets 工作板選型草案。</li>
+          <li>做「一般民眾財務生活快照」public-safe prototype brief。</li>
+          <li>把新鮮度檢查轉成 report-first automation candidate，但不自動匯入 private records。</li>
+          <li>設計第一個 public-safe 夥伴 trial task，不做外部寄送。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

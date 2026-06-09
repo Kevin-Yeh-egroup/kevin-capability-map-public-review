@@ -20,8 +20,8 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.7 fictional pilot</dd></div>
-        <div><dt>日期</dt><dd>2026-06-08</dd></div>
+        <div><dt>版本</dt><dd>v0.8 schema gap pilot</dd></div>
+        <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
     </div>
@@ -1117,17 +1117,109 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="gap-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Second fictional pilot / v0.8</p>
+          <h2 id="gap-title">測試技術自動化夥伴，找出 schema 缺口</h2>
+          <p>v0.8 新增 Fictional Candidate B，專門測試「技術 / 自動化夥伴」權重。這讓我們能比較：高技術分數是否等於第一位營運夥伴適任，並整理 v0.5 schema 在真實內部流程前還缺哪些欄位。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Technical Candidate JSON</h3>
+            <p>第二位完全虛構候選人，role_template_id 為 technical_automation。</p>
+            <a href="pilots/fictional-technical-candidate-assessment-v0.8.json">開啟 Candidate B JSON</a>
+          </article>
+          <article>
+            <h3>Candidate Comparison</h3>
+            <p>比較 Candidate A 與 Candidate B 的角色、分數、強弱訊號與下一步。</p>
+            <a href="pilots/fictional-candidate-comparison-v0.8.csv">開啟 comparison CSV</a>
+          </article>
+          <article>
+            <h3>Technical Trial Draft</h3>
+            <p>技術自動化夥伴的 private-draft 試作題，尚未準備發送真人。</p>
+            <a href="templates/technical-automation-trial-task-v0.8.md">開啟 trial draft</a>
+          </article>
+          <article>
+            <h3>Schema Gap Report</h3>
+            <p>整理兩次 fictional pilot 暴露出的 v0.9 schema 欄位需求。</p>
+            <a href="docs/schema-gap-report-v0.8.md">開啟 gap report</a>
+          </article>
+          <article>
+            <h3>Extension Proposal</h3>
+            <p>候選資料模式、角色權重、dimension confidence、trial task 與 feedback loop 的提案。</p>
+            <a href="schemas/hr-assessment-v0.8-extension-proposal.json">開啟 extension JSON</a>
+          </article>
+          <article>
+            <h3>v0.8 Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v0.8.json">開啟 v0.8 掃描報告</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>說明 v0.8 仍是 public-review pilot，不是正式 schema 或自動化。</p>
+            <a href="docs/governance-expansion-review-card-v0.8.md">開啟 v0.8 治理卡</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="gap-table">
+            <thead>
+              <tr>
+                <th>發現</th>
+                <th>目前影響</th>
+                <th>v0.9 方向</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>技術分數高不等於第一位夥伴適任</td>
+                <td>Candidate B 的 technical_automation 加權為 4.00，但 D1/D4 仍需試作。</td>
+                <td>保留不同 role template，不把一個總分套到所有職缺。</td>
+              </tr>
+              <tr>
+                <td>weighted_score 缺少權重來源</td>
+                <td>目前 record 看得到分數，看不到採用哪個權重表。</td>
+                <td>新增 role_weight_context。</td>
+              </tr>
+              <tr>
+                <td>confidence 應分到每個維度</td>
+                <td>D7/D8 可能比 D1/D4 有更強證據，單一 confidence 不夠。</td>
+                <td>新增 dimension_confidence。</td>
+              </tr>
+              <tr>
+                <td>trial task 需要結構化</td>
+                <td>兩位 fictional candidate 都只得到 trial_task next step。</td>
+                <td>新增 trial_task_packet 與 feedback_loop。</td>
+              </tr>
+              <tr>
+                <td>redaction pass 需要 proof ref</td>
+                <td>sensitive_field_scan=pass 需要連到實際 scan report。</td>
+                <td>新增 redaction_evidence。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v0.8 實作邊界：</strong>
+          這版只比較兩位 fictional candidate，並提出 schema extension proposal；不替換 v0.5 schema，不接真實人力資料，不邀請真人試作，也不建立薪資或任用決策。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.8</p>
+          <p class="eyebrow">Next version / v0.9</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>再跑一位不同型態的 fictional candidate，測試技術自動化或內容研究夥伴權重。</li>
-          <li>把 trial task 轉成正式可發給真人前的 private draft，不公開也不發送。</li>
-          <li>重新檢查真實 workforce-war-room repo 狀態後，設計 private internal assessment branch。</li>
-          <li>把 task checklist 轉成可匯入 Notion / Google Sheets 的正式工作看板格式。</li>
+          <li>決定是否把 v0.8 extension proposal 升級成正式 `hr-assessment-v0.9.schema.json`。</li>
+          <li>用一位內容 / 研究型 fictional candidate 測第三種 role template。</li>
+          <li>把 trial task packet 與 feedback loop 做成 Sheet-ready 欄位模板。</li>
+          <li>重新檢查真實 workforce-war-room repo 狀態後，只在 private branch 設計 internal assessment layer。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

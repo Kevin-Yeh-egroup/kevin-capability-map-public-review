@@ -1,0 +1,3 @@
+candidate,role_template,weighted_score,confidence,strongest_signals,weakest_signals,recommended_next_step,not_a_decision
+Fictional Candidate A,first_partner,3.93,C,"workflow checklist; concise summary; approval gate awareness","no real trial proof; domain depth unproven",controlled operations trial,yes
+Fictional Candidate B,technical_automation,4.00,C,"automation design; JSON review; redaction testing; technical notes","Kevin work-line context; communication revision proof",non-production technical trial,yes

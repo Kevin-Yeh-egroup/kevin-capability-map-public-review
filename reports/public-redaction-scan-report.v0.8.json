@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.6",
+  "generated_at": "2026-06-09T01:47:53.319Z",
+  "scanned_root": ".",
+  "scanned_files": 31,
+  "status": "pass",
+  "checks": [
+    {
+      "id": "email_address",
+      "severity": "restricted",
+      "reason": "Email addresses cannot be included in public artifacts."
+    },
+    {
+      "id": "taiwan_mobile_phone",
+      "severity": "restricted",
+      "reason": "Taiwan mobile phone numbers cannot be included in public artifacts."
+    },
+    {
+      "id": "taiwan_id_number_like",
+      "severity": "restricted",
+      "reason": "Taiwan ID-like values cannot be included in public artifacts."
+    },
+    {
+      "id": "raw_gmail_url",
+      "severity": "internal",
+      "reason": "Mailbox URLs cannot be included in public artifacts."
+    },
+    {
+      "id": "local_windows_user_path",
+      "severity": "internal",
+      "reason": "Local machine paths cannot be included in public artifacts."
+    },
+    {
+      "id": "vercel_internal_identifier",
+      "severity": "internal",
+      "reason": "Internal Vercel project or team identifiers should stay out of public artifacts."
+    },
+    {
+      "id": "secret_key_like",
+      "severity": "restricted",
+      "reason": "Secret-like keys cannot be included in public artifacts."
+    },
+    {
+      "id": "salary_amount_context",
+      "severity": "restricted",
+      "reason": "Salary or compensation amounts cannot be included in public artifacts."
+    }
+  ],
+  "matches": []
+}

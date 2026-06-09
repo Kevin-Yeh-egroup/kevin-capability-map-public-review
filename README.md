@@ -35,3 +35,10 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Fictional pilot report: `docs/fictional-pilot-report-v0.7.md`
 - v0.7 governance expansion review card: `docs/governance-expansion-review-card-v0.7.md`
 - v0.7 public redaction scan report: `reports/public-redaction-scan-report.v0.7.json`
+- Fictional technical candidate assessment: `pilots/fictional-technical-candidate-assessment-v0.8.json`
+- Fictional candidate comparison matrix: `pilots/fictional-candidate-comparison-v0.8.csv`
+- Technical automation trial task draft: `templates/technical-automation-trial-task-v0.8.md`
+- Schema gap report: `docs/schema-gap-report-v0.8.md`
+- v0.8 schema extension proposal: `schemas/hr-assessment-v0.8-extension-proposal.json`
+- v0.8 governance expansion review card: `docs/governance-expansion-review-card-v0.8.md`
+- v0.8 public redaction scan report: `reports/public-redaction-scan-report.v0.8.json`

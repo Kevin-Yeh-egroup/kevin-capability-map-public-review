@@ -1,0 +1,57 @@
+{
+  "proposal_version": "0.8",
+  "name": "hr-assessment-extension-proposal",
+  "status": "proposal_only",
+  "purpose": "Record schema gaps discovered after two fictional pilots without replacing the v0.5 schema yet.",
+  "do_not_use_for": [
+    "automatic_hiring",
+    "automatic_rejection",
+    "automatic_compensation",
+    "public_personal_data_export"
+  ],
+  "proposed_fields": [
+    {
+      "field": "candidate_data_mode",
+      "type": "enum",
+      "values": ["fictional", "deidentified_sample", "internal_real_record", "restricted_real_record"],
+      "reason": "The public pilot needs an explicit marker that a record is fictional or de-identified."
+    },
+    {
+      "field": "role_weight_context",
+      "type": "object",
+      "fields": ["role_template_id", "weight_version", "dimension_weights", "weighted_score_formula"],
+      "reason": "The record stores weighted_score but not the weight table used to produce it."
+    },
+    {
+      "field": "dimension_confidence",
+      "type": "object",
+      "fields": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"],
+      "reason": "Evidence confidence should be tracked per dimension, not only at application level."
+    },
+    {
+      "field": "trial_task_packet",
+      "type": "object",
+      "fields": ["task_template_id", "task_scope", "due_policy", "expected_proof", "stop_conditions"],
+      "reason": "Both fictional pilots recommend trial tasks, but the current schema has no structured trial task object."
+    },
+    {
+      "field": "feedback_loop",
+      "type": "object",
+      "fields": ["revision_count", "feedback_summary", "improved_after_feedback", "reviewer_notes_ref"],
+      "reason": "Trainability is important but not yet supported by structured feedback evidence."
+    },
+    {
+      "field": "supervision_profile",
+      "type": "object",
+      "fields": ["supervision_load", "allowed_gates", "not_allowed_tasks", "handoff_phase"],
+      "reason": "Kevin needs to know whether a person reduces or increases coordination load."
+    },
+    {
+      "field": "redaction_evidence",
+      "type": "object",
+      "fields": ["scan_report_ref", "scan_status", "scan_generated_at", "public_export_allowed"],
+      "reason": "Redaction pass/fail should point to a concrete scan report."
+    }
+  ],
+  "recommendation": "Keep v0.5 as the stable base for now. Use this proposal to design v0.9 only after one more fictional or private de-identified pilot."
+}

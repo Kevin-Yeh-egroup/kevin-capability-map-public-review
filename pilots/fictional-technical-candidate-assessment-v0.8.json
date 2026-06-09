@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.5",
+  "record_classification": "internal",
+  "person": {
+    "person_id": "fictional-person-b-v0.8",
+    "source_type": "applicant",
+    "internal_name_ref": "fictional-ref-b",
+    "public_alias": "Fictional Candidate B",
+    "status": "needs_review",
+    "data_source": "fictional-pilot-v0.8",
+    "consent_scope": "evaluation_only",
+    "retention_until": "2026-07-09",
+    "created_at": "2026-06-09T09:44:46+08:00",
+    "updated_at": "2026-06-09T09:44:46+08:00"
+  },
+  "contact_profile": {
+    "preferred_contact_ref": "fictional-contact-ref-none",
+    "residence_area": "fictional remote-first area",
+    "commute_area": "remote-only for pilot",
+    "available_days": ["weekday_evenings", "weekend_blocks"],
+    "available_hours_per_week": 8,
+    "availability_notes": "Fictional technical availability only; no real contact or location data is included."
+  },
+  "talent_profile": {
+    "role_interest": ["technical_automation", "other"],
+    "experience_summary": "Fictional candidate is strong in automation thinking, data-shape review, and script QA. Kevin work-line understanding and decision-oriented communication still need trial evidence.",
+    "skill_tags": ["automation_design", "json_review", "redaction_testing", "workflow_debugging"],
+    "language_tags": ["traditional_chinese_summary", "technical_notes"],
+    "portfolio_refs": ["fictional-redaction-script-review", "fictional-workflow-json-test-plan"],
+    "missing_fields": ["real_code_review_sample", "kevin_workline_context_test", "communication_revision_sample"]
+  },
+  "work_history": {
+    "covered_months": ["2026-05", "2026-06"],
+    "total_hours": null,
+    "task_types": ["fictional_script_review", "fictional_schema_gap_review", "fictional_test_plan"],
+    "attendance_signal": "insufficient",
+    "reliability_notes": "Only simulated technical signals are available; reliability must be tested with a small non-production automation task.",
+    "amounts_excluded": true
+  },
+  "application_input": {
+    "raw_source_ref": "fictional-technical-pilot-input-v0.8",
+    "parsed_summary": "Fictional technical automation profile created to test whether the model can distinguish technical depth from first-partner operational fit.",
+    "evidence_items": [
+      {
+        "evidence_type": "fictional_script_review",
+        "evidence_ref": "fictional-tech-task-t1",
+        "evidence_date": "2026-06-09",
+        "confidence": "C"
+      },
+      {
+        "evidence_type": "fictional_workflow_json_review",
+        "evidence_ref": "fictional-tech-task-t2",
+        "evidence_date": "2026-06-09",
+        "confidence": "C"
+      }
+    ],
+    "confidence_level": "C",
+    "review_required": true
+  },
+  "evaluation_run": {
+    "evaluation_id": "fictional-eval-b-v0.8",
+    "model_version": "hr-evaluation-v0.5",
+    "role_template_id": "technical_automation",
+    "scores": {
+      "d1": 2.8,
+      "d2": 3.5,
+      "d3": 4.2,
+      "d4": 3.0,
+      "d5": 3.8,
+      "d6": 4.0,
+      "d7": 4.5,
+      "d8": 4.4,
+      "weighted_score": 4.0
+    },
+    "compensation_fit": "not_evaluated",
+    "planning_value": "medium",
+    "risk_flags": ["fictional_data_only", "confidence_level_c", "low_kevin_workline_context", "communication_needs_trial", "human_review_required"],
+    "human_review_required": true,
+    "ai_summary": "Evidence pattern suggests a possible technical automation trial candidate, not a first-partner operations owner. The valid next step is a small non-production technical trial with explicit communication and approval-gate checks."
+  },
+  "decision_record": {
+    "stage": "screening",
+    "recommended_next_step": "trial_task",
+    "decision_owner": "Kevin",
+    "final_decision": "manual_review_required",
+    "decision_reason": "Fictional pilot recommends testing technical automation depth separately from general operations ownership.",
+    "override_reason": "none",
+    "reviewed_at": "2026-06-09T09:44:46+08:00"
+  },
+  "redaction_status": {
+    "public_allowed": false,
+    "history_amounts_excluded": true,
+    "sensitive_field_scan": "pass",
+    "public_output_notes": "This record is fictional and public-safe for review, but public_allowed remains false to preserve the default internal-record posture."
+  }
+}

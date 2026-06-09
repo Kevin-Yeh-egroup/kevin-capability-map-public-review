@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.5 workboard selection</dd></div>
+        <div><dt>版本</dt><dd>v1.6 citizen finance snapshot</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1934,17 +1934,124 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="next-title">
+    <section class="section" aria-labelledby="finance-snapshot-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.6</p>
+          <p class="eyebrow">Citizen finance-life snapshot / v1.6</p>
+          <h2 id="finance-snapshot-title">把財務生活快照做成安全的第一版工具</h2>
+          <p>v1.6 將 v1.3 的一般民眾財務生活工具線，轉成 public-safe prototype。它只協助整理生活脈絡、缺漏欄位、風險訊號與可查詢方向；不收真實帳務、不做個別財務建議、不替使用者決定貸款、投資、保險、福利或申訴策略。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/citizen-finance-life-snapshot-prototype-v1.6.svg" alt="Citizen finance-life snapshot v1.6：以生活情境、財務壓力、可查資源與人工覆核組成安全整理流程。">
+          <figcaption>v1.6 財務生活快照：先做空白欄位與虛構案例可測的整理工具，private 真實資料與個別建議仍需另行核准與專業邊界。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Prototype JSON</h3>
+            <p>機器可讀 prototype，含流程、欄位、試作任務、rubric、停止條件與 v1.7 候選。</p>
+            <a href="weekly/citizen-finance-life-snapshot-prototype-v1.6.json">開啟 prototype JSON</a>
+          </article>
+          <article>
+            <h3>Prototype Brief</h3>
+            <p>人可讀說明，釐清工具用途、非用途、操作流程與官方來源定位。</p>
+            <a href="docs/citizen-finance-life-snapshot-prototype-brief-v1.6.md">開啟 prototype brief</a>
+          </article>
+          <article>
+            <h3>Empty Record</h3>
+            <p>空白 JSON record，只保留欄位結構與 allowed values，不含任何真實個人資料。</p>
+            <a href="templates/citizen-finance-life-snapshot-empty-record-v1.6.json">開啟空白 record</a>
+          </article>
+          <article>
+            <h3>Sheet Template</h3>
+            <p>Google Sheets / Notion 可轉用的 CSV 欄位模板，適合之後建立 private workboard。</p>
+            <a href="templates/citizen-finance-life-snapshot-template-v1.6.csv">開啟 Sheet template</a>
+          </article>
+          <article>
+            <h3>QA Checklist</h3>
+            <p>夥伴試作與 Kevin review 可用的檢核點，特別檢查是否越界成個別建議。</p>
+            <a href="weekly/citizen-finance-life-snapshot-qa-checklist-v1.6.csv">開啟 QA checklist</a>
+          </article>
+          <article>
+            <h3>Taiwan Fit Gate</h3>
+            <p>確認台灣民眾閱讀語氣、金融教育邊界、申訴路徑與人工覆核設計。</p>
+            <a href="docs/citizen-finance-life-snapshot-taiwan-fit-gate-v1.6.md">開啟 Taiwan fit gate</a>
+          </article>
+          <article>
+            <h3>Prototype SVG</h3>
+            <p>視覺化說明：生活脈絡、壓力欄位、可查方向、停止條件與 weekly refresh。</p>
+            <a href="assets/citizen-finance-life-snapshot-prototype-v1.6.svg">開啟 v1.6 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.6 是 public-safe prototype，不是 live financial assessment service。</p>
+            <a href="docs/governance-expansion-review-card-v1.6.md">開啟 v1.6 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.6 Scan Report</h3>
+            <p>本版 public package 掃描報告，確認沒有敏感實值與 private-only 資訊。</p>
+            <a href="reports/public-redaction-scan-report.v1.6.json">開啟 v1.6 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>工作步驟</th>
+                <th>允許產出</th>
+                <th>停止邊界</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>設定生活情境</td>
+                <td>用一般化標籤描述收入穩定度、支出壓力與生活事件。</td>
+                <td>不收姓名、帳號、薪資明細、債務明細或可識別敘述。</td>
+              </tr>
+              <tr>
+                <td>整理快照欄位</td>
+                <td>標記缺欄、壓力區、需要查證的公開資源。</td>
+                <td>不替使用者判斷是否借貸、投資、投保或申請特定方案。</td>
+              </tr>
+              <tr>
+                <td>產生白話摘要</td>
+                <td>輸出「目前需要整理什麼」與「下一步可查什麼」。</td>
+                <td>不輸出個別財務、法律、福利、申訴或醫療建議。</td>
+              </tr>
+              <tr>
+                <td>標記下一步</td>
+                <td>只用整理紀錄、查公開資源、找專業協助、暫停人工覆核四類。</td>
+                <td>只要資料涉及危機、爭議或個資，即轉人工覆核。</td>
+              </tr>
+              <tr>
+                <td>知識與 no-op 檢查</td>
+                <td>每週檢查官方來源連結、模板欄位與是否需要更新。</td>
+                <td>若來源無變更，記錄 no-op，不重做已穩定內容。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.6 實作邊界：</strong>
+          這版只發布公開安全原型、空白模板、試作檢核與治理卡；不建立 private Sheet、不匯入真實財務資料、不做自動決策，也不對外提供個別諮詢。
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted" aria-labelledby="next-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Next version / v1.7</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>做「一般民眾財務生活快照」public-safe prototype brief。</li>
-          <li>經 Kevin 核准後，建立 private blank Google Sheets workboard。</li>
-          <li>起草 report-first 新鮮度檢查 automation，但不做外部寫入。</li>
-          <li>設計第一個 public-safe 夥伴 trial task，不做外部寄送。</li>
+          <li>建立 public-safe 夥伴 trial task packet，用於測試社工資源卡或財務生活快照。</li>
+          <li>經 Kevin 核准後，建立 private blank Google Sheets workboard，不匯入真實資料。</li>
+          <li>起草 report-first 新鮮度檢查 automation，先只做報告與 no-op checkpoint。</li>
+          <li>比較 v1.4 社工資源卡與 v1.6 財務生活快照，判斷第一位夥伴評估題目。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

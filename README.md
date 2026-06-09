@@ -103,3 +103,12 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Social-resource workboard selection visual v1.5: `assets/social-resource-workboard-selection-v1.5.svg`
 - v1.5 governance expansion review card: `docs/governance-expansion-review-card-v1.5.md`
 - v1.5 public redaction scan report: `reports/public-redaction-scan-report.v1.5.json`
+- Citizen finance-life snapshot prototype v1.6: `weekly/citizen-finance-life-snapshot-prototype-v1.6.json`
+- Citizen finance-life snapshot prototype brief v1.6: `docs/citizen-finance-life-snapshot-prototype-brief-v1.6.md`
+- Citizen finance-life snapshot empty record v1.6: `templates/citizen-finance-life-snapshot-empty-record-v1.6.json`
+- Citizen finance-life snapshot Sheet template v1.6: `templates/citizen-finance-life-snapshot-template-v1.6.csv`
+- Citizen finance-life snapshot QA checklist v1.6: `weekly/citizen-finance-life-snapshot-qa-checklist-v1.6.csv`
+- Citizen finance-life snapshot Taiwan fit gate v1.6: `docs/citizen-finance-life-snapshot-taiwan-fit-gate-v1.6.md`
+- Citizen finance-life snapshot prototype visual v1.6: `assets/citizen-finance-life-snapshot-prototype-v1.6.svg`
+- v1.6 governance expansion review card: `docs/governance-expansion-review-card-v1.6.md`
+- v1.6 public redaction scan report: `reports/public-redaction-scan-report.v1.6.json`

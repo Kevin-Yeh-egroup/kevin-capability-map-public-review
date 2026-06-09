@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.6",
+  "artifact_type": "public_safe_prototype_brief",
+  "line_id": "citizen_finance_life_tools",
+  "module_id": "cf_snapshot",
+  "module_name": "一般民眾財務生活快照",
+  "updated_at_public": "2026-06-09",
+  "selected_for_v1_6_reason": "This module is public-safe, useful for citizen-facing education, and can be tested with blank or fictional records before any private data policy exists.",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_user_financial_records": false,
+    "contains_private_messages": false,
+    "contains_compensation_amounts": false,
+    "contains_account_identifiers": false,
+    "public_export_rule": "Publish only blank structures, fictional examples, public references, and non-advisory workflow notes."
+  },
+  "official_reference_sources": [
+    {
+      "source_name": "金融監督管理委員會金融智慧網",
+      "url": "https://moneywise.fsc.gov.tw/",
+      "use_in_prototype": "Financial education and consumer awareness reference."
+    },
+    {
+      "source_name": "金融智慧網生活指南",
+      "url": "https://moneywise.fsc.gov.tw/home.jsp?id=6&parentpath=0",
+      "use_in_prototype": "Plain-language categories for risk awareness, saving, consultation, and complaint routes."
+    },
+    {
+      "source_name": "財團法人金融消費評議中心",
+      "url": "https://www.foi.org.tw/",
+      "use_in_prototype": "Financial consumer dispute and complaint path reference."
+    }
+  ],
+  "prototype_intent": {
+    "plain_language_goal": "協助一般民眾用中立欄位看懂自己的財務生活狀態，整理缺資料、壓力點、可用資源與下一步求助路徑。",
+    "not_financial_advice": true,
+    "not_legal_advice": true,
+    "not_welfare_eligibility_decision": true,
+    "target_users": ["Kevin", "內容 / 研究夥伴", "未來工具使用者", "Codex 作業支援"]
+  },
+  "snapshot_flow": [
+    {
+      "step_id": "context",
+      "step_name": "設定生活情境",
+      "owner_tag": "Kevin 做",
+      "input": "公開安全情境或空白模板",
+      "output": "context_label, life_stage, priority_question",
+      "done_proof": "情境與問題只描述狀態，不要求工具下判斷"
+    },
+    {
+      "step_id": "collect_fields",
+      "step_name": "整理快照欄位",
+      "owner_tag": "使用者 / 夥伴做",
+      "input": "空白或虛構欄位",
+      "output": "income_stability, expense_pressure, debt_pressure, emergency_buffer_status, support_resources",
+      "done_proof": "欄位只使用級距或狀態，不填公開頁不可出現的實值"
+    },
+    {
+      "step_id": "summarize",
+      "step_name": "產生白話摘要",
+      "owner_tag": "Codex 做",
+      "input": "snapshot fields and missing information",
+      "output": "plain_language_summary, missing_info, review_questions",
+      "done_proof": "摘要不包含個人化金融建議，也不推銷產品"
+    },
+    {
+      "step_id": "route",
+      "step_name": "標記下一步路徑",
+      "owner_tag": "Kevin 做",
+      "input": "summary and review questions",
+      "output": "safe_next_step, referral_or_consultation_hint, risk_boundary_note",
+      "done_proof": "下一步是整理資料、查公開資訊或找真人協助，不是自動決策"
+    },
+    {
+      "step_id": "refresh",
+      "step_name": "知識與 no-op 檢查",
+      "owner_tag": "自動化",
+      "input": "approved public references and blank template",
+      "output": "source_checked, changed_fields, no_op_checkpoint",
+      "done_proof": "官方參考與模板無變動時可回報 no-op"
+    }
+  ],
+  "snapshot_fields": [
+    {
+      "field": "snapshot_id",
+      "required": true,
+      "public_safe": true,
+      "description": "Stable ID for a blank or fictional snapshot."
+    },
+    {
+      "field": "data_mode",
+      "required": true,
+      "public_safe": true,
+      "allowed_values": ["blank_template", "fictional_example", "private_later"],
+      "description": "Public artifacts may use only blank_template or fictional_example."
+    },
+    {
+      "field": "context_label",
+      "required": true,
+      "public_safe": true,
+      "description": "Plain situation label without private details."
+    },
+    {
+      "field": "income_stability",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["stable", "variable", "interrupted", "unknown"],
+      "description": "Status label only; no income amount in public artifacts."
+    },
+    {
+      "field": "fixed_expense_pressure",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["low", "watch", "high", "unknown"],
+      "description": "Status label for fixed-cost pressure."
+    },
+    {
+      "field": "flexible_expense_room",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["some", "limited", "none", "unknown"],
+      "description": "Status label for adjustable room."
+    },
+    {
+      "field": "debt_pressure",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["none", "watch", "high", "unknown"],
+      "description": "Status label; do not suggest repayment strategy."
+    },
+    {
+      "field": "emergency_buffer_status",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["some", "limited", "none", "unknown"],
+      "description": "Status label; no balance amount in public artifacts."
+    },
+    {
+      "field": "life_event_pressure",
+      "required": false,
+      "public_safe": true,
+      "allowed_values": ["none", "watch", "high", "unknown"],
+      "description": "Signals life events that may require human review."
+    },
+    {
+      "field": "support_resources_to_check",
+      "required": false,
+      "public_safe": true,
+      "description": "Public resources or consultation paths to check."
+    },
+    {
+      "field": "missing_info",
+      "required": true,
+      "public_safe": true,
+      "description": "Information gaps to clarify before any next step."
+    },
+    {
+      "field": "safe_next_step",
+      "required": true,
+      "public_safe": true,
+      "allowed_values": ["organize_records", "check_public_resources", "ask_professional_help", "pause_for_human_review"],
+      "description": "Non-advisory next step."
+    },
+    {
+      "field": "risk_boundary_note",
+      "required": true,
+      "public_safe": true,
+      "description": "Reminder that this is education and organization, not individualized advice."
+    }
+  ],
+  "partner_trial_task": {
+    "title": "Finance-life snapshot public-safe trial",
+    "task_size": "one fictional situation, one blank snapshot, one missing-info list",
+    "inputs_allowed": ["blank template", "fictional situation", "official public education page"],
+    "inputs_not_allowed": ["real user financial record", "account number", "private message", "actual debt details", "product recommendation"],
+    "expected_outputs": [
+      "One completed fictional snapshot",
+      "Plain-language summary",
+      "Missing-info list",
+      "Safe next-step label",
+      "Risk boundary note"
+    ],
+    "stop_conditions": [
+      "A real person's private financial details appear",
+      "The task starts recommending financial products",
+      "The task makes repayment, borrowing, insurance, investment, legal, or welfare eligibility decisions",
+      "The next step would contact an outside party"
+    ],
+    "review_rubric": [
+      "Fields are status-based, not amount-based",
+      "Summary is plain and neutral",
+      "Missing information is visible",
+      "Next step is non-advisory",
+      "High-risk situations route to human review"
+    ]
+  },
+  "taiwan_fit_gate": {
+    "verdict": "pass",
+    "wording_fit": "Uses plain Taiwan-facing labels such as 財務生活快照, 缺資料, 壓力點, 可用資源, 下一步, and 真人協助.",
+    "workplace_habit_fit": "Keeps Kevin review visible and lets partners work with fictional examples and official public references only.",
+    "mobile_readability_fit": "Public page uses short artifact cards and table summaries; detailed fields live in CSV and JSON."
+  },
+  "next_version_candidates": [
+    {
+      "version": "v1.7",
+      "candidate": "Create a public-safe partner trial task packet for either social-resource cards or finance-life snapshots.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.7",
+      "candidate": "Create a private blank Google Sheets workboard only after Kevin approval.",
+      "requires_approval": true
+    },
+    {
+      "version": "v1.7",
+      "candidate": "Draft report-first freshness or knowledge-source automation without external writes.",
+      "requires_approval": true
+    }
+  ]
+}

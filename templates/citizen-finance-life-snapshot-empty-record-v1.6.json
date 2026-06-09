@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.6",
+  "artifact_type": "citizen_finance_life_snapshot_empty_record",
+  "snapshot_id": "",
+  "data_mode": "blank_template",
+  "context_label": "",
+  "life_stage": "",
+  "priority_question": "",
+  "income_stability": "unknown",
+  "fixed_expense_pressure": "unknown",
+  "flexible_expense_room": "unknown",
+  "debt_pressure": "unknown",
+  "emergency_buffer_status": "unknown",
+  "life_event_pressure": "unknown",
+  "support_resources_to_check": [],
+  "missing_info": [],
+  "plain_language_summary": "",
+  "review_questions": [],
+  "safe_next_step": "organize_records",
+  "risk_boundary_note": "This snapshot supports education and organization only. It is not individualized financial, legal, insurance, borrowing, investment, or welfare eligibility advice.",
+  "done_proof": []
+}

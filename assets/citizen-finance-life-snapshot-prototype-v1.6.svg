@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Citizen finance-life snapshot prototype v1.6</title>
+  <desc id="desc">A public-safe prototype flow for organizing finance-life status, missing information, plain summaries, safe next steps, and human review boundaries.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#17252B" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#617174"/>
+    </marker>
+    <style>
+      .bg { fill: #F8FAF7; }
+      .title { font: 700 34px Arial, sans-serif; fill: #18343B; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #526064; }
+      .card { filter: url(#shadow); }
+      .step { font: 800 28px Arial, sans-serif; fill: #FFFFFF; }
+      .cardTitle { font: 700 19px Arial, sans-serif; fill: #18343B; }
+      .line { font: 400 14px Arial, sans-serif; fill: #2F4147; }
+      .tiny { font: 400 12px Arial, sans-serif; fill: #59686C; }
+      .badge { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .arrow { stroke: #617174; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .footer { font: 400 13px Arial, sans-serif; fill: #667174; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Citizen Finance-life Snapshot v1.6</text>
+  <text class="sub" x="60" y="88">Education, organization, reminders, and help routes. No individualized financial advice.</text>
+
+  <g class="card">
+    <rect x="60" y="138" width="204" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="102" cy="181" r="27" fill="#0369A1"/>
+    <text class="step" x="102" y="191" text-anchor="middle">1</text>
+    <text class="cardTitle" x="86" y="230">Context</text>
+    <text class="line" x="86" y="260">Blank or fictional situation</text>
+    <text class="line" x="86" y="286">Priority question</text>
+    <text class="line" x="86" y="312">No private details</text>
+  </g>
+
+  <path class="arrow" d="M274 235 H330"/>
+
+  <g class="card">
+    <rect x="340" y="138" width="204" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="382" cy="181" r="27" fill="#0F766E"/>
+    <text class="step" x="382" y="191" text-anchor="middle">2</text>
+    <text class="cardTitle" x="366" y="230">Status labels</text>
+    <text class="line" x="366" y="260">Income stability</text>
+    <text class="line" x="366" y="286">Expense pressure</text>
+    <text class="line" x="366" y="312">Debt and buffer status</text>
+  </g>
+
+  <path class="arrow" d="M554 235 H610"/>
+
+  <g class="card">
+    <rect x="620" y="138" width="204" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="662" cy="181" r="27" fill="#7C3AED"/>
+    <text class="step" x="662" y="191" text-anchor="middle">3</text>
+    <text class="cardTitle" x="646" y="230">Plain summary</text>
+    <text class="line" x="646" y="260">Missing information</text>
+    <text class="line" x="646" y="286">Review questions</text>
+    <text class="line" x="646" y="312">No product advice</text>
+  </g>
+
+  <path class="arrow" d="M834 235 H890"/>
+
+  <g class="card">
+    <rect x="900" y="138" width="230" height="190" rx="8" fill="#FFFFFF"/>
+    <circle cx="942" cy="181" r="27" fill="#BE123C"/>
+    <text class="step" x="942" y="191" text-anchor="middle">4</text>
+    <text class="cardTitle" x="926" y="230">Safe next step</text>
+    <text class="line" x="926" y="260">Organize records</text>
+    <text class="line" x="926" y="286">Check public resources</text>
+    <text class="line" x="926" y="312">Ask human help</text>
+  </g>
+
+  <g class="card">
+    <rect x="90" y="398" width="480" height="160" rx="8" fill="#FFFFFF"/>
+    <rect x="120" y="425" width="130" height="26" rx="8" fill="#0369A1"/>
+    <text class="badge" x="185" y="443" text-anchor="middle">Allowed output</text>
+    <text class="line" x="120" y="486">Status-based snapshot</text>
+    <text class="line" x="120" y="514">Missing-info list</text>
+    <text class="line" x="120" y="542">Education and help-route labels</text>
+  </g>
+
+  <g class="card">
+    <rect x="630" y="398" width="480" height="160" rx="8" fill="#FFFFFF"/>
+    <rect x="660" y="425" width="130" height="26" rx="8" fill="#BE123C"/>
+    <text class="badge" x="725" y="443" text-anchor="middle">Stop boundary</text>
+    <text class="line" x="660" y="486">No real financial records</text>
+    <text class="line" x="660" y="514">No product recommendations</text>
+    <text class="line" x="660" y="542">No borrowing, investment, legal, or welfare decisions</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="618" width="1080" height="78" rx="8" fill="#18343B"/>
+    <text class="tiny" x="90" y="656" fill="#EAF4F1" style="fill:#EAF4F1">Public-safe prototype only. Private data, external contact, workboard setup, and automation require Kevin approval.</text>
+    <text class="tiny" x="90" y="680" fill="#EAF4F1" style="fill:#EAF4F1">References support financial education and complaint routes; they do not make decisions for individual users.</text>
+  </g>
+
+  <text class="footer" x="60" y="728">v1.6 · finance-life snapshot · status labels · human review boundary · public review noindex</text>
+</svg>

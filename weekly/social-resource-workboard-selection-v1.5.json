@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.5",
+  "artifact_type": "private_workboard_selection_draft",
+  "line_id": "social_worker_tools",
+  "module_id": "sw_resource_finder",
+  "updated_at_public": "2026-06-09",
+  "decision_summary": {
+    "recommended_path": "Google Sheets first, Notion later as a read-friendly layer if needed.",
+    "why": "The resource card workflow is row-based, source-audit-heavy, and partner-entry-friendly. Sheets supports CSV import, filters, validation, simple formulas, and easier Codex round-trips before a richer Notion view is worth maintaining.",
+    "decision_status": "draft_for_kevin_review",
+    "not_an_external_action": true
+  },
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_case_data": false,
+    "contains_private_messages": false,
+    "contains_private_workboard_url": false,
+    "contains_private_financial_records": false,
+    "public_export_rule": "Publish only blank structures, selection rationale, and approval gates. Real private board creation requires Kevin approval."
+  },
+  "selection_matrix": [
+    {
+      "criterion": "欄位穩定與批次整理",
+      "google_sheets_fit": "strong",
+      "notion_fit": "medium",
+      "reason": "資源卡、來源檢查、新鮮度 log 和 QA checklist 都是 row-based。"
+    },
+    {
+      "criterion": "夥伴填寫與初步篩選",
+      "google_sheets_fit": "strong",
+      "notion_fit": "medium",
+      "reason": "Sheets 比較容易用欄位驗證、篩選、排序與批次貼上。"
+    },
+    {
+      "criterion": "Kevin review queue",
+      "google_sheets_fit": "strong",
+      "notion_fit": "strong",
+      "reason": "兩者都可做 review view；Sheets 更適合先穩住欄位，Notion 更適合後續看板閱讀。"
+    },
+    {
+      "criterion": "Codex 匯出與驗證",
+      "google_sheets_fit": "strong",
+      "notion_fit": "medium",
+      "reason": "CSV / XLSX / JSON round-trip 比較直接，適合先建立 proof。"
+    },
+    {
+      "criterion": "手機閱讀與討論",
+      "google_sheets_fit": "medium",
+      "notion_fit": "strong",
+      "reason": "Notion 卡片較適合閱讀，但欄位治理成熟前容易變成敘事散件。"
+    },
+    {
+      "criterion": "權限與資料邊界",
+      "google_sheets_fit": "medium",
+      "notion_fit": "medium",
+      "reason": "兩者都需要 private permission 設計；公開 repo 只放空白模板與規格。"
+    }
+  ],
+  "recommended_tabs": [
+    {
+      "tab_id": "dashboard",
+      "tab_name": "Dashboard",
+      "purpose": "Kevin weekly review summary, counts, blockers, and next review."
+    },
+    {
+      "tab_id": "resource_cards",
+      "tab_name": "Resource_Cards",
+      "purpose": "Main source cards created from public sources."
+    },
+    {
+      "tab_id": "source_checks",
+      "tab_name": "Source_Checks",
+      "purpose": "Public source URL, last-seen date, freshness, and missing-field tracking."
+    },
+    {
+      "tab_id": "review_queue",
+      "tab_name": "Review_Queue",
+      "purpose": "Items needing Kevin review, stop-condition decisions, or private boundary checks."
+    },
+    {
+      "tab_id": "partner_tasks",
+      "tab_name": "Partner_Tasks",
+      "purpose": "Small tasks for source collection, field cleanup, and QA."
+    },
+    {
+      "tab_id": "freshness_log",
+      "tab_name": "Freshness_Log",
+      "purpose": "Scheduled or manual freshness checks and no-op results."
+    },
+    {
+      "tab_id": "no_op_checkpoints",
+      "tab_name": "No_Op_Checkpoints",
+      "purpose": "Verified unchanged-state records."
+    },
+    {
+      "tab_id": "governance",
+      "tab_name": "Governance",
+      "purpose": "Approval gates, public/private boundary, and stop conditions."
+    }
+  ],
+  "implementation_ladder": [
+    {
+      "phase": "P0",
+      "name": "Public selection draft",
+      "status": "done_in_v1.5",
+      "allowed_data": "blank templates and public-safe field design",
+      "approval_needed": false
+    },
+    {
+      "phase": "P1",
+      "name": "Private blank Sheet setup",
+      "status": "approval_required",
+      "allowed_data": "blank rows and fictional examples only",
+      "approval_needed": true
+    },
+    {
+      "phase": "P2",
+      "name": "Partner trial with public sources",
+      "status": "future_candidate",
+      "allowed_data": "public source cards only",
+      "approval_needed": true
+    },
+    {
+      "phase": "P3",
+      "name": "Real public-resource maintenance",
+      "status": "future_candidate",
+      "allowed_data": "public source records reviewed by Kevin",
+      "approval_needed": true
+    },
+    {
+      "phase": "P4",
+      "name": "Report-first freshness automation",
+      "status": "future_candidate",
+      "allowed_data": "approved public source URLs only",
+      "approval_needed": true
+    }
+  ],
+  "notion_later_rule": {
+    "when_to_add_notion": [
+      "Sheets tabs and fields have been stable for at least one review cycle.",
+      "Kevin wants a partner-facing or discussion-friendly card view.",
+      "The data boundary is already private and permissioned."
+    ],
+    "notion_should_not_do": [
+      "Replace source-of-truth rows before fields are stable.",
+      "Hold real case records in a public or loosely shared workspace.",
+      "Create external notifications or assignments without approval."
+    ]
+  },
+  "taiwan_fit_gate": {
+    "verdict": "pass",
+    "wording_fit": "Uses practical labels such as 工作板, 欄位, 分頁, 待覆核, 暫停, 新鮮度, and no-op checkpoint.",
+    "workplace_habit_fit": "Sheets-first matches a small team pattern: stabilize rows and review rules before introducing a more narrative Notion view.",
+    "mobile_readability_fit": "Public page section uses short headings and table summaries; detailed fields live in CSV artifacts."
+  },
+  "next_version_candidates": [
+    {
+      "version": "v1.6",
+      "candidate": "Build a public-safe citizen finance-life snapshot prototype brief.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.6",
+      "candidate": "Create a private blank Google Sheets workboard only after Kevin approval.",
+      "requires_approval": true
+    },
+    {
+      "version": "v1.6",
+      "candidate": "Draft report-first freshness automation without external writes.",
+      "requires_approval": true
+    }
+  ]
+}

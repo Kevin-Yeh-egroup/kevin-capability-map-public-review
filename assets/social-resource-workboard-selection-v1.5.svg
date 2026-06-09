@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Social resource workboard selection v1.5</title>
+  <desc id="desc">A public-safe decision diagram recommending Google Sheets first and Notion later for the social resource workboard.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#17252B" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #F8FAF7; }
+      .title { font: 700 34px Arial, sans-serif; fill: #18343B; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #526064; }
+      .card { filter: url(#shadow); }
+      .cardTitle { font: 700 21px Arial, sans-serif; fill: #18343B; }
+      .line { font: 400 14px Arial, sans-serif; fill: #2F4147; }
+      .small { font: 400 13px Arial, sans-serif; fill: #59686C; }
+      .badge { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .score { font: 800 40px Arial, sans-serif; fill: #18343B; }
+      .footer { font: 400 13px Arial, sans-serif; fill: #667174; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Private Workboard Selection v1.5</text>
+  <text class="sub" x="60" y="88">Recommendation: Google Sheets first, Notion later as a read-friendly layer.</text>
+
+  <g class="card">
+    <rect x="60" y="130" width="500" height="360" rx="8" fill="#FFFFFF"/>
+    <rect x="90" y="160" width="116" height="26" rx="8" fill="#0F766E"/>
+    <text class="badge" x="148" y="178" text-anchor="middle">Recommended</text>
+    <text class="cardTitle" x="90" y="226">Google Sheets first</text>
+    <text class="line" x="90" y="268">Row-based resource cards</text>
+    <text class="line" x="90" y="300">CSV / JSON / Codex round-trips</text>
+    <text class="line" x="90" y="332">Filters, validation, review queue</text>
+    <text class="line" x="90" y="364">Partner-friendly field entry</text>
+    <text class="line" x="90" y="396">Good first source of truth</text>
+    <text class="score" x="452" y="285" text-anchor="middle">1st</text>
+    <text class="small" x="408" y="318">source of truth</text>
+  </g>
+
+  <g class="card">
+    <rect x="640" y="130" width="500" height="360" rx="8" fill="#FFFFFF"/>
+    <rect x="670" y="160" width="116" height="26" rx="8" fill="#7C3AED"/>
+    <text class="badge" x="728" y="178" text-anchor="middle">Later layer</text>
+    <text class="cardTitle" x="670" y="226">Notion later</text>
+    <text class="line" x="670" y="268">Readable card views</text>
+    <text class="line" x="670" y="300">Partner discussion surfaces</text>
+    <text class="line" x="670" y="332">Useful after fields stabilize</text>
+    <text class="line" x="670" y="364">Not the first source of truth</text>
+    <text class="line" x="670" y="396">Requires private permissions</text>
+    <text class="score" x="1032" y="285" text-anchor="middle">2nd</text>
+    <text class="small" x="992" y="318">view layer</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="540" width="1080" height="120" rx="8" fill="#18343B"/>
+    <text class="badge" x="90" y="580">Approval gate</text>
+    <text class="line" x="90" y="616" fill="#EAF4F1" style="fill:#EAF4F1">This public artifact is only a selection draft. Creating a private Sheet, Notion database, partner access, import, or automation requires Kevin approval.</text>
+    <text class="line" x="90" y="646" fill="#EAF4F1" style="fill:#EAF4F1">Public repo keeps blank structures only: no private workboard URLs, no real case records, no external sends.</text>
+  </g>
+
+  <text class="footer" x="60" y="720">v1.5 · Sheets-first decision · Notion later · public review noindex · private setup requires approval</text>
+</svg>

@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.4 social resource prototype</dd></div>
+        <div><dt>版本</dt><dd>v1.5 workboard selection</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1821,16 +1821,129 @@
       </div>
     </section>
 
+    <section class="section tinted" aria-labelledby="workboard-selection-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Private workboard selection / v1.5</p>
+          <h2 id="workboard-selection-title">先用 Sheets 穩住欄位，再把 Notion 當閱讀視圖</h2>
+          <p>v1.5 將 v1.4 的社工資源卡 prototype 轉成 private workboard 選型草案。建議採用 Google Sheets first、Notion later：先把欄位、分頁、review queue 與 no-op checkpoint 做穩，再考慮卡片式閱讀視圖。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/social-resource-workboard-selection-v1.5.svg" alt="Social resource workboard selection v1.5：推薦 Google Sheets 作為第一層 source of truth，Notion 之後作為閱讀與討論視圖；private setup 需要 Kevin approval。">
+          <figcaption>v1.5 工作板選型：公開頁只放空白結構與選型理由；真正建立 private board 仍需 Kevin 核准。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Selection JSON</h3>
+            <p>機器可讀選型草案，含 Sheets-first 建議、比較矩陣、分頁、導入階段與 Notion later rule。</p>
+            <a href="weekly/social-resource-workboard-selection-v1.5.json">開啟 selection JSON</a>
+          </article>
+          <article>
+            <h3>Selection Memo</h3>
+            <p>人可讀決策 memo，說明為何先用 Google Sheets 做 private source of truth。</p>
+            <a href="docs/social-resource-workboard-selection-v1.5.md">開啟選型 memo</a>
+          </article>
+          <article>
+            <h3>Tabs CSV</h3>
+            <p>Dashboard、Resource_Cards、Source_Checks、Review_Queue、Partner_Tasks 等分頁設計。</p>
+            <a href="workboards/social-resource-workboard-tabs-v1.5.csv">開啟分頁 CSV</a>
+          </article>
+          <article>
+            <h3>Fields CSV</h3>
+            <p>每個分頁的欄位、型態、owner、allowed values 與 public/private 邊界。</p>
+            <a href="workboards/social-resource-workboard-fields-v1.5.csv">開啟欄位 CSV</a>
+          </article>
+          <article>
+            <h3>Setup Checklist</h3>
+            <p>private blank Sheet setup 的導入檢核；不建立真實工作板、不匯入資料。</p>
+            <a href="docs/social-resource-workboard-implementation-checklist-v1.5.md">開啟導入檢核</a>
+          </article>
+          <article>
+            <h3>Taiwan Fit Gate</h3>
+            <p>確認 Sheets-first 符合台灣小型團隊先用表格穩住流程的工作習慣。</p>
+            <a href="docs/social-resource-workboard-taiwan-fit-gate-v1.5.md">開啟 Taiwan fit gate</a>
+          </article>
+          <article>
+            <h3>Selection SVG</h3>
+            <p>視覺說明 Sheets 作為 source of truth、Notion 作為 later layer。</p>
+            <a href="assets/social-resource-workboard-selection-v1.5.svg">開啟 v1.5 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.5 是 public-review 選型草案，不是 live private database。</p>
+            <a href="docs/governance-expansion-review-card-v1.5.md">開啟 v1.5 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.5 Scan Report</h3>
+            <p>本版 public package 掃描報告，確認 0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.5.json">開啟 v1.5 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>比較點</th>
+                <th>Google Sheets</th>
+                <th>Notion</th>
+                <th>v1.5 判斷</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>欄位穩定與批次整理</td>
+                <td>強</td>
+                <td>中</td>
+                <td>資源卡是 row-based，先用表格穩住。</td>
+              </tr>
+              <tr>
+                <td>夥伴填寫與篩選</td>
+                <td>強</td>
+                <td>中</td>
+                <td>Sheets 比較適合複製、篩選、補欄與 CSV 匯入。</td>
+              </tr>
+              <tr>
+                <td>Kevin review queue</td>
+                <td>強</td>
+                <td>強</td>
+                <td>初期 Sheets 當 source of truth；Notion 可後續做視圖。</td>
+              </tr>
+              <tr>
+                <td>手機閱讀與討論</td>
+                <td>中</td>
+                <td>強</td>
+                <td>等欄位穩定後，再加 Notion 卡片式閱讀。</td>
+              </tr>
+              <tr>
+                <td>權限與資料邊界</td>
+                <td>需設計</td>
+                <td>需設計</td>
+                <td>兩者都必須 private permission，不放公開 repo。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.5 實作邊界：</strong>
+          這版只做選型與空白欄位設計；不建立 Google Sheet、不建立 Notion database、不產生 private URL、不邀請夥伴、不匯入真實資料。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.5</p>
+          <p class="eyebrow">Next version / v1.6</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把 v1.4 資源卡 prototype 轉成 private Notion / Google Sheets 工作板選型草案。</li>
           <li>做「一般民眾財務生活快照」public-safe prototype brief。</li>
-          <li>把新鮮度檢查轉成 report-first automation candidate，但不自動匯入 private records。</li>
+          <li>經 Kevin 核准後，建立 private blank Google Sheets workboard。</li>
+          <li>起草 report-first 新鮮度檢查 automation，但不做外部寫入。</li>
           <li>設計第一個 public-safe 夥伴 trial task，不做外部寄送。</li>
         </ol>
         <div class="notice">

@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-09 12:29:39 +08:00
+Updated: 2026-06-09 12:40:55 +08:00
 
 ## Artifact
 
@@ -34,6 +34,7 @@ Updated: 2026-06-09 12:29:39 +08:00
 - v1.2: Added the weekly capability dashboard with status metrics, changed work lines, delegation snapshot, private-only blockers, next-week candidates, dashboard SVG, actions CSV, governance card, and v1.2 redaction scan report.
 - v1.3: Added social-worker tools and citizen finance-life tools line cards, a weekly no-op checkpoint template, Notion / Google Sheets-ready workboard CSV, roadmap SVG, governance card, and v1.3 redaction scan report.
 - v1.4: Added a public-safe social-worker resource finder prototype package with prototype JSON, human-readable brief, empty record template, Sheet-ready CSV, QA checklist, Taiwan tool-fit gate proof, SVG, governance card, and v1.4 redaction scan report.
+- v1.5: Added a public-safe private workboard selection draft for the social-resource prototype, recommending Google Sheets first and Notion later, with tabs CSV, fields CSV, implementation checklist, Taiwan fit gate, SVG, governance card, and v1.5 redaction scan report.
 
 ## Indexing Controls
 

@@ -94,3 +94,12 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Social-worker resource finder prototype visual v1.4: `assets/social-worker-resource-finder-prototype-v1.4.svg`
 - v1.4 governance expansion review card: `docs/governance-expansion-review-card-v1.4.md`
 - v1.4 public redaction scan report: `reports/public-redaction-scan-report.v1.4.json`
+- Social-resource workboard selection v1.5: `weekly/social-resource-workboard-selection-v1.5.json`
+- Social-resource workboard selection memo v1.5: `docs/social-resource-workboard-selection-v1.5.md`
+- Social-resource workboard tabs CSV v1.5: `workboards/social-resource-workboard-tabs-v1.5.csv`
+- Social-resource workboard fields CSV v1.5: `workboards/social-resource-workboard-fields-v1.5.csv`
+- Social-resource workboard implementation checklist v1.5: `docs/social-resource-workboard-implementation-checklist-v1.5.md`
+- Social-resource workboard Taiwan fit gate v1.5: `docs/social-resource-workboard-taiwan-fit-gate-v1.5.md`
+- Social-resource workboard selection visual v1.5: `assets/social-resource-workboard-selection-v1.5.svg`
+- v1.5 governance expansion review card: `docs/governance-expansion-review-card-v1.5.md`
+- v1.5 public redaction scan report: `reports/public-redaction-scan-report.v1.5.json`

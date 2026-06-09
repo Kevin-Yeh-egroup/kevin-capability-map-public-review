@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.1 weekly capability map</dd></div>
+        <div><dt>版本</dt><dd>v1.2 weekly dashboard</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1510,17 +1510,109 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="weekly-dashboard-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Weekly dashboard / v1.2</p>
+          <h2 id="weekly-dashboard-title">把能力地圖變成每週決策面板</h2>
+          <p>v1.2 將 v1.1 的能力地圖基準轉成 dashboard：本週變動、新產物、可交辦工作、Codex 可接工作、自動化候選、阻塞與下週最小行動。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/weekly-dashboard-v1.2.svg" alt="Weekly capability dashboard v1.2：能力節點、工作線、可交辦項目、Codex 可接工作、自動化候選、private-only blockers 與下週候選任務。">
+          <figcaption>v1.2 週更新 dashboard：把「能力地圖」變成每週可以直接規劃與討論的決策面板。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Dashboard JSON</h3>
+            <p>機器可讀 dashboard，含 metrics、changed work lines、delegation snapshot、blockers、next-week candidates。</p>
+            <a href="weekly/capability-dashboard-v1.2.json">開啟 dashboard JSON</a>
+          </article>
+          <article>
+            <h3>Actions CSV</h3>
+            <p>可匯入 Notion / Sheets 的 dashboard action 表，含 changed、partner-ready、Codex-ready、automation、blocked、next-week。</p>
+            <a href="weekly/capability-dashboard-actions-v1.2.csv">開啟 actions CSV</a>
+          </article>
+          <article>
+            <h3>Dashboard Note</h3>
+            <p>用人可讀格式解釋 dashboard 區塊、目前數字與 public boundary。</p>
+            <a href="docs/weekly-capability-dashboard-v1.2.md">開啟 dashboard 說明</a>
+          </article>
+          <article>
+            <h3>Dashboard SVG</h3>
+            <p>可視覺說明本週能力節點、可交辦項目、自動化候選與 private-only blockers。</p>
+            <a href="assets/weekly-dashboard-v1.2.svg">開啟 dashboard SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 dashboard 是 public-review planning layer，不是 HR 決策或 private database。</p>
+            <a href="docs/governance-expansion-review-card-v1.2.md">開啟 v1.2 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.2 Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.2.json">開啟 v1.2 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>Dashboard 區塊</th>
+                <th>現在顯示什麼</th>
+                <th>怎麼幫 Kevin 規劃</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Status metrics</td>
+                <td>7 個能力節點、8 條工作線、3 個 partner-ready、8 個 Codex-ready、4 個 automation candidates、4 個 private-only blockers。</td>
+                <td>先看整體工作負荷與可分工成熟度。</td>
+              </tr>
+              <tr>
+                <td>Changed work lines</td>
+                <td>AI / Codex 作業系統、專案帶領、治理風險三條線從 baseline 進入 dashboard 層。</td>
+                <td>知道這週不是新增一堆散件，而是把週更轉成管理面板。</td>
+              </tr>
+              <tr>
+                <td>Delegation snapshot</td>
+                <td>Kevin 決策、夥伴蒐集與初稿、Codex 結構與驗證、自動化草稿與 no-op。</td>
+                <td>把人力規劃從直覺轉成可討論的分工設計。</td>
+              </tr>
+              <tr>
+                <td>Blocked / private only</td>
+                <td>真實 workforce import、真人候選評估、trial send、de-identified public export 仍需 approval。</td>
+                <td>避免週更 dashboard 變成誤用 private data 的入口。</td>
+              </tr>
+              <tr>
+                <td>Next-week candidates</td>
+                <td>社工工具線、民眾財務生活工具線、private import checklist、Notion/Sheets 選型、no-op template。</td>
+                <td>把下一週討論收斂成 3-5 個可執行選項。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.2 實作邊界：</strong>
+          Dashboard 只整理 public-safe planning signals；不接真實人力情報站、不處理真人候選資料、不寄試作題、不發布 de-identified real records。GitHub / Vercel 更新仍需 Kevin 指令確認。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.2</p>
+          <p class="eyebrow">Next version / v1.3</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把 weekly capability map 轉成 dashboard：本週變動、新產物、可交辦工作、阻塞與下週候選。</li>
-          <li>決定週更資料要維持 CSV/JSON，或同步成 private Notion / Google Sheets。</li>
-          <li>重新檢查真實 workforce-war-room repo 狀態後，只在 private branch 設計 internal assessment layer。</li>
-          <li>新增「社工工具線」與「一般民眾財務生活工具線」的需求 / 規格 / 展望卡。</li>
+          <li>新增「社工工具線」需求 / 目前規格 / 未來展望卡。</li>
+          <li>新增「一般民眾財務生活工具線」roadmap card。</li>
+          <li>建立 weekly no-op checkpoint template，讓沒有變動的一週也可被正確記錄。</li>
+          <li>決定 dashboard 是否要同步成 private Notion / Google Sheets。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

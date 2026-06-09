@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.2",
+  "artifact_type": "weekly_capability_dashboard",
+  "coverage_label": "2026-W24 dashboard baseline",
+  "updated_at_public": "2026-06-09",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_candidate_data": false,
+    "contains_private_messages": false,
+    "contains_compensation_amounts": false,
+    "contains_local_paths": false,
+    "public_export_rule": "Dashboard only summarizes public-safe artifacts and planning signals."
+  },
+  "dashboard_summary": {
+    "capability_nodes": 7,
+    "work_lines": 8,
+    "new_public_artifacts_this_version": 5,
+    "partner_ready_candidates": 3,
+    "codex_ready_candidates": 8,
+    "automation_candidates": 4,
+    "blocked_or_private_only_items": 4
+  },
+  "changed_work_lines": [
+    {
+      "work_line_id": "wl_ai_codex_ops",
+      "change_type": "expanded",
+      "change_summary": "Weekly refresh moved from baseline map to decision dashboard.",
+      "proof_artifacts": ["weekly/capability-dashboard-v1.2.json", "docs/weekly-capability-dashboard-v1.2.md"]
+    },
+    {
+      "work_line_id": "wl_project_leadership",
+      "change_type": "expanded",
+      "change_summary": "Dashboard now separates partner-ready work, Codex-ready work, and automation candidates.",
+      "proof_artifacts": ["weekly/capability-dashboard-actions-v1.2.csv"]
+    },
+    {
+      "work_line_id": "wl_governance_safety",
+      "change_type": "strengthened",
+      "change_summary": "Dashboard has explicit blocked/private-only list and public safety checks.",
+      "proof_artifacts": ["docs/governance-expansion-review-card-v1.2.md", "reports/public-redaction-scan-report.v1.2.json"]
+    }
+  ],
+  "delegation_snapshot": {
+    "kevin_focus": [
+      "Decide weekly priorities",
+      "Approve public updates",
+      "Review private boundaries before real workforce data",
+      "Judge which partner role to test next"
+    ],
+    "partner_ready": [
+      "Source collection for public-safe research cards",
+      "First-draft summaries from approved public materials",
+      "Checklist conversion for low-risk work lines"
+    ],
+    "codex_ready": [
+      "Update work-line tables",
+      "Draft weekly notes",
+      "Generate public-safe SVG and HTML sections",
+      "Run redaction and link checks",
+      "Package production proof"
+    ],
+    "automation_candidates": [
+      "Weekly dashboard draft",
+      "No-op source check",
+      "Artifact link validation",
+      "Redaction scan reminder"
+    ]
+  },
+  "blocked_or_private_only": [
+    {
+      "item": "Real workforce-war-room import",
+      "reason": "Requires private repo boundary review and Kevin approval.",
+      "next_gate": "Private implementation checklist"
+    },
+    {
+      "item": "Real candidate assessment",
+      "reason": "Public repo allows only fictional or de-identified examples.",
+      "next_gate": "Private-only HR data policy"
+    },
+    {
+      "item": "Sending trial tasks",
+      "reason": "External contact requires explicit approval in that run.",
+      "next_gate": "Kevin-approved send list"
+    },
+    {
+      "item": "Publishing de-identified real records",
+      "reason": "noindex is not privacy and de-identification must be reviewed.",
+      "next_gate": "G2 public export approval"
+    }
+  ],
+  "next_week_candidates": [
+    {
+      "priority": 1,
+      "action": "Build a social-worker tools line card",
+      "owner": "Kevin + Codex",
+      "approval_needed": false
+    },
+    {
+      "priority": 2,
+      "action": "Build a citizen finance-life tools roadmap card",
+      "owner": "Kevin + Codex",
+      "approval_needed": false
+    },
+    {
+      "priority": 3,
+      "action": "Draft private-only workforce-war-room import checklist",
+      "owner": "Kevin + Codex",
+      "approval_needed": true
+    },
+    {
+      "priority": 4,
+      "action": "Turn dashboard CSV into a private Notion or Google Sheets workboard",
+      "owner": "Kevin decision, Codex build",
+      "approval_needed": true
+    },
+    {
+      "priority": 5,
+      "action": "Create a weekly no-op checkpoint template",
+      "owner": "Codex",
+      "approval_needed": false
+    }
+  ],
+  "checkpoint_card": {
+    "last_successful_checkpoint": "v1.1 weekly capability map baseline published",
+    "session_state": "v1.2 dashboard draft prepared from public-safe artifacts",
+    "project_context_state": "public review repo with noindex controls",
+    "exact_blocked_step": "real private data integration not attempted",
+    "fallback_checks_completed": ["public artifact review", "redaction scan", "link check"],
+    "proof_artifacts": ["weekly/capability-dashboard-v1.2.json", "weekly/capability-dashboard-actions-v1.2.csv"],
+    "decision": "proceed",
+    "next_retry_gate": "next weekly refresh or Kevin approval for private workboard"
+  }
+}

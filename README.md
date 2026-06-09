@@ -69,3 +69,9 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Weekly capability update workflow v1.1: `docs/weekly-capability-map-update-workflow-v1.1.md`
 - v1.1 governance expansion review card: `docs/governance-expansion-review-card-v1.1.md`
 - v1.1 public redaction scan report: `reports/public-redaction-scan-report.v1.1.json`
+- Weekly capability dashboard visual v1.2: `assets/weekly-dashboard-v1.2.svg`
+- Weekly capability dashboard v1.2: `weekly/capability-dashboard-v1.2.json`
+- Weekly capability dashboard actions v1.2: `weekly/capability-dashboard-actions-v1.2.csv`
+- Weekly capability dashboard note v1.2: `docs/weekly-capability-dashboard-v1.2.md`
+- v1.2 governance expansion review card: `docs/governance-expansion-review-card-v1.2.md`
+- v1.2 public redaction scan report: `reports/public-redaction-scan-report.v1.2.json`

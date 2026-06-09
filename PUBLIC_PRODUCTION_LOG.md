@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-09 10:06:26 +08:00
+Updated: 2026-06-09 10:58:25 +08:00
 
 ## Artifact
 
@@ -29,6 +29,7 @@ Updated: 2026-06-09 10:06:26 +08:00
 - v0.7: Added a fully fictional candidate assessment pilot, P0-P7 stage log, pilot rubric, pilot report, governance card, and v0.7 redaction scan report to test the HR workflow without real personal data.
 - v0.8: Added a second fictional technical automation candidate, candidate comparison matrix, technical trial task draft, schema gap report, v0.8 extension proposal, governance card, and redaction scan report.
 - v0.9: Promoted the v0.8 extension proposal into a formal HR assessment schema with empty record template, Sheet template, migration guide, governance card, and v0.9 redaction scan report.
+- v1.0: Added a full fictional content / research candidate record using the v0.9 schema, trial task template, feedback-loop and supervision test report, Notion / Google Sheets workboard CSVs, Excel workboard, governance card, and v1.0 redaction scan report.
 
 ## Indexing Controls
 

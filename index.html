@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.9 formal schema</dd></div>
+        <div><dt>版本</dt><dd>v1.0 pilot + workboard</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1301,17 +1301,129 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="workboard-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Pilot + workboard / v1.0</p>
+          <h2 id="workboard-title">用 v0.9 schema 跑內容 / 研究型夥伴</h2>
+          <p>v1.0 用一位完全虛構的內容 / 研究型候選人測試第三種 role template，並把 trial task、feedback loop、supervision profile 轉成 Notion / Google Sheets 可操作的人力情報站工作板。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Candidate C JSON</h3>
+            <p>完整 v0.9 fictional record，role_template_id 為 content_research。</p>
+            <a href="pilots/fictional-content-research-candidate-assessment-v1.0.json">開啟 Candidate C</a>
+          </article>
+          <article>
+            <h3>Trial Task</h3>
+            <p>內容 / 研究夥伴試作題，含 expected proof、stop conditions 與 review rubric。</p>
+            <a href="templates/content-research-trial-task-v1.0.md">開啟試作題</a>
+          </article>
+          <article>
+            <h3>Pilot Report</h3>
+            <p>整理 v0.9 schema 的完整跑法、分數、回饋迴圈與管理負荷觀察。</p>
+            <a href="docs/fictional-content-research-pilot-report-v1.0.md">開啟 pilot report</a>
+          </article>
+          <article>
+            <h3>Workboard Spec</h3>
+            <p>說明 Notion / Google Sheets 應有的 views、欄位型態與操作規則。</p>
+            <a href="docs/hr-intel-workboard-v1.0.md">開啟工作板說明</a>
+          </article>
+          <article>
+            <h3>Workboard XLSX</h3>
+            <p>含 Dashboard、Candidates、Trial Tasks、Feedback、Supervision、Field Map 分頁。</p>
+            <a href="workboards/hr-intel-workboard.v1.0.xlsx">下載 Excel 工作板</a>
+          </article>
+          <article>
+            <h3>Candidate CSV</h3>
+            <p>候選人 pipeline 匯入表，含 stage、role、score、risk flags 與 next gate。</p>
+            <a href="workboards/hr-intel-workboard-candidates.v1.0.csv">開啟 candidate CSV</a>
+          </article>
+          <article>
+            <h3>Trial Task CSV</h3>
+            <p>試作題看板匯入表，含 scope、proof、stop conditions 與 send status。</p>
+            <a href="workboards/hr-intel-workboard-trial-tasks.v1.0.csv">開啟 trial CSV</a>
+          </article>
+          <article>
+            <h3>Feedback CSV</h3>
+            <p>回饋迴圈匯入表，記錄 revision count、feedback summary 與改善狀態。</p>
+            <a href="workboards/hr-intel-workboard-feedback.v1.0.csv">開啟 feedback CSV</a>
+          </article>
+          <article>
+            <h3>Supervision CSV</h3>
+            <p>管理負荷匯入表，記錄 allowed gates、禁止任務與接手階段。</p>
+            <a href="workboards/hr-intel-workboard-supervision.v1.0.csv">開啟 supervision CSV</a>
+          </article>
+          <article>
+            <h3>Field Map CSV</h3>
+            <p>把 v0.9 schema path 對應到 Notion property 與 Google Sheets 欄位。</p>
+            <a href="workboards/hr-intel-workboard-field-map.v1.0.csv">開啟欄位 map</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.0 仍是 public-review template，不是實際 HR 系統或自動化。</p>
+            <a href="docs/governance-expansion-review-card-v1.0.md">開啟 v1.0 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.0 Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.0.json">開啟 v1.0 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="workboard-table">
+            <thead>
+              <tr>
+                <th>測試欄位群</th>
+                <th>v1.0 結果</th>
+                <th>對 Kevin 的用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>trial_task_packet</td>
+                <td>可表達試作範圍、due policy、expected proof、stop conditions 與 send_status。</td>
+                <td>先看到「怎麼測」，再決定是否真的邀請真人試作。</td>
+              </tr>
+              <tr>
+                <td>feedback_loop</td>
+                <td>可記錄 revision_count、feedback_summary、improved_after_feedback 與 reviewer note ref。</td>
+                <td>不只看能力，還能看對方是否可訓練、能不能吃回饋。</td>
+              </tr>
+              <tr>
+                <td>supervision_profile</td>
+                <td>可標示 supervision_load、allowed_gates、not_allowed_tasks 與 handoff_phase。</td>
+                <td>把「會不會幫 Kevin 減少管理負荷」放進評估，而不是只看分數。</td>
+              </tr>
+              <tr>
+                <td>workboard field map</td>
+                <td>把 schema path 轉成 Pipeline、Trial、Feedback、Supervision、Redaction views。</td>
+                <td>可以直接討論未來 Notion / Google Sheets 的欄位與分工看板。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.0 實作邊界：</strong>
+          這版只使用 fictional candidate，不連接真實人力情報站、不匯入真人資料、不寄出試作題、不做任用或薪資決策。工作板可作為未來 private implementation 的討論稿。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.0</p>
-          <h2 id="next-title">下一版要補的內容</h2>
+          <p class="eyebrow">Next version / v1.1</p>
+          <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>用一位內容 / 研究型 fictional candidate 測第三種 role template。</li>
-          <li>用 v0.9 schema 填一筆完整 fictional record，測試 trial_task_packet 與 feedback_loop。</li>
-          <li>把 v0.9 欄位轉成 Notion / Google Sheets 工作看板匯入版。</li>
           <li>重新檢查真實 workforce-war-room repo 狀態後，只在 private branch 設計 internal assessment layer。</li>
+          <li>把 v1.0 workboard 轉成 Kevin 每週可更新的能力地圖 / 人力規劃 refresh 流程。</li>
+          <li>決定要先做 Notion、Google Sheets，或先維持 CSV/XLSX 作為中立模板。</li>
+          <li>再跑一筆低可靠度的 fictional content/research case，測試 workboard 是否能顯示風險差異。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

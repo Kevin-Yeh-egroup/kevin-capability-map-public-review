@@ -1,0 +1,2 @@
+"record_id","supervision_load","allowed_gates","not_allowed_tasks","handoff_phase","suggested_30_day_goal","suggested_60_day_goal","suggested_90_day_goal"
+"fictional-person-c-v1.0","medium","G0; G1","real_applicant_contact; compensation_or_offer_work; private_account_access; production_data_write; unsupervised_public_publish","30_days","Complete public-safe research packets with Kevin review.","Maintain a repeatable source table and checklist rhythm.","Prepare low-risk research drafts with clear escalation points."

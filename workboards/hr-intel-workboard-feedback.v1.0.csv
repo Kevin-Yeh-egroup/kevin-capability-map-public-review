@@ -1,0 +1,2 @@
+"record_id","revision_count","feedback_summary","improved_after_feedback","reviewer_notes_ref","next_feedback_question","status"
+"fictional-person-c-v1.0","1","Fictional feedback asked for a shorter summary; separation of source facts from interpretation; and a missing-field list. The simulated revision improved structure but still needs a real timed trial.","yes","fictional-review-notes-c-v1.0","Can the candidate apply feedback under a bounded deadline without inventing unsupported source facts?","needs_real_trial"

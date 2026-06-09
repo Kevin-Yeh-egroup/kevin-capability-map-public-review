@@ -27,6 +27,8 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - First-partner hiring pack: `templates/first-partner-hiring-pack-v0.6.md`
 - Workflow task checklist template: `templates/workflow-task-checklist-v0.6.csv`
 - Public redaction scanner: `scripts/redaction-scan.mjs`
+- HR assessment record validator: `scripts/validate-hr-assessment-record.mjs`
+- HR intel workboard XLSX builder: `scripts/build-hr-intel-workboard-xlsx.mjs`
 - Public redaction scan report: `reports/public-redaction-scan-report.v0.6.json`
 - Governance expansion review card: `docs/governance-expansion-review-card-v0.6.md`
 - Fictional candidate assessment pilot: `pilots/fictional-candidate-assessment-v0.7.json`
@@ -48,3 +50,15 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Schema migration guide v0.5 to v0.9: `docs/schema-migration-v0.5-to-v0.9.md`
 - v0.9 governance expansion review card: `docs/governance-expansion-review-card-v0.9.md`
 - v0.9 public redaction scan report: `reports/public-redaction-scan-report.v0.9.json`
+- Fictional content / research candidate assessment v1.0: `pilots/fictional-content-research-candidate-assessment-v1.0.json`
+- Content / research trial task v1.0: `templates/content-research-trial-task-v1.0.md`
+- Fictional content / research pilot report v1.0: `docs/fictional-content-research-pilot-report-v1.0.md`
+- HR intel workboard spec v1.0: `docs/hr-intel-workboard-v1.0.md`
+- HR intel workboard Excel v1.0: `workboards/hr-intel-workboard.v1.0.xlsx`
+- HR intel candidate pipeline CSV v1.0: `workboards/hr-intel-workboard-candidates.v1.0.csv`
+- HR intel trial tasks CSV v1.0: `workboards/hr-intel-workboard-trial-tasks.v1.0.csv`
+- HR intel feedback CSV v1.0: `workboards/hr-intel-workboard-feedback.v1.0.csv`
+- HR intel supervision CSV v1.0: `workboards/hr-intel-workboard-supervision.v1.0.csv`
+- HR intel field map CSV v1.0: `workboards/hr-intel-workboard-field-map.v1.0.csv`
+- v1.0 governance expansion review card: `docs/governance-expansion-review-card-v1.0.md`
+- v1.0 public redaction scan report: `reports/public-redaction-scan-report.v1.0.json`

@@ -1,0 +1,154 @@
+{
+  "schema_version": "0.9",
+  "candidate_data_mode": "fictional",
+  "record_classification": "public_review",
+  "person": {
+    "person_id": "fictional-person-c-v1.0",
+    "source_type": "applicant",
+    "internal_name_ref": "fictional-ref-c",
+    "public_alias": "Fictional Candidate C",
+    "status": "trial",
+    "data_source": "fictional-content-research-pilot-v1.0",
+    "consent_scope": "evaluation_only",
+    "retention_until": "2026-07-09",
+    "created_at": "2026-06-09T11:00:00+08:00",
+    "updated_at": "2026-06-09T11:00:00+08:00"
+  },
+  "contact_profile": {
+    "preferred_contact_ref": "fictional-contact-ref-none",
+    "residence_area": "fictional central Taiwan area",
+    "commute_area": "remote-first with occasional online review blocks",
+    "available_days": ["weekday_afternoons", "weekday_evenings"],
+    "available_hours_per_week": 10,
+    "availability_notes": "Fictional availability only; no real contact or location data is included."
+  },
+  "talent_profile": {
+    "role_interest": ["content_research", "operations_support"],
+    "experience_summary": "Fictional candidate is strong in source reading, dated evidence notes, public-safe summaries, and turning research into checklist-ready work packets. Codex prompting and repeated delivery reliability still need a controlled trial.",
+    "skill_tags": ["source_triage", "evidence_note", "plain_language_summary", "resource_mapping", "checklist_conversion"],
+    "language_tags": ["traditional_chinese", "public_safe_summary", "source_date_tracking"],
+    "portfolio_refs": ["fictional-resource-brief-sample", "fictional-source-table-sample", "fictional-checklist-conversion-sample"],
+    "missing_fields": ["real_trial_submission", "feedback_revision_sample", "kevin_context_alignment_notes"]
+  },
+  "work_history": {
+    "covered_months": ["2026-06"],
+    "total_hours": null,
+    "task_types": ["fictional_source_triage", "fictional_resource_mapping", "fictional_public_summary"],
+    "attendance_signal": "insufficient",
+    "reliability_notes": "Only simulated research signals are available; reliability must be tested with a bounded content-research trial task.",
+    "amounts_excluded": true
+  },
+  "application_input": {
+    "raw_source_ref": "fictional-content-research-input-v1.0",
+    "parsed_summary": "Fictional content and research profile created to test the v0.9 schema's third role template. It is not a real person, application, intern record, contact record, compensation case, or private workforce-war-room item.",
+    "evidence_items": [
+      {
+        "evidence_type": "fictional_source_triage",
+        "evidence_ref": "fictional-content-task-t1",
+        "evidence_date": "2026-06-09",
+        "confidence": "B"
+      },
+      {
+        "evidence_type": "fictional_resource_mapping",
+        "evidence_ref": "fictional-content-task-t2",
+        "evidence_date": "2026-06-09",
+        "confidence": "B"
+      },
+      {
+        "evidence_type": "fictional_feedback_revision",
+        "evidence_ref": "fictional-content-task-t3",
+        "evidence_date": "2026-06-09",
+        "confidence": "C"
+      }
+    ],
+    "confidence_level": "B",
+    "review_required": true
+  },
+  "evaluation_run": {
+    "evaluation_id": "fictional-eval-c-v1.0",
+    "model_version": "hr-evaluation-v0.9",
+    "role_template_id": "content_research",
+    "role_weight_context": {
+      "weight_version": "role-weights-v0.9-content-research",
+      "dimension_weights": {
+        "d1": 16,
+        "d2": 8,
+        "d3": 16,
+        "d4": 17,
+        "d5": 10,
+        "d6": 12,
+        "d7": 6,
+        "d8": 15
+      },
+      "weighted_score_formula": "sum(score_dimension * dimension_weight) / 100"
+    },
+    "scores": {
+      "d1": 4.2,
+      "d2": 3.6,
+      "d3": 4.5,
+      "d4": 4.3,
+      "d5": 4.0,
+      "d6": 4.1,
+      "d7": 3.4,
+      "d8": 4.4,
+      "weighted_score": 4.17
+    },
+    "dimension_confidence": {
+      "d1": "B",
+      "d2": "C",
+      "d3": "A",
+      "d4": "B",
+      "d5": "C",
+      "d6": "B",
+      "d7": "C",
+      "d8": "B"
+    },
+    "compensation_fit": "not_evaluated",
+    "planning_value": "high",
+    "risk_flags": ["fictional_data_only", "no_real_trial_submission", "source_date_verification_needed", "codex_prompting_needs_trial", "human_review_required"],
+    "human_review_required": true,
+    "ai_summary": "Evidence pattern suggests a possible content and research trial candidate for public-safe resource briefs, source tables, and checklist conversion. The valid next step is a controlled trial task plus feedback-loop review; this is not a hiring, rejection, or compensation decision."
+  },
+  "trial_task_packet": {
+    "task_template_id": "content-research-trial-v1.0",
+    "task_scope": "Create one public-safe research brief from fictional source cards, mark source dates and missing fields, convert the brief into a checklist, and identify which parts require Kevin review.",
+    "due_policy": "Fictional pilot policy: three working days after private approval; no task is sent from this public package.",
+    "expected_proof": ["source_table", "public_safe_brief", "missing_fields_list", "kevin_review_checklist", "redaction_notes"],
+    "stop_conditions": ["private_account_required", "real_person_data_detected", "compensation_or_offer_topic_detected", "external_publish_required", "production_write_required"],
+    "send_status": "private_draft",
+    "trial_result_ref": "fictional-trial-result-not-run-v1.0"
+  },
+  "feedback_loop": {
+    "revision_count": 1,
+    "feedback_summary": "Fictional feedback asked the candidate to shorten the summary, separate source facts from interpretation, and add a missing-field list. The simulated revision improved structure but still needs a real timed trial.",
+    "improved_after_feedback": "yes",
+    "reviewer_notes_ref": "fictional-review-notes-c-v1.0"
+  },
+  "supervision_profile": {
+    "supervision_load": "medium",
+    "allowed_gates": ["G0", "G1"],
+    "not_allowed_tasks": ["real_applicant_contact", "compensation_or_offer_work", "private_account_access", "production_data_write", "unsupervised_public_publish"],
+    "handoff_phase": "30_days"
+  },
+  "decision_record": {
+    "stage": "trial",
+    "recommended_next_step": "trial_task",
+    "decision_owner": "Kevin",
+    "final_decision": "manual_review_required",
+    "decision_reason": "Fictional pilot recommends a controlled content-research trial to verify reliability, source handling, revision behavior, and supervision load.",
+    "override_reason": "none",
+    "reviewed_at": "2026-06-09T11:00:00+08:00"
+  },
+  "redaction_status": {
+    "public_allowed": false,
+    "history_amounts_excluded": true,
+    "sensitive_field_scan": "pass",
+    "redaction_evidence": {
+      "scan_report_ref": "reports/public-redaction-scan-report.v1.0.json",
+      "scan_status": "pass",
+      "scan_generated_at": "2026-06-09T11:00:00+08:00",
+      "public_export_allowed": false
+    },
+    "public_output_notes": "This record is fictional and public-safe for review, but public_allowed remains false to preserve the default internal-record posture."
+  }
+}

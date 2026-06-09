@@ -75,3 +75,13 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Weekly capability dashboard note v1.2: `docs/weekly-capability-dashboard-v1.2.md`
 - v1.2 governance expansion review card: `docs/governance-expansion-review-card-v1.2.md`
 - v1.2 public redaction scan report: `reports/public-redaction-scan-report.v1.2.json`
+- Social-worker tools line card v1.3: `weekly/social-worker-tools-line-card-v1.3.json`
+- Social-worker tools line card note v1.3: `docs/social-worker-tools-line-card-v1.3.md`
+- Citizen finance-life tools roadmap v1.3: `weekly/citizen-finance-life-tools-roadmap-v1.3.json`
+- Citizen finance-life tools roadmap note v1.3: `docs/citizen-finance-life-tools-roadmap-v1.3.md`
+- Weekly no-op checkpoint template v1.3: `weekly/weekly-no-op-checkpoint-template-v1.3.json`
+- Weekly no-op checkpoint template note v1.3: `docs/weekly-no-op-checkpoint-template-v1.3.md`
+- Tool line cards workboard CSV v1.3: `weekly/tool-line-cards-v1.3.csv`
+- Tool line roadmap visual v1.3: `assets/tool-line-roadmap-v1.3.svg`
+- v1.3 governance expansion review card: `docs/governance-expansion-review-card-v1.3.md`
+- v1.3 public redaction scan report: `reports/public-redaction-scan-report.v1.3.json`

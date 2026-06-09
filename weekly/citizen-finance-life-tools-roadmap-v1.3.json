@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.3",
+  "artifact_type": "tool_line_roadmap",
+  "line_id": "citizen_finance_life_tools",
+  "line_name": "一般民眾財務優化生活工具開發",
+  "updated_at_public": "2026-06-09",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_user_financial_records": false,
+    "contains_private_messages": false,
+    "contains_compensation_amounts": false,
+    "public_export_rule": "Only publish high-level roadmap, fictional examples, and non-advisory tool specifications."
+  },
+  "need_statement": {
+    "problem": "一般民眾常需要把收入、支出、債務、資源、生活目標與可採取行動整理成看得懂的下一步，但工具不能假裝替使用者做個人化財務、法律或福利決策。",
+    "target_users": ["Kevin", "內容 / 研究夥伴", "未來工具使用者", "FamilyFin 相關公開內容與工具線"],
+    "success_signals": [
+      "使用者能看懂自己的財務生活狀態，而不是只看到抽象分數。",
+      "工具輸出是教育、整理與行動清單，不是個人化金融建議。",
+      "夥伴能協助整理公開知識、情境卡、欄位定義與使用者常見問題。",
+      "Codex 能把內容轉成 prototype spec、表格、提示詞與驗證 checklist。"
+    ]
+  },
+  "current_spec": {
+    "stage": "roadmap_and_planning_layer",
+    "what_exists_now": [
+      "能力地圖已把民眾財務生活工具列為 Kevin 工作線。",
+      "人力評估 schema 與工作板已能測試內容 / 研究型夥伴的任務適配。",
+      "公開發布 workflow 已能產生 noindex review page 與 redaction proof。"
+    ],
+    "current_artifacts": [
+      "docs/fictional-content-research-pilot-report-v1.0.md",
+      "workboards/hr-intel-workboard-field-map.v1.0.csv",
+      "weekly/capability-dashboard-actions-v1.2.csv",
+      "reports/public-redaction-scan-report.v1.2.json"
+    ],
+    "not_in_scope_yet": [
+      "真實使用者財務紀錄",
+      "個人化投資、借貸、保險或法律建議",
+      "自動替使用者申請服務或聯絡外部單位",
+      "未核准的 private data import"
+    ]
+  },
+  "roadmap_stages": [
+    {
+      "stage_id": "cf_snapshot",
+      "stage_name": "財務生活快照",
+      "purpose": "用中立欄位幫使用者整理收入穩定度、固定支出、可調整支出、債務壓力、家庭支持與可用資源。",
+      "outputs": ["snapshot fields", "missing information list", "plain-language summary"],
+      "owner_split": {
+        "Kevin 做": "定義哪些狀態需要人工判讀與哪些說法不能使用。",
+        "夥伴做": "整理公開教育內容與常見情境。",
+        "Codex 做": "產生欄位、摘要模板與測試案例。",
+        "自動化": "檢查欄位是否完整，無資料時回報 no-op。"
+      }
+    },
+    {
+      "stage_id": "cf_expense_debt_organizer",
+      "stage_name": "支出與債務整理器",
+      "purpose": "把支出、債務、付款順序與壓力點整理成可討論清單，不自動給高風險建議。",
+      "outputs": ["category table", "question queue", "risk boundary notice"],
+      "owner_split": {
+        "Kevin 做": "確認工具語氣與高風險提醒。",
+        "夥伴做": "把公開知識轉成情境題與欄位說明。",
+        "Codex 做": "製作 prototype spec、CSV 與 QA checklist。",
+        "自動化": "做欄位缺漏提醒與連結檢查。"
+      }
+    },
+    {
+      "stage_id": "cf_resource_action_plan",
+      "stage_name": "資源與行動清單",
+      "purpose": "把可查詢的公開資源、生活調整選項、諮詢路徑與下一步整理成 review-ready action list。",
+      "outputs": ["resource list", "action checklist", "follow-up schedule"],
+      "owner_split": {
+        "Kevin 做": "決定優先情境與是否需要專業轉介提醒。",
+        "夥伴做": "蒐集公開資源與更新日期。",
+        "Codex 做": "整理成可讀卡片、工作板欄位與公開說明。",
+        "自動化": "定期檢查公開資源連結與更新狀態。"
+      }
+    },
+    {
+      "stage_id": "cf_learning_loop",
+      "stage_name": "知識蒐集與活用迴圈",
+      "purpose": "把新知識、使用者問題、工具測試回饋與內容更新連成每週可檢查的學習迴圈。",
+      "outputs": ["learning backlog", "content update candidate", "tool improvement note"],
+      "owner_split": {
+        "Kevin 做": "選擇哪些知識值得轉成工具或內容。",
+        "夥伴做": "摘要公開資料與整理問題清單。",
+        "Codex 做": "歸納成產品需求、prompt、FAQ 與測試規格。",
+        "自動化": "每週列出新舊差異與 no-op checkpoint。"
+      }
+    }
+  ],
+  "work_and_capability_map": [
+    {
+      "work_line": "公開知識整理",
+      "capability_needed": ["research summarization", "source freshness", "plain-language rewriting"],
+      "partner_entry_task": "整理一個公開主題的來源、日期、重點與限制。",
+      "codex_support": "產生內容架構、欄位表與安全語氣檢查。"
+    },
+    {
+      "work_line": "工具規格與 prototype",
+      "capability_needed": ["product thinking", "workflow design", "QA checklist"],
+      "partner_entry_task": "依模板測試情境、標記不清楚欄位。",
+      "codex_support": "把需求轉成 prototype spec、CSV、JSON 與視覺 roadmap。"
+    },
+    {
+      "work_line": "專案規劃與夥伴帶領",
+      "capability_needed": ["task decomposition", "review cadence", "feedback loop"],
+      "partner_entry_task": "完成小任務並依 rubric 自評。",
+      "codex_support": "建立 trial task、feedback loop、supervision profile 與週更 dashboard。"
+    }
+  ],
+  "future_outlook": [
+    "v1.4 可挑選一個財務生活工具 stage，產出 public-safe prototype brief。",
+    "未來若要接真實使用者資料，必須移到 private implementation，並設計資料同意、保存、刪除與人工覆核規則。",
+    "此工作線可回饋 HR 評估模型：內容 / 研究夥伴、工具測試夥伴、資料整理夥伴的評分欄位會更具體。",
+    "正式對外工具要避免看似個人化金融建議，輸出應定位為教育、整理、提醒與求助路徑。"
+  ],
+  "weekly_update_contract": {
+    "cadence": "weekly_or_on_kevin_request",
+    "minimum_update": "Update roadmap stage state, partner-ready tasks, Codex-ready tasks, blockers, and next prototype candidate.",
+    "no_op_rule": "If no approved public-safe material changed, record a verified no-op and keep the roadmap stable.",
+    "next_checkpoint": "Select one stage for a public-safe prototype brief."
+  }
+}

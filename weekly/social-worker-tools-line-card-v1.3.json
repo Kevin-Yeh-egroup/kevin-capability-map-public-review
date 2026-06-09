@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.3",
+  "artifact_type": "tool_line_card",
+  "line_id": "social_worker_tools",
+  "line_name": "社工可用工具開發",
+  "updated_at_public": "2026-06-09",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_case_data": false,
+    "contains_private_messages": false,
+    "contains_candidate_personal_data": false,
+    "contains_compensation_amounts": false,
+    "public_export_rule": "Only publish high-level planning, fictional examples, and public-safe tool specifications."
+  },
+  "need_statement": {
+    "problem": "Kevin 的社工相關工作需要把資源查找、需求整理、表單準備、轉介判斷與後續追蹤變成可分工、可檢核、可逐步工具化的工作流。",
+    "target_users": ["Kevin", "社工或服務設計夥伴", "未來協助整理公開資源與工具規格的夥伴"],
+    "success_signals": [
+      "每個工具模組都有明確輸入、輸出、使用邊界與 proof。",
+      "夥伴能先做公開資料蒐集、初稿整理與 checklist conversion。",
+      "Codex 能把需求轉成規格、表格、提示詞、測試案例與公開安全說明。",
+      "自動化只做提醒、連結檢查、資料新鮮度檢查與 no-op 回報。"
+    ]
+  },
+  "current_spec": {
+    "stage": "public_planning_layer",
+    "what_exists_now": [
+      "能力地圖與每週 dashboard 已把社工工具線列為下一週候選。",
+      "HR schema、trial task、feedback loop 與 supervision profile 可借作工具試作與夥伴評估結構。",
+      "公開發布與 redaction workflow 已能保護公開頁不混入 private records。"
+    ],
+    "current_artifacts": [
+      "weekly/capability-map-baseline-v1.1.json",
+      "weekly/capability-dashboard-v1.2.json",
+      "schemas/hr-assessment-v0.9.schema.json",
+      "docs/weekly-capability-dashboard-v1.2.md"
+    ],
+    "not_in_scope_yet": [
+      "真實服務對象紀錄",
+      "診斷、法律、醫療或福利資格的自動判定",
+      "未經核准的 private database 匯入",
+      "外部訊息發送或個案聯絡"
+    ]
+  },
+  "module_map": [
+    {
+      "module_id": "sw_resource_finder",
+      "module_name": "公開資源查找與新鮮度卡",
+      "purpose": "把公開福利、社區、課程、諮詢或轉介資源整理成可查找、可更新、可標記缺口的資料卡。",
+      "inputs": ["公開網頁", "公開表單說明", "Kevin 指定的資源分類"],
+      "outputs": ["resource card", "missing-field list", "freshness check result"],
+      "work_checkpoints": ["來源是否公開", "更新日期是否可判讀", "適用對象是否清楚", "下一步是否需要人工確認"],
+      "owner_split": {
+        "Kevin 做": "定義資源分類、服務判斷邊界與優先順序。",
+        "夥伴做": "蒐集公開來源、摘錄欄位、標註缺漏與更新日期。",
+        "Codex 做": "轉成資料卡 schema、檢查欄位一致性、產生說明與公開頁摘要。",
+        "自動化": "定期檢查連結是否可讀、更新日期是否過舊，無變動時產生 no-op。"
+      }
+    },
+    {
+      "module_id": "sw_needs_triage_checklist",
+      "module_name": "需求盤點與初步分流 checklist",
+      "purpose": "把服務需求整理成非診斷、非判定的初步盤點表，協助 Kevin 與夥伴快速看見缺資料處。",
+      "inputs": ["Kevin 提供的公開安全需求描述", "虛構或去識別化案例", "服務流程欄位"],
+      "outputs": ["needs checklist", "question queue", "risk boundary note"],
+      "work_checkpoints": ["是否只做資訊整理", "是否避免自動資格判定", "是否有人工覆核欄位", "是否標明高風險需轉人工"],
+      "owner_split": {
+        "Kevin 做": "確認社工判斷邏輯與哪些問題不能自動化。",
+        "夥伴做": "把常見問題轉成清單初稿與欄位說明。",
+        "Codex 做": "整理 checklist、產生測試案例、補上 stop condition。",
+        "自動化": "只提醒欄位缺漏或產生空白模板，不做判定。"
+      }
+    },
+    {
+      "module_id": "sw_session_prep",
+      "module_name": "會談與服務紀錄準備包",
+      "purpose": "在不公開私人內容的前提下，把會談前準備、會後整理、待追蹤事項做成模板。",
+      "inputs": ["空白會談模板", "公開安全情境", "Kevin 指定追蹤欄位"],
+      "outputs": ["prep brief", "follow-up checklist", "proof list"],
+      "work_checkpoints": ["是否為空白或虛構內容", "是否有下一步 owner", "是否有 proof 欄位", "是否需要 Kevin approval"],
+      "owner_split": {
+        "Kevin 做": "定義實務上需要追蹤的欄位與風險提醒。",
+        "夥伴做": "整理模板與標準問題初稿。",
+        "Codex 做": "把模板轉成 Markdown、CSV、JSON 或頁面說明。",
+        "自動化": "週期提醒未完成的空白模板或 no-op 檢核。"
+      }
+    },
+    {
+      "module_id": "sw_tool_trial",
+      "module_name": "工具試作與回饋迴圈",
+      "purpose": "用小型 trial task 測試夥伴是否能協助社工工具線，不碰真實個資。",
+      "inputs": ["public-safe trial brief", "rubric", "feedback form"],
+      "outputs": ["trial result", "feedback loop", "supervision profile signal"],
+      "work_checkpoints": ["任務是否小到可評分", "是否沒有真實個案", "是否有停止條件", "是否有 Kevin 回饋欄位"],
+      "owner_split": {
+        "Kevin 做": "決定試作題是否符合真實工作需要。",
+        "夥伴做": "完成公開安全試作題與自評。",
+        "Codex 做": "產生 trial task、rubric、feedback loop 與評估摘要。",
+        "自動化": "提醒回饋期限與彙整空白結果，不主動評分真人。"
+      }
+    }
+  ],
+  "capability_map": [
+    {
+      "capability": "社工需求拆解",
+      "current_level": "Kevin-led",
+      "partner_entry_task": "把公開安全情境轉成問題清單。",
+      "codex_support": "結構化需求、補欄位、產生測試案例。",
+      "automation_candidate": "缺欄提醒與 no-op checkpoint。"
+    },
+    {
+      "capability": "公共資源整理",
+      "current_level": "partner-ready",
+      "partner_entry_task": "查找公開來源、標記更新日期與適用對象。",
+      "codex_support": "去重、欄位正規化與公開頁整理。",
+      "automation_candidate": "連結與新鮮度檢查。"
+    },
+    {
+      "capability": "服務流程文件化",
+      "current_level": "Codex-ready",
+      "partner_entry_task": "整理表單與流程初稿。",
+      "codex_support": "轉成 SOP、模板、CSV 與視覺流程。",
+      "automation_candidate": "模板完整性檢查。"
+    }
+  ],
+  "future_outlook": [
+    "v1.4 可新增社工工具最小可行 demo spec，但仍只用公開安全資料。",
+    "未來 private pilot 需要先建立 private repo、資料政策、人工覆核與 Kevin approval gate。",
+    "社工工具線可逐步連到人力情報站，用來評估夥伴是否能做 public source、checklist、template、QA 這些低風險任務。",
+    "正式工具不得把 noindex 當作隱私保護；只要涉及真實個案或私人紀錄，就必須離開公開 repo。"
+  ],
+  "weekly_update_contract": {
+    "cadence": "weekly_or_on_kevin_request",
+    "minimum_update": "Update changed modules, next tasks, blockers, and owner split.",
+    "no_op_rule": "If public-safe evidence is unchanged, write a verified no-op checkpoint instead of inventing progress.",
+    "next_checkpoint": "Choose one module for a small public-safe trial spec."
+  }
+}

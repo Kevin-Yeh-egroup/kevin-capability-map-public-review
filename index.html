@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.2 weekly dashboard</dd></div>
+        <div><dt>版本</dt><dd>v1.3 tool line cards</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1602,17 +1602,123 @@
       </div>
     </section>
 
+    <section class="section tinted" aria-labelledby="tool-line-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Tool line cards / v1.3</p>
+          <h2 id="tool-line-title">把工具方向拆成可檢核的工作線</h2>
+          <p>v1.3 將 v1.2 的下一週候選落成三個可操作 artifact：社工可用工具開發 line card、一般民眾財務生活工具 roadmap，以及 weekly no-op checkpoint template。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/tool-line-roadmap-v1.3.svg" alt="Tool line roadmap v1.3：社工工具線、民眾財務生活工具線、weekly no-op checkpoint 與 Kevin、夥伴、Codex、自動化分工。">
+          <figcaption>v1.3 工具工作線 roadmap：把「可以做什麼工具」轉成每週可討論、可交辦、可驗證的小任務。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Social-worker JSON</h3>
+            <p>社工工具線的需求、目前規格、模組、工作檢核點、分工與未來展望。</p>
+            <a href="weekly/social-worker-tools-line-card-v1.3.json">開啟社工工具 JSON</a>
+          </article>
+          <article>
+            <h3>Social-worker Note</h3>
+            <p>人可讀 line card，說明公開資源、需求 checklist、服務紀錄模板與 trial loop。</p>
+            <a href="docs/social-worker-tools-line-card-v1.3.md">開啟社工工具說明</a>
+          </article>
+          <article>
+            <h3>Citizen Finance JSON</h3>
+            <p>民眾財務生活工具 roadmap，含 snapshot、支出整理、資源行動清單與知識迴圈。</p>
+            <a href="weekly/citizen-finance-life-tools-roadmap-v1.3.json">開啟財務生活 roadmap</a>
+          </article>
+          <article>
+            <h3>Citizen Finance Note</h3>
+            <p>說明這條線的教育、整理、提醒與求助路徑定位，不做個人化決策。</p>
+            <a href="docs/citizen-finance-life-tools-roadmap-v1.3.md">開啟財務生活說明</a>
+          </article>
+          <article>
+            <h3>No-op Template</h3>
+            <p>週更無變動時的 checkpoint schema，保留 checked source、decision 與 next retry gate。</p>
+            <a href="weekly/weekly-no-op-checkpoint-template-v1.3.json">開啟 no-op JSON</a>
+          </article>
+          <article>
+            <h3>No-op Note</h3>
+            <p>人可讀週更 checkpoint 說明，含欄位、使用時機、工作板欄位與 no-op 範例。</p>
+            <a href="docs/weekly-no-op-checkpoint-template-v1.3.md">開啟 no-op 說明</a>
+          </article>
+          <article>
+            <h3>Workboard CSV</h3>
+            <p>可匯入 Notion / Sheets 的小任務清單，含 Kevin 做、夥伴做、Codex 做、自動化。</p>
+            <a href="weekly/tool-line-cards-v1.3.csv">開啟 v1.3 CSV</a>
+          </article>
+          <article>
+            <h3>Roadmap SVG</h3>
+            <p>可視覺說明兩條工具線與 no-op checkpoint 的分工設計。</p>
+            <a href="assets/tool-line-roadmap-v1.3.svg">開啟 v1.3 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.3 仍是 public-review planning artifacts，不是 private system。</p>
+            <a href="docs/governance-expansion-review-card-v1.3.md">開啟 v1.3 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.3 Scan Report</h3>
+            <p>本版 public package 掃描報告，需在發布前確認 0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.3.json">開啟 v1.3 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>工作線</th>
+                <th>目前規格</th>
+                <th>可交辦檢核點</th>
+                <th>下一步</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>社工可用工具開發</td>
+                <td>公開資源查找、需求盤點 checklist、會談準備模板、工具試作迴圈。</td>
+                <td>來源公開、無真實個案、人工覆核、stop condition、proof artifact。</td>
+                <td>選一個模組做 public-safe prototype brief。</td>
+              </tr>
+              <tr>
+                <td>一般民眾財務優化生活工具</td>
+                <td>財務生活快照、支出與債務整理、資源行動清單、知識活用迴圈。</td>
+                <td>教育與整理定位、白話摘要、公開來源、非個人化決策。</td>
+                <td>先從 snapshot 或資源行動清單擇一試作。</td>
+              </tr>
+              <tr>
+                <td>weekly no-op checkpoint</td>
+                <td>source_checked、changed_work_lines、decision、proof_artifacts、next_retry_gate。</td>
+                <td>沒有 public-safe 變動時記錄 verified no-op，不製造假進度。</td>
+                <td>每週 refresh 時使用 proceed / no-op / blocked 決策卡。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.3 實作邊界：</strong>
+          這版只發布工具線規格、工作板欄位與週更模板；不匯入真實個案、真人候選、私人財務紀錄，不做外部聯絡，也不移除 noindex。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.3</p>
+          <p class="eyebrow">Next version / v1.4</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>新增「社工工具線」需求 / 目前規格 / 未來展望卡。</li>
-          <li>新增「一般民眾財務生活工具線」roadmap card。</li>
-          <li>建立 weekly no-op checkpoint template，讓沒有變動的一週也可被正確記錄。</li>
-          <li>決定 dashboard 是否要同步成 private Notion / Google Sheets。</li>
+          <li>從社工工具線或財務生活工具線中選一個模組，做 public-safe prototype brief。</li>
+          <li>把 v1.3 CSV 轉成 private Notion / Google Sheets 工作板選型草案。</li>
+          <li>補上 private import checklist，但不接真實資料，先只設邊界與欄位。</li>
+          <li>把 weekly no-op checkpoint 轉成 report-first automation candidate。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

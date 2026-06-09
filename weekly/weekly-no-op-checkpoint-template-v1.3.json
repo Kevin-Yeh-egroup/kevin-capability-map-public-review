@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.3",
+  "artifact_type": "weekly_no_op_checkpoint_template",
+  "updated_at_public": "2026-06-09",
+  "purpose": "Make a quiet week useful by recording what was checked, why nothing changed, and when to retry instead of inventing progress.",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_real_candidate_data": false,
+    "contains_private_messages": false,
+    "contains_private_financial_records": false,
+    "public_export_rule": "A public no-op record may mention artifact names and high-level status only."
+  },
+  "template_fields": [
+    {
+      "field": "checkpoint_id",
+      "required": true,
+      "description": "Stable ID for this weekly checkpoint."
+    },
+    {
+      "field": "coverage_window",
+      "required": true,
+      "description": "The week or review period covered by the check."
+    },
+    {
+      "field": "last_successful_checkpoint",
+      "required": true,
+      "description": "The last version, artifact, or verified state that remains valid."
+    },
+    {
+      "field": "session_state",
+      "required": true,
+      "description": "What Codex or the operator was asked to check in this run."
+    },
+    {
+      "field": "project_context_state",
+      "required": true,
+      "description": "Current public/private boundary, repo state, or dashboard baseline."
+    },
+    {
+      "field": "source_checked",
+      "required": true,
+      "description": "Approved public-safe sources, artifacts, or registries that were checked."
+    },
+    {
+      "field": "changed_work_lines",
+      "required": true,
+      "description": "List of changed work lines; empty array means no meaningful public-safe change."
+    },
+    {
+      "field": "fallback_checks_completed",
+      "required": true,
+      "description": "Checks used when the primary source had no update or was unavailable."
+    },
+    {
+      "field": "proof_artifacts",
+      "required": true,
+      "description": "Files, reports, scans, or URLs that prove the no-op was verified."
+    },
+    {
+      "field": "decision",
+      "required": true,
+      "allowed_values": ["proceed", "no-op", "blocked"],
+      "description": "Whether to update artifacts, keep current state, or stop due to a blocker."
+    },
+    {
+      "field": "exact_blocked_step",
+      "required": false,
+      "description": "Only fill when decision is blocked."
+    },
+    {
+      "field": "next_retry_gate",
+      "required": true,
+      "description": "When or under what condition the next run should check again."
+    },
+    {
+      "field": "public_update_needed",
+      "required": true,
+      "description": "Whether a public page update is needed after this checkpoint."
+    },
+    {
+      "field": "redaction_required",
+      "required": true,
+      "description": "Whether redaction scan must run before publishing."
+    }
+  ],
+  "decision_rules": [
+    {
+      "decision": "proceed",
+      "use_when": "There is at least one public-safe change, new artifact, or approved planning update.",
+      "required_proof": ["changed_work_lines", "updated artifact", "redaction scan if public package changes"]
+    },
+    {
+      "decision": "no-op",
+      "use_when": "Sources were checked and no meaningful public-safe change exists.",
+      "required_proof": ["source_checked", "proof_artifacts", "next_retry_gate"]
+    },
+    {
+      "decision": "blocked",
+      "use_when": "The next step requires private data, external contact, account action, unclear source access, or Kevin approval.",
+      "required_proof": ["exact_blocked_step", "fallback_checks_completed", "approval gate"]
+    }
+  ],
+  "notion_or_sheets_columns": [
+    "checkpoint_id",
+    "coverage_window",
+    "line_checked",
+    "owner",
+    "source_checked",
+    "changed",
+    "decision",
+    "blocker_category",
+    "proof_artifact",
+    "next_retry_gate",
+    "public_update_needed",
+    "redaction_required"
+  ],
+  "example_public_safe_record": {
+    "checkpoint_id": "weekly-example-v1.3",
+    "coverage_window": "example week",
+    "last_successful_checkpoint": "v1.3 tool line cards published",
+    "session_state": "Checked public-safe planning artifacts for new approved changes.",
+    "project_context_state": "Public review repo remains noindex and contains no private records.",
+    "source_checked": ["weekly/tool-line-cards-v1.3.csv", "docs/weekly-no-op-checkpoint-template-v1.3.md"],
+    "changed_work_lines": [],
+    "fallback_checks_completed": ["artifact link check", "redaction scan"],
+    "proof_artifacts": ["reports/public-redaction-scan-report.v1.3.json"],
+    "decision": "no-op",
+    "exact_blocked_step": "",
+    "next_retry_gate": "next weekly refresh or Kevin-approved new material",
+    "public_update_needed": false,
+    "redaction_required": false
+  },
+  "owner_split": {
+    "Kevin 做": "判斷是否真的有新方向、是否要改公開頁或進 private implementation。",
+    "夥伴做": "提供公開安全來源整理與本週變動摘要。",
+    "Codex 做": "比對 artifact、產出 checkpoint、更新頁面與跑驗證。",
+    "自動化": "在 report-first 模式下提醒、檢查連結、跑 redaction scan，沒有變動時輸出 no-op。"
+  },
+  "automation_boundary": {
+    "allowed": ["read public-safe artifacts", "check links", "run redaction scan", "draft no-op checkpoint"],
+    "not_allowed": ["import private records", "contact candidates", "send trial tasks", "change public site without Kevin instruction"]
+  }
+}

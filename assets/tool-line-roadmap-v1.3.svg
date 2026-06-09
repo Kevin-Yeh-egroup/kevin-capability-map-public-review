@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Kevin tool line roadmap v1.3</title>
+  <desc id="desc">A public-safe roadmap for social-worker tools, citizen finance-life tools, and weekly no-op checkpoints.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#1B2A32" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #F8FAF7; }
+      .title { font: 700 34px Arial, sans-serif; fill: #17333A; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #4D5C60; }
+      .card { filter: url(#shadow); }
+      .cardTitle { font: 700 22px Arial, sans-serif; fill: #17333A; }
+      .line { font: 400 15px Arial, sans-serif; fill: #2D4147; }
+      .small { font: 400 13px Arial, sans-serif; fill: #52666B; }
+      .badge { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .axis { stroke: #AAB8BA; stroke-width: 2; }
+      .footer { font: 400 13px Arial, sans-serif; fill: #657174; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Tool Line Roadmap v1.3</text>
+  <text class="sub" x="60" y="88">Public-safe line cards for tool planning, partner work, Codex packaging, and weekly no-op checkpoints.</text>
+
+  <g class="card">
+    <rect x="60" y="130" width="330" height="430" rx="8" fill="#FFFFFF"/>
+    <rect x="84" y="154" width="134" height="26" rx="8" fill="#0F766E"/>
+    <text class="badge" x="151" y="172" text-anchor="middle">Line card 01</text>
+    <text class="cardTitle" x="84" y="218">Social-worker tools</text>
+    <text class="line" x="84" y="258">Resource finder and freshness cards</text>
+    <text class="line" x="84" y="292">Needs triage checklist</text>
+    <text class="line" x="84" y="326">Session prep and follow-up templates</text>
+    <text class="line" x="84" y="360">Public-safe tool trial loop</text>
+    <line class="axis" x1="84" y1="396" x2="346" y2="396"/>
+    <text class="small" x="84" y="430">Kevin: service logic and risk boundary</text>
+    <text class="small" x="84" y="456">Partner: public sources and checklist draft</text>
+    <text class="small" x="84" y="482">Codex: schema, cards, prompts, QA</text>
+    <text class="small" x="84" y="508">Automation: link, freshness, no-op checks</text>
+  </g>
+
+  <g class="card">
+    <rect x="435" y="130" width="330" height="430" rx="8" fill="#FFFFFF"/>
+    <rect x="459" y="154" width="134" height="26" rx="8" fill="#0369A1"/>
+    <text class="badge" x="526" y="172" text-anchor="middle">Line card 02</text>
+    <text class="cardTitle" x="459" y="218">Citizen finance-life tools</text>
+    <text class="line" x="459" y="258">Finance-life snapshot</text>
+    <text class="line" x="459" y="292">Expense and debt organizer</text>
+    <text class="line" x="459" y="326">Resource and action checklist</text>
+    <text class="line" x="459" y="360">Knowledge learning loop</text>
+    <line class="axis" x1="459" y1="396" x2="721" y2="396"/>
+    <text class="small" x="459" y="430">Kevin: positioning and high-risk limits</text>
+    <text class="small" x="459" y="456">Partner: source summaries and FAQ drafts</text>
+    <text class="small" x="459" y="482">Codex: prototype brief, CSV, QA checklist</text>
+    <text class="small" x="459" y="508">Automation: field, link, and no-op checks</text>
+  </g>
+
+  <g class="card">
+    <rect x="810" y="130" width="330" height="430" rx="8" fill="#FFFFFF"/>
+    <rect x="834" y="154" width="134" height="26" rx="8" fill="#7C3AED"/>
+    <text class="badge" x="901" y="172" text-anchor="middle">Weekly gate</text>
+    <text class="cardTitle" x="834" y="218">No-op checkpoint</text>
+    <text class="line" x="834" y="258">source_checked</text>
+    <text class="line" x="834" y="292">changed_work_lines</text>
+    <text class="line" x="834" y="326">decision: proceed / no-op / blocked</text>
+    <text class="line" x="834" y="360">proof_artifacts and next_retry_gate</text>
+    <line class="axis" x1="834" y1="396" x2="1096" y2="396"/>
+    <text class="small" x="834" y="430">Proceed: update public-safe artifacts</text>
+    <text class="small" x="834" y="456">No-op: record verified unchanged state</text>
+    <text class="small" x="834" y="482">Blocked: name exact approval gate</text>
+    <text class="small" x="834" y="508">Always keep noindex and redaction proof</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="610" width="1080" height="84" rx="8" fill="#17333A"/>
+    <text class="badge" x="86" y="646">Public boundary</text>
+    <text class="small" x="86" y="674" fill="#E8F4F1" style="fill:#E8F4F1">Planning artifacts only: no real case records, no real candidate data, no private financial records, no external sends, no compensation amounts.</text>
+  </g>
+
+  <text class="footer" x="60" y="728">v1.3 roadmap · public review noindex · next useful step: choose one module for a public-safe prototype brief</text>
+</svg>

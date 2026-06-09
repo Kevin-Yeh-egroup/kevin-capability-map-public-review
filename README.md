@@ -42,3 +42,9 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - v0.8 schema extension proposal: `schemas/hr-assessment-v0.8-extension-proposal.json`
 - v0.8 governance expansion review card: `docs/governance-expansion-review-card-v0.8.md`
 - v0.8 public redaction scan report: `reports/public-redaction-scan-report.v0.8.json`
+- Formal HR assessment schema v0.9: `schemas/hr-assessment-v0.9.schema.json`
+- Empty HR assessment record v0.9: `templates/hr-assessment-empty-record.v0.9.json`
+- Sheet-ready HR assessment template v0.9: `templates/hr-assessment-sheet-template.v0.9.csv`
+- Schema migration guide v0.5 to v0.9: `docs/schema-migration-v0.5-to-v0.9.md`
+- v0.9 governance expansion review card: `docs/governance-expansion-review-card-v0.9.md`
+- v0.9 public redaction scan report: `reports/public-redaction-scan-report.v0.9.json`

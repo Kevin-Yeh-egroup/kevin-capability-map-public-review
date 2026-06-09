@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v0.8 schema gap pilot</dd></div>
+        <div><dt>版本</dt><dd>v0.9 formal schema</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1209,16 +1209,108 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="formal-schema-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Formal schema / v0.9</p>
+          <h2 id="formal-schema-title">把 HR 評估 schema 正式化</h2>
+          <p>v0.9 將 v0.8 的 extension proposal 升級成正式 public-review schema。新版保留 v0.5 的證據整理結構，並補上角色權重、每個維度的信心、試作題、回饋迴圈、管理負荷與 redaction proof。</p>
+        </div>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>v0.9 JSON Schema</h3>
+            <p>正式 schema，含 candidate_data_mode、role_weight_context、dimension_confidence 等新欄位。</p>
+            <a href="schemas/hr-assessment-v0.9.schema.json">開啟 v0.9 schema</a>
+          </article>
+          <article>
+            <h3>v0.9 Empty Record</h3>
+            <p>可作為 public-safe fictional 或 private de-identified draft 的空白紀錄。</p>
+            <a href="templates/hr-assessment-empty-record.v0.9.json">開啟空白 record</a>
+          </article>
+          <article>
+            <h3>v0.9 Sheet Template</h3>
+            <p>新增 role weights、dimension confidence、trial task、feedback loop、supervision 與 redaction evidence 欄位。</p>
+            <a href="templates/hr-assessment-sheet-template.v0.9.csv">開啟 Sheet CSV</a>
+          </article>
+          <article>
+            <h3>Migration Guide</h3>
+            <p>從 v0.5 升級到 v0.9 的欄位差異、預設值與安全規則。</p>
+            <a href="docs/schema-migration-v0.5-to-v0.9.md">開啟 migration guide</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>說明 v0.9 是正式 public-review schema，但不是 automation 或真實 HR 決策流程。</p>
+            <a href="docs/governance-expansion-review-card-v0.9.md">開啟 v0.9 治理卡</a>
+          </article>
+          <article>
+            <h3>v0.9 Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v0.9.json">開啟 v0.9 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="formal-schema-table">
+            <thead>
+              <tr>
+                <th>新增欄位群</th>
+                <th>解決的問題</th>
+                <th>安全規則</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>candidate_data_mode</td>
+                <td>清楚標記 fictional、deidentified、internal real 或 restricted real。</td>
+                <td>Public review 只用 fictional 或 deidentified_sample。</td>
+              </tr>
+              <tr>
+                <td>role_weight_context</td>
+                <td>讓 weighted_score 可追溯使用哪一組 role weights。</td>
+                <td>分數只作規劃訊號，不作薪資或任用命令。</td>
+              </tr>
+              <tr>
+                <td>dimension_confidence</td>
+                <td>分開記錄 D1-D8 的證據信心。</td>
+                <td>低信心維度不能被總分掩蓋。</td>
+              </tr>
+              <tr>
+                <td>trial_task_packet / feedback_loop</td>
+                <td>把試作範圍、proof、停止條件與回饋後改善結構化。</td>
+                <td>send_status 預設 not_prepared；真人發送需另行批准。</td>
+              </tr>
+              <tr>
+                <td>supervision_profile</td>
+                <td>記錄候選人會減少還是增加 Kevin 的管理負荷。</td>
+                <td>預設只允許 G0/G1，不碰任用、薪資、外部發布。</td>
+              </tr>
+              <tr>
+                <td>redaction_evidence</td>
+                <td>把 sensitive_field_scan 連到具體 scan report。</td>
+                <td>public_export_allowed 預設 false。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v0.9 實作邊界：</strong>
+          這版正式化 schema，但仍不接真實人力情報站、不處理真人資料、不寄試作題、不做任用淘汰或薪資決策。它只是讓未來 private pilot 有更穩的欄位結構。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v0.9</p>
+          <p class="eyebrow">Next version / v1.0</p>
           <h2 id="next-title">下一版要補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>決定是否把 v0.8 extension proposal 升級成正式 `hr-assessment-v0.9.schema.json`。</li>
           <li>用一位內容 / 研究型 fictional candidate 測第三種 role template。</li>
-          <li>把 trial task packet 與 feedback loop 做成 Sheet-ready 欄位模板。</li>
+          <li>用 v0.9 schema 填一筆完整 fictional record，測試 trial_task_packet 與 feedback_loop。</li>
+          <li>把 v0.9 欄位轉成 Notion / Google Sheets 工作看板匯入版。</li>
           <li>重新檢查真實 workforce-war-room repo 狀態後，只在 private branch 設計 internal assessment layer。</li>
         </ol>
         <div class="notice">

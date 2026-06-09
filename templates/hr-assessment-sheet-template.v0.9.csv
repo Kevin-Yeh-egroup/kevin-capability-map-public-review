@@ -1,0 +1,60 @@
+tab_name,field_key,field_label,required,type,classification,public_allowed,notes
+record,candidate_data_mode,候選資料模式,yes,enum,public,yes,fictional deidentified_sample internal_real_record restricted_real_record
+record,record_classification,紀錄分類,yes,enum,internal,no,public_review internal restricted
+person,person_id,內部人員 ID,yes,string,internal,no,不可使用身分證電話 email 或真名
+person,source_type,來源類型,yes,enum,internal,no,applicant intern contractor referral existing_pool unknown
+person,public_alias,公開匿名別名,no,string,public,yes,需不可逆且不可回推個人
+person,status,狀態,yes,enum,internal,no,staging needs_review active paused shortlist trial not_selected archived
+person,consent_scope,同意範圍,yes,enum,restricted,no,unknown evaluation_only talent_pool workforce_planning do_not_process
+application_input,raw_source_ref,原始來源索引,yes,string,internal,no,不得放公開私人連結
+application_input,parsed_summary,資料摘要,yes,text,internal,no,只做證據摘要
+application_input,confidence_level,整體證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,role_template_id,評估角色模板,yes,enum,internal,no,first_partner technical_automation content_research
+evaluation_run,weight_version,角色權重版本,yes,string,internal,no,例如 role-weights-v0.9
+evaluation_run,d1_weight,D1 權重,yes,number,internal,no,0-100
+evaluation_run,d2_weight,D2 權重,yes,number,internal,no,0-100
+evaluation_run,d3_weight,D3 權重,yes,number,internal,no,0-100
+evaluation_run,d4_weight,D4 權重,yes,number,internal,no,0-100
+evaluation_run,d5_weight,D5 權重,yes,number,internal,no,0-100
+evaluation_run,d6_weight,D6 權重,yes,number,internal,no,0-100
+evaluation_run,d7_weight,D7 權重,yes,number,internal,no,0-100
+evaluation_run,d8_weight,D8 權重,yes,number,internal,no,0-100
+evaluation_run,d1_score,D1 工作線理解,yes,number,internal,no,1-5
+evaluation_run,d2_score,D2 執行可靠度,yes,number,internal,no,1-5
+evaluation_run,d3_score,D3 資料證據品質,yes,number,internal,no,1-5
+evaluation_run,d4_score,D4 溝通回報,yes,number,internal,no,1-5
+evaluation_run,d5_score,D5 學習可訓練,yes,number,internal,no,1-5
+evaluation_run,d6_score,D6 風險 gate,yes,number,internal,no,低於 3 不接觸個資薪資任用
+evaluation_run,d7_score,D7 Codex 工具協作,yes,number,internal,no,1-5
+evaluation_run,d8_score,D8 專業深度,yes,number,internal,no,1-5
+evaluation_run,d1_confidence,D1 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d2_confidence,D2 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d3_confidence,D3 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d4_confidence,D4 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d5_confidence,D5 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d6_confidence,D6 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d7_confidence,D7 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,d8_confidence,D8 證據信心,yes,enum,internal,no,A B C unknown not_tested
+evaluation_run,weighted_score,加權分數,yes,number,internal,no,1-5 區間定位不是定薪命令
+trial_task_packet,task_template_id,試作題模板,no,string,internal,no,private draft 或 approved template id
+trial_task_packet,task_scope,試作範圍,no,text,internal,no,不含真實帳號或 production mutation
+trial_task_packet,due_policy,期限規則,no,string,internal,no,例如 3 working days
+trial_task_packet,expected_proof,交付證明,no,list,internal,no,用逗號分隔
+trial_task_packet,stop_conditions,停止條件,no,list,internal,no,碰到敏感資料或 production 即停止
+trial_task_packet,send_status,發送狀態,yes,enum,internal,no,not_prepared private_draft approved_to_send sent not_applicable
+feedback_loop,revision_count,修訂次數,yes,number,internal,no,0 起算
+feedback_loop,feedback_summary,回饋摘要,no,text,internal,no,不放私人訊息全文
+feedback_loop,improved_after_feedback,回饋後是否改善,yes,enum,internal,no,unknown yes no mixed not_tested
+feedback_loop,reviewer_notes_ref,reviewer notes 索引,no,string,restricted,no,只放索引不放私人內容
+supervision_profile,supervision_load,管理負荷,yes,enum,internal,no,unknown low medium high
+supervision_profile,allowed_gates,允許 gate,yes,list,internal,no,G0 G1 G2 G3
+supervision_profile,not_allowed_tasks,禁止任務,yes,list,internal,no,薪資任用個資外部發布等
+supervision_profile,handoff_phase,接手階段,yes,enum,internal,no,not_started 30_days 60_days 90_days owner_ready not_applicable
+decision_record,recommended_next_step,建議下一步,yes,enum,internal,no,collect_more_data trial_task interview shortlist hold archive manual_review
+decision_record,decision_owner,人審 owner,yes,string,internal,no,錄用淘汰薪資必須人審
+decision_record,final_decision,最終決策,yes,enum,restricted,no,none approved not_approved paused manual_review_required
+redaction_status,public_allowed,可公開,yes,boolean,public,yes,預設 false
+redaction_status,history_amounts_excluded,工時金額已排除,yes,boolean,public,yes,public build 必須 true
+redaction_status,sensitive_field_scan,敏感欄位掃描,yes,enum,public,yes,not_run pass fail
+redaction_status,scan_report_ref,掃描報告索引,yes,string,public,yes,連到 redaction report
+redaction_status,public_export_allowed,公開輸出允許,yes,boolean,public,yes,預設 false

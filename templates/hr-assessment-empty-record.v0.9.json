@@ -1,0 +1,135 @@
+{
+  "schema_version": "0.9",
+  "candidate_data_mode": "fictional",
+  "record_classification": "public_review",
+  "person": {
+    "person_id": "",
+    "source_type": "unknown",
+    "internal_name_ref": "",
+    "public_alias": "",
+    "status": "staging",
+    "data_source": "",
+    "consent_scope": "unknown",
+    "retention_until": "",
+    "created_at": "",
+    "updated_at": ""
+  },
+  "contact_profile": {
+    "preferred_contact_ref": "",
+    "residence_area": "",
+    "commute_area": "",
+    "available_days": [],
+    "available_hours_per_week": null,
+    "availability_notes": ""
+  },
+  "talent_profile": {
+    "role_interest": [],
+    "experience_summary": "",
+    "skill_tags": [],
+    "language_tags": [],
+    "portfolio_refs": [],
+    "missing_fields": []
+  },
+  "work_history": {
+    "covered_months": [],
+    "total_hours": null,
+    "task_types": [],
+    "attendance_signal": "unknown",
+    "reliability_notes": "",
+    "amounts_excluded": true
+  },
+  "application_input": {
+    "raw_source_ref": "",
+    "parsed_summary": "",
+    "evidence_items": [],
+    "confidence_level": "unknown",
+    "review_required": true
+  },
+  "evaluation_run": {
+    "evaluation_id": "",
+    "model_version": "hr-evaluation-v0.9",
+    "role_template_id": "first_partner",
+    "role_weight_context": {
+      "weight_version": "role-weights-v0.9",
+      "dimension_weights": {
+        "d1": 12,
+        "d2": 20,
+        "d3": 15,
+        "d4": 15,
+        "d5": 14,
+        "d6": 14,
+        "d7": 5,
+        "d8": 5
+      },
+      "weighted_score_formula": "sum(score_dimension * dimension_weight) / 100"
+    },
+    "scores": {
+      "d1": 1,
+      "d2": 1,
+      "d3": 1,
+      "d4": 1,
+      "d5": 1,
+      "d6": 1,
+      "d7": 1,
+      "d8": 1,
+      "weighted_score": 1
+    },
+    "dimension_confidence": {
+      "d1": "unknown",
+      "d2": "unknown",
+      "d3": "unknown",
+      "d4": "unknown",
+      "d5": "unknown",
+      "d6": "unknown",
+      "d7": "unknown",
+      "d8": "unknown"
+    },
+    "compensation_fit": "not_evaluated",
+    "planning_value": "unknown",
+    "risk_flags": [],
+    "human_review_required": true,
+    "ai_summary": ""
+  },
+  "trial_task_packet": {
+    "task_template_id": "",
+    "task_scope": "",
+    "due_policy": "",
+    "expected_proof": [],
+    "stop_conditions": [],
+    "send_status": "not_prepared",
+    "trial_result_ref": ""
+  },
+  "feedback_loop": {
+    "revision_count": 0,
+    "feedback_summary": "",
+    "improved_after_feedback": "not_tested",
+    "reviewer_notes_ref": ""
+  },
+  "supervision_profile": {
+    "supervision_load": "unknown",
+    "allowed_gates": ["G0", "G1"],
+    "not_allowed_tasks": [],
+    "handoff_phase": "not_started"
+  },
+  "decision_record": {
+    "stage": "staging",
+    "recommended_next_step": "collect_more_data",
+    "decision_owner": "",
+    "final_decision": "none",
+    "decision_reason": "",
+    "override_reason": "",
+    "reviewed_at": ""
+  },
+  "redaction_status": {
+    "public_allowed": false,
+    "history_amounts_excluded": true,
+    "sensitive_field_scan": "not_run",
+    "redaction_evidence": {
+      "scan_report_ref": "",
+      "scan_status": "not_run",
+      "scan_generated_at": "",
+      "public_export_allowed": false
+    },
+    "public_output_notes": ""
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kevin-capability-map-public-review.vercel.app/schemas/hr-assessment-v0.9.schema.json",
+  "title": "Kevin HR Assessment Record v0.9",
+  "description": "Public-safe formal schema for internal HR assessment records. The schema organizes evidence, trial tasks, feedback, supervision load, and redaction proof for human review. It must not be used for automated hiring, rejection, or compensation decisions.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_data_mode",
+    "record_classification",
+    "person",
+    "application_input",
+    "evaluation_run",
+    "trial_task_packet",
+    "feedback_loop",
+    "supervision_profile",
+    "decision_record",
+    "redaction_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.9"
+    },
+    "candidate_data_mode": {
+      "type": "string",
+      "enum": ["fictional", "deidentified_sample", "internal_real_record", "restricted_real_record"],
+      "description": "Explicit safety marker. Public review artifacts should use fictional or deidentified_sample only."
+    },
+    "record_classification": {
+      "type": "string",
+      "enum": ["public_review", "internal", "restricted"],
+      "default": "internal"
+    },
+    "person": {
+      "type": "object",
+      "required": ["person_id", "source_type", "status", "consent_scope"],
+      "additionalProperties": false,
+      "properties": {
+        "person_id": { "type": "string", "description": "Stable internal ID. Do not use a national ID, phone, email, or real name." },
+        "source_type": { "type": "string", "enum": ["applicant", "intern", "contractor", "referral", "existing_pool", "unknown"] },
+        "internal_name_ref": { "type": "string", "description": "Reference key only. Store any real name in a restricted source if needed." },
+        "public_alias": { "type": "string", "description": "Optional irreversible alias for aggregated or de-identified public use." },
+        "status": { "type": "string", "enum": ["staging", "needs_review", "active", "paused", "shortlist", "trial", "not_selected", "archived"] },
+        "data_source": { "type": "string" },
+        "consent_scope": { "type": "string", "enum": ["unknown", "evaluation_only", "talent_pool", "workforce_planning", "do_not_process"] },
+        "retention_until": { "type": "string", "format": "date" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "contact_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferred_contact_ref": { "type": "string", "description": "Reference key only. Do not publish phone, email, or private contact details." },
+        "residence_area": { "type": "string", "description": "Use area-level location only; do not store full address here." },
+        "commute_area": { "type": "string" },
+        "available_days": { "type": "array", "items": { "type": "string" } },
+        "available_hours_per_week": { "type": ["number", "null"], "minimum": 0 },
+        "availability_notes": { "type": "string" }
+      }
+    },
+    "talent_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role_interest": { "type": "array", "items": { "type": "string", "enum": ["first_partner", "technical_automation", "content_research", "operations_support", "other"] } },
+        "experience_summary": { "type": "string" },
+        "skill_tags": { "type": "array", "items": { "type": "string" } },
+        "language_tags": { "type": "array", "items": { "type": "string" } },
+        "portfolio_refs": { "type": "array", "items": { "type": "string" } },
+        "missing_fields": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "work_history": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "covered_months": { "type": "array", "items": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" } },
+        "total_hours": { "type": ["number", "null"], "minimum": 0 },
+        "task_types": { "type": "array", "items": { "type": "string" } },
+        "attendance_signal": { "type": "string", "enum": ["unknown", "insufficient", "mixed", "reliable", "strong"] },
+        "reliability_notes": { "type": "string" },
+        "amounts_excluded": { "type": "boolean", "description": "Must be true for public or redacted outputs." }
+      }
+    },
+    "application_input": {
+      "type": "object",
+      "required": ["raw_source_ref", "parsed_summary", "confidence_level", "review_required"],
+      "additionalProperties": false,
+      "properties": {
+        "raw_source_ref": { "type": "string", "description": "Pointer to the source, not a public URL unless already approved." },
+        "parsed_summary": { "type": "string" },
+        "evidence_items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidence_item" }
+        },
+        "confidence_level": { "$ref": "#/$defs/confidence" },
+        "review_required": { "type": "boolean" }
+      }
+    },
+    "evaluation_run": {
+      "type": "object",
+      "required": [
+        "evaluation_id",
+        "model_version",
+        "role_template_id",
+        "role_weight_context",
+        "scores",
+        "dimension_confidence",
+        "risk_flags",
+        "human_review_required"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "evaluation_id": { "type": "string" },
+        "model_version": { "type": "string", "const": "hr-evaluation-v0.9" },
+        "role_template_id": { "type": "string", "enum": ["first_partner", "technical_automation", "content_research"] },
+        "role_weight_context": {
+          "type": "object",
+          "required": ["weight_version", "dimension_weights", "weighted_score_formula"],
+          "additionalProperties": false,
+          "properties": {
+            "weight_version": { "type": "string" },
+            "dimension_weights": {
+              "type": "object",
+              "required": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"],
+              "additionalProperties": false,
+              "properties": {
+                "d1": { "$ref": "#/$defs/weight" },
+                "d2": { "$ref": "#/$defs/weight" },
+                "d3": { "$ref": "#/$defs/weight" },
+                "d4": { "$ref": "#/$defs/weight" },
+                "d5": { "$ref": "#/$defs/weight" },
+                "d6": { "$ref": "#/$defs/weight" },
+                "d7": { "$ref": "#/$defs/weight" },
+                "d8": { "$ref": "#/$defs/weight" }
+              }
+            },
+            "weighted_score_formula": { "type": "string" }
+          }
+        },
+        "scores": {
+          "type": "object",
+          "required": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "weighted_score"],
+          "additionalProperties": false,
+          "properties": {
+            "d1": { "$ref": "#/$defs/score" },
+            "d2": { "$ref": "#/$defs/score" },
+            "d3": { "$ref": "#/$defs/score" },
+            "d4": { "$ref": "#/$defs/score" },
+            "d5": { "$ref": "#/$defs/score" },
+            "d6": { "$ref": "#/$defs/score" },
+            "d7": { "$ref": "#/$defs/score" },
+            "d8": { "$ref": "#/$defs/score" },
+            "weighted_score": { "type": "number", "minimum": 1, "maximum": 5 }
+          }
+        },
+        "dimension_confidence": {
+          "type": "object",
+          "required": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"],
+          "additionalProperties": false,
+          "properties": {
+            "d1": { "$ref": "#/$defs/confidence" },
+            "d2": { "$ref": "#/$defs/confidence" },
+            "d3": { "$ref": "#/$defs/confidence" },
+            "d4": { "$ref": "#/$defs/confidence" },
+            "d5": { "$ref": "#/$defs/confidence" },
+            "d6": { "$ref": "#/$defs/confidence" },
+            "d7": { "$ref": "#/$defs/confidence" },
+            "d8": { "$ref": "#/$defs/confidence" }
+          }
+        },
+        "compensation_fit": { "type": "string", "enum": ["below_band", "within_band", "above_band", "manual_review_required", "not_evaluated"] },
+        "planning_value": { "type": "string", "enum": ["unknown", "low", "medium", "high", "strategic"] },
+        "risk_flags": { "type": "array", "items": { "type": "string" } },
+        "human_review_required": { "type": "boolean" },
+        "ai_summary": { "type": "string", "description": "Evidence summary only. Must not state final hiring, rejection, or compensation decisions." }
+      }
+    },
+    "trial_task_packet": {
+      "type": "object",
+      "required": ["task_template_id", "task_scope", "due_policy", "expected_proof", "stop_conditions", "send_status"],
+      "additionalProperties": false,
+      "properties": {
+        "task_template_id": { "type": "string" },
+        "task_scope": { "type": "string" },
+        "due_policy": { "type": "string" },
+        "expected_proof": { "type": "array", "items": { "type": "string" } },
+        "stop_conditions": { "type": "array", "items": { "type": "string" } },
+        "send_status": { "type": "string", "enum": ["not_prepared", "private_draft", "approved_to_send", "sent", "not_applicable"] },
+        "trial_result_ref": { "type": "string" }
+      }
+    },
+    "feedback_loop": {
+      "type": "object",
+      "required": ["revision_count", "feedback_summary", "improved_after_feedback", "reviewer_notes_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "revision_count": { "type": "integer", "minimum": 0 },
+        "feedback_summary": { "type": "string" },
+        "improved_after_feedback": { "type": "string", "enum": ["unknown", "yes", "no", "mixed", "not_tested"] },
+        "reviewer_notes_ref": { "type": "string" }
+      }
+    },
+    "supervision_profile": {
+      "type": "object",
+      "required": ["supervision_load", "allowed_gates", "not_allowed_tasks", "handoff_phase"],
+      "additionalProperties": false,
+      "properties": {
+        "supervision_load": { "type": "string", "enum": ["unknown", "low", "medium", "high"] },
+        "allowed_gates": { "type": "array", "items": { "type": "string", "enum": ["G0", "G1", "G2", "G3"] } },
+        "not_allowed_tasks": { "type": "array", "items": { "type": "string" } },
+        "handoff_phase": { "type": "string", "enum": ["not_started", "30_days", "60_days", "90_days", "owner_ready", "not_applicable"] }
+      }
+    },
+    "decision_record": {
+      "type": "object",
+      "required": ["stage", "recommended_next_step", "final_decision", "decision_owner"],
+      "additionalProperties": false,
+      "properties": {
+        "stage": { "type": "string", "enum": ["staging", "screening", "trial", "interview", "shortlist", "offer_review", "active_pool", "archive"] },
+        "recommended_next_step": { "type": "string", "enum": ["collect_more_data", "trial_task", "interview", "shortlist", "hold", "archive", "manual_review"] },
+        "decision_owner": { "type": "string" },
+        "final_decision": { "type": "string", "enum": ["none", "approved", "not_approved", "paused", "manual_review_required"] },
+        "decision_reason": { "type": "string" },
+        "override_reason": { "type": "string" },
+        "reviewed_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "redaction_status": {
+      "type": "object",
+      "required": ["public_allowed", "history_amounts_excluded", "sensitive_field_scan", "redaction_evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "public_allowed": { "type": "boolean" },
+        "history_amounts_excluded": { "type": "boolean" },
+        "sensitive_field_scan": { "type": "string", "enum": ["not_run", "pass", "fail"] },
+        "redaction_evidence": {
+          "type": "object",
+          "required": ["scan_report_ref", "scan_status", "scan_generated_at", "public_export_allowed"],
+          "additionalProperties": false,
+          "properties": {
+            "scan_report_ref": { "type": "string" },
+            "scan_status": { "type": "string", "enum": ["not_run", "pass", "fail"] },
+            "scan_generated_at": { "type": "string", "format": "date-time" },
+            "public_export_allowed": { "type": "boolean" }
+          }
+        },
+        "public_output_notes": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "score": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["A", "B", "C", "unknown", "not_tested"]
+    },
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidence_type": { "type": "string" },
+        "evidence_ref": { "type": "string" },
+        "evidence_date": { "type": "string", "format": "date" },
+        "confidence": { "$ref": "#/$defs/confidence" }
+      }
+    }
+  }
+}

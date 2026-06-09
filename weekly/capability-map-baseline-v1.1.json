@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.1",
+  "artifact_type": "weekly_capability_map_baseline",
+  "coverage_label": "2026-W24 baseline",
+  "generated_for": "public_review",
+  "public_safety": {
+    "contains_real_candidate_data": false,
+    "contains_private_messages": false,
+    "contains_compensation_amounts": false,
+    "contains_local_paths": false,
+    "public_export_rule": "High-level capability and workflow summary only; no private source records."
+  },
+  "purpose": "Create the first weekly-refresh baseline for Kevin's accumulated work, capability map, planning needs, current specs, and future outlook.",
+  "capability_nodes": [
+    {
+      "id": "ai_codex_ops",
+      "label": "AI / Codex operating system",
+      "need": "Turn Kevin's scattered work into repeatable prompts, checkpoints, artifacts, and reviewable outputs.",
+      "current_spec": "Agent OS routing, public artifact publishing flow, redaction scanner, schema validator, workboard builder, and weekly draft automation proposal.",
+      "future_outlook": "Reusable weekly update skill that gathers safe evidence, proposes updates, and waits for Kevin approval before public changes."
+    },
+    {
+      "id": "social_welfare_tech",
+      "label": "Social-welfare technology",
+      "need": "Translate social-work and citizen-support needs into practical tools, service flows, and decision aids.",
+      "current_spec": "Capability map, welfare-resource direction, public-safe directory/report patterns, and HR planning for support roles.",
+      "future_outlook": "Separate public information tools from private social-work operating workflows, with clear review and freshness checks."
+    },
+    {
+      "id": "citizen_finance_tools",
+      "label": "Citizen finance and life tools",
+      "need": "Help general users organize money, risk, resources, and daily-life decisions without turning the tool into expert-only language.",
+      "current_spec": "FamilyFin reporting, finance-health tool thinking, plain-language content workflow, and workboard-backed planning signals.",
+      "future_outlook": "More citizen-facing workflows that combine resource lookup, financial-life optimization, and content guidance."
+    },
+    {
+      "id": "knowledge_research",
+      "label": "Knowledge and research activation",
+      "need": "Collect new knowledge, check source quality, turn findings into usable content, tool ideas, and work packets.",
+      "current_spec": "Knowledge war-room patterns, content/research fictional pilot, source tables, review rubrics, and field maps.",
+      "future_outlook": "A recurring research-to-action lane that produces public-safe briefs and private implementation candidates."
+    },
+    {
+      "id": "people_architecture",
+      "label": "People architecture and HR intelligence",
+      "need": "Find partners who reduce Kevin's workload rather than simply adding coordination cost.",
+      "current_spec": "HR assessment v0.9 schema, fictional pilots A/B/C, workboard CSV/XLSX, trial task packet, feedback loop, and supervision profile.",
+      "future_outlook": "Private-only real-data layer after repo boundary review; public layer remains fictional and explanatory."
+    },
+    {
+      "id": "project_leadership",
+      "label": "Project planning and partner leadership",
+      "need": "Move from Kevin personally doing everything toward task packages, gates, training, and handoff ladders.",
+      "current_spec": "Workflow responsibility matrix, task package checkpoints, first-partner hiring pack, 30/60/90 handoff framing, and weekly planning card.",
+      "future_outlook": "Role-specific onboarding packs and visible delegation map for Kevin / partner / Codex / automation."
+    },
+    {
+      "id": "publishing_governance",
+      "label": "Public publishing and governance",
+      "need": "Make work explainable across devices while keeping public/internal/restricted boundaries visible.",
+      "current_spec": "GitHub-backed Vercel production, noindex controls, production log, redaction scans, governance cards, and proof-oriented verification.",
+      "future_outlook": "Every public update keeps noindex, scan proof, source links, and a no-op path when nothing changed."
+    }
+  ],
+  "weekly_update_contract": {
+    "cadence": "weekly draft",
+    "default_review_day": "Monday",
+    "source_order": [
+      "public repo artifacts",
+      "production log",
+      "safe git history",
+      "local memory summary",
+      "Kevin-approved private notes only when explicitly supplied"
+    ],
+    "required_output_groups": [
+      "new or changed work lines",
+      "capability node updates",
+      "needs / current specs / future outlook",
+      "Kevin / partner / Codex / automation split",
+      "public safety boundary",
+      "next-week candidates",
+      "checkpoint card"
+    ],
+    "no_op_rule": "If no reliable new material exists, produce a verified no-op with sources checked instead of inventing progress."
+  }
+}

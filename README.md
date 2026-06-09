@@ -62,3 +62,10 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - HR intel field map CSV v1.0: `workboards/hr-intel-workboard-field-map.v1.0.csv`
 - v1.0 governance expansion review card: `docs/governance-expansion-review-card-v1.0.md`
 - v1.0 public redaction scan report: `reports/public-redaction-scan-report.v1.0.json`
+- Weekly capability map visual v1.1: `assets/weekly-capability-map-v1.1.svg`
+- Weekly capability map baseline v1.1: `weekly/capability-map-baseline-v1.1.json`
+- Weekly capability work lines v1.1: `weekly/capability-map-work-lines-v1.1.csv`
+- Weekly capability baseline note v1.1: `docs/weekly-capability-map-baseline-v1.1.md`
+- Weekly capability update workflow v1.1: `docs/weekly-capability-map-update-workflow-v1.1.md`
+- v1.1 governance expansion review card: `docs/governance-expansion-review-card-v1.1.md`
+- v1.1 public redaction scan report: `reports/public-redaction-scan-report.v1.1.json`

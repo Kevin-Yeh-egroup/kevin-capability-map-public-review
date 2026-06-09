@@ -20,7 +20,7 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.0 pilot + workboard</dd></div>
+        <div><dt>版本</dt><dd>v1.1 weekly capability map</dd></div>
         <div><dt>日期</dt><dd>2026-06-09</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
@@ -1413,17 +1413,114 @@
       </div>
     </section>
 
+    <section class="section tinted" aria-labelledby="weekly-map-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Weekly capability map / v1.1</p>
+          <h2 id="weekly-map-title">把一路做過的事變成可週更的能力地圖</h2>
+          <p>v1.1 建立第一個每週更新基準：把 Kevin 累積的工作線整理成能力節點、需求、目前規格、目前產物、未來展望與 Kevin / 夥伴 / Codex / 自動化分工。</p>
+        </div>
+
+        <figure class="map-figure">
+          <img src="assets/weekly-capability-map-v1.1.svg" alt="Weekly capability map v1.1：AI/Codex、社福科技、財務生活工具、知識研究、人力架構、專案帶領、發布治理與週更新節奏。">
+          <figcaption>v1.1 週更新能力地圖：把「做過什麼」轉成可規劃、可說明、可分工的 operating map。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Baseline JSON</h3>
+            <p>機器可讀能力節點，含需求、目前規格、未來展望與週更新 contract。</p>
+            <a href="weekly/capability-map-baseline-v1.1.json">開啟 baseline JSON</a>
+          </article>
+          <article>
+            <h3>Work Lines CSV</h3>
+            <p>可匯入 Notion / Sheets 的工作線清單，含分工與下一週候選任務。</p>
+            <a href="weekly/capability-map-work-lines-v1.1.csv">開啟 work-lines CSV</a>
+          </article>
+          <article>
+            <h3>Baseline Note</h3>
+            <p>用人可讀格式說明能力節點、工作線、公開邊界與 v1.2 方向。</p>
+            <a href="docs/weekly-capability-map-baseline-v1.1.md">開啟基準說明</a>
+          </article>
+          <article>
+            <h3>Update Workflow</h3>
+            <p>每週 refresh 的來源順序、步驟、no-op rule、approval gates 與 checkpoint card。</p>
+            <a href="docs/weekly-capability-map-update-workflow-v1.1.md">開啟週更新流程</a>
+          </article>
+          <article>
+            <h3>Visual Map SVG</h3>
+            <p>能力地圖視覺版，可供簡報、討論與後續週更新擴充。</p>
+            <a href="assets/weekly-capability-map-v1.1.svg">開啟 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認週更新仍是 public-review workflow，不是自動 HR 系統或 private database。</p>
+            <a href="docs/governance-expansion-review-card-v1.1.md">開啟 v1.1 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.1 Scan Report</h3>
+            <p>本版 public package 掃描結果：0 筆敏感實值命中。</p>
+            <a href="reports/public-redaction-scan-report.v1.1.json">開啟 v1.1 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-map-table">
+            <thead>
+              <tr>
+                <th>週更欄位</th>
+                <th>用途</th>
+                <th>本版基準</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>需求</td>
+                <td>說明這條工作線為什麼存在。</td>
+                <td>每條 work line 都有 `need` 欄位。</td>
+              </tr>
+              <tr>
+                <td>目前規格</td>
+                <td>說明現在已經做到什麼程度。</td>
+                <td>用 `current_spec` 與 `current_artifacts` 連到現有產物。</td>
+              </tr>
+              <tr>
+                <td>未來展望</td>
+                <td>把方向轉成下週或下版可推進的候選。</td>
+                <td>用 `future_outlook` 與 `next_week_candidate` 表示。</td>
+              </tr>
+              <tr>
+                <td>分工</td>
+                <td>讓人力規劃可視化。</td>
+                <td>拆成 Kevin、夥伴、Codex、自動化四欄。</td>
+              </tr>
+              <tr>
+                <td>公開邊界</td>
+                <td>避免把內部資料誤放到 public site。</td>
+                <td>每條工作線都有 public_boundary；週更流程有 no-op rule。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.1 實作邊界：</strong>
+          這版是 public-safe baseline，只整理高階工作線與能力節點；不接真實人力情報站、不匯入私人訊息、不放候選人個資、不做任用或薪資決策。每週自動化目前只作草稿建議，public site 更新仍需 Kevin 確認。
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.1</p>
+          <p class="eyebrow">Next version / v1.2</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
+          <li>把 weekly capability map 轉成 dashboard：本週變動、新產物、可交辦工作、阻塞與下週候選。</li>
+          <li>決定週更資料要維持 CSV/JSON，或同步成 private Notion / Google Sheets。</li>
           <li>重新檢查真實 workforce-war-room repo 狀態後，只在 private branch 設計 internal assessment layer。</li>
-          <li>把 v1.0 workboard 轉成 Kevin 每週可更新的能力地圖 / 人力規劃 refresh 流程。</li>
-          <li>決定要先做 Notion、Google Sheets，或先維持 CSV/XLSX 作為中立模板。</li>
-          <li>再跑一筆低可靠度的 fictional content/research case，測試 workboard 是否能顯示風險差異。</li>
+          <li>新增「社工工具線」與「一般民眾財務生活工具線」的需求 / 規格 / 展望卡。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>

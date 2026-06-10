@@ -120,3 +120,14 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Kevin market competitiveness positioning visual v1.7: `assets/kevin-market-competitiveness-positioning-v1.7.svg`
 - v1.7 governance expansion review card: `docs/governance-expansion-review-card-v1.7.md`
 - v1.7 public redaction scan report: `reports/public-redaction-scan-report.v1.7.json`
+- Public-safe feature cards v1.8: `weekly/public-safe-feature-cards-v1.8.json`
+- Public-safe feature cards brief v1.8: `docs/public-safe-feature-cards-v1.8.md`
+- Weekly proof dashboard v1.8: `weekly/weekly-proof-dashboard-v1.8.json`
+- Weekly proof dashboard Sheet template v1.8: `workboards/weekly-proof-dashboard-v1.8.csv`
+- Weekly proof dashboard brief v1.8: `docs/weekly-proof-dashboard-v1.8.md`
+- Site information architecture plan v1.8: `docs/site-information-architecture-plan-v1.8.md`
+- Agent discussion summary v1.8: `docs/agent-discussion-summary-v1.8.md`
+- Tool update Taiwan fit gate v1.8: `docs/tool-update-taiwan-fit-gate-v1.8.md`
+- Weekly proof dashboard visual v1.8: `assets/weekly-proof-dashboard-v1.8.svg`
+- v1.8 governance expansion review card: `docs/governance-expansion-review-card-v1.8.md`
+- v1.8 public redaction scan report: `reports/public-redaction-scan-report.v1.8.json`

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.8",
+  "artifact_type": "weekly_proof_dashboard",
+  "updated_at_public": "2026-06-10",
+  "dashboard_purpose": "Track the proof needed to move Kevin's public positioning from L2.5 toward L3 without exposing private accounts, raw records, candidate data, or unverified claims.",
+  "cadence": "weekly_review",
+  "status_values": ["planned", "in_progress", "proven", "blocked", "missing", "needs_review", "no_op"],
+  "source_quality_values": ["direct_read", "redacted_summary", "manual_review", "fallback", "missing", "not_applicable"],
+  "public_safety": {
+    "contains_private_account_settings": false,
+    "contains_real_user_records": false,
+    "contains_compensation_amounts": false,
+    "contains_private_source_paths": false,
+    "public_export_rule": "Publish only proof state, source-quality category, next action, and approval gate. Keep raw proof artifacts in private approved surfaces."
+  },
+  "dashboard_rows": [
+    {
+      "proof_area": "P0 measurement proof",
+      "related_feature": "measurement_proof_board",
+      "owner_tag": "Kevin + Codex 做",
+      "status": "planned",
+      "source_quality": "missing",
+      "current_public_proof": "Event plan exists; production proof summary still needs a public-safe version.",
+      "next_action": "Create redacted P0 event proof checklist.",
+      "approval_gate": "Kevin approval before any GTM, GA4, Ads, or production setting change.",
+      "public_boundary": "No account IDs, container IDs, private URLs, or sensitive user data."
+    },
+    {
+      "proof_area": "Source-quality dashboard",
+      "related_feature": "measurement_proof_board",
+      "owner_tag": "Codex 做",
+      "status": "planned",
+      "source_quality": "manual_review",
+      "current_public_proof": "The public workflow already separates direct-read, fallback, missing, and no-op states.",
+      "next_action": "Create one weekly dashboard row for each source-quality state.",
+      "approval_gate": "None for public-safe aggregate status.",
+      "public_boundary": "No private report links or account identifiers."
+    },
+    {
+      "proof_area": "Meaningful action definition",
+      "related_feature": "impact_metric_tree",
+      "owner_tag": "Kevin 做",
+      "status": "planned",
+      "source_quality": "manual_review",
+      "current_public_proof": "v1.7 identified the need to connect usage and impact.",
+      "next_action": "Define meaningful action separately from visitor, registration, and raw usage counts.",
+      "approval_gate": "Kevin decision on the public-safe definition.",
+      "public_boundary": "No individual assessment answer, consultation content, or family record."
+    },
+    {
+      "proof_area": "Impact metric tree",
+      "related_feature": "impact_metric_tree",
+      "owner_tag": "Kevin + Codex 做",
+      "status": "planned",
+      "source_quality": "redacted_summary",
+      "current_public_proof": "Application content provides goals and early signals, but method validation is still needed.",
+      "next_action": "Classify each item as goal, early_signal, verified, or needs_method_review.",
+      "approval_gate": "Kevin approval before external publication beyond this review page.",
+      "public_boundary": "Do not present unverified claims as final proof."
+    },
+    {
+      "proof_area": "Growth experiments",
+      "related_feature": "measurement_proof_board",
+      "owner_tag": "Kevin 做",
+      "status": "planned",
+      "source_quality": "not_applicable",
+      "current_public_proof": "No public-safe experiment log yet.",
+      "next_action": "Select two low-risk experiment candidates after measurement proof exists.",
+      "approval_gate": "Kevin approval before production mutation.",
+      "public_boundary": "No changes to live product, Ads, or tracking without approval."
+    },
+    {
+      "proof_area": "Partner trial task",
+      "related_feature": "future_partner_trial",
+      "owner_tag": "Kevin 做 / 夥伴做",
+      "status": "needs_review",
+      "source_quality": "not_applicable",
+      "current_public_proof": "Prior HR artifacts define trial task and supervision patterns.",
+      "next_action": "Choose one low-risk work line after feature proof priorities are stable.",
+      "approval_gate": "Kevin approval before inviting a real partner or using real candidate data.",
+      "public_boundary": "No candidate personal data or automatic people decision."
+    },
+    {
+      "proof_area": "Public site navigation",
+      "related_feature": "site_information_architecture",
+      "owner_tag": "Codex 做",
+      "status": "proven",
+      "source_quality": "manual_review",
+      "current_public_proof": "v1.8 adds latest-first layout, quick links, version index, and collapsible full archive.",
+      "next_action": "Verify desktop and mobile navigation after deployment.",
+      "approval_gate": "Kevin approval before removing old sections permanently.",
+      "public_boundary": "No content deletion; old versions remain available in the archive."
+    }
+  ],
+  "weekly_review_questions": [
+    "Which proof area changed since last week?",
+    "Is the proof direct-read, redacted summary, manual review, fallback, missing, or not applicable?",
+    "Does the next action require Kevin approval?",
+    "Can the result be shown publicly without private details?",
+    "If nothing changed, should this row be marked no_op?"
+  ],
+  "next_version_candidates": [
+    {
+      "version": "v1.9",
+      "candidate": "Turn the dashboard into a weekly public-safe review table with latest status.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.9",
+      "candidate": "Create a private implementation checklist for P0 measurement proof.",
+      "requires_approval": true
+    }
+  ]
+}

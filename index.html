@@ -20,14 +20,185 @@
         </p>
       </div>
       <dl class="meta-list" aria-label="文件資訊">
-        <div><dt>版本</dt><dd>v1.7 market competitiveness</dd></div>
-        <div><dt>日期</dt><dd>2026-06-09</dd></div>
+        <div><dt>版本</dt><dd>v1.8 feature cards + proof dashboard</dd></div>
+        <div><dt>日期</dt><dd>2026-06-10</dd></div>
         <div><dt>狀態</dt><dd>公開可看，搜尋封鎖</dd></div>
       </dl>
     </div>
   </header>
 
+  <nav class="quick-nav" aria-label="頁面捷徑">
+    <div class="wrap quick-nav-inner">
+      <a href="#latest-title">最新重點</a>
+      <a href="#feature-cards-v18">Feature cards</a>
+      <a href="#proof-dashboard-v18">Proof dashboard</a>
+      <a href="#version-index-title">版本索引</a>
+      <a href="#full-archive">完整歷史</a>
+      <a href="#next-title">下一步</a>
+    </div>
+  </nav>
+
   <main id="main">
+    <section class="section latest-section" aria-labelledby="latest-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Latest work / v1.8</p>
+          <h2 id="latest-title">最新重點：兩張功能卡與每週 proof dashboard</h2>
+          <p>v1.8 不再只把新版追加在頁面底部，而是把目前最需要討論的內容放到最前面：兩張 public-safe feature card、weekly proof dashboard，以及更好找的版本索引。</p>
+        </div>
+
+        <div class="latest-overview">
+          <article>
+            <strong>Feature 1</strong>
+            <h3 id="feature-cards-v18">Production measurement proof board</h3>
+            <p>整理 P0 event proof、source quality、current proof、next action 與 approval gate，證明量測不是只有規劃。</p>
+          </article>
+          <article>
+            <strong>Feature 2</strong>
+            <h3>Impact metric tree and claim validation</h3>
+            <p>把 goal、early signal、verified proof、needs method review 分清楚，避免把未驗證宣稱寫成結論。</p>
+          </article>
+          <article>
+            <strong>Navigation</strong>
+            <h3>Latest-first public review</h3>
+            <p>新增 sticky quick nav、版本索引與完整歷史 archive，讓日常查看不用一路滑到底。</p>
+          </article>
+        </div>
+
+        <figure class="map-figure latest-figure">
+          <img src="assets/weekly-proof-dashboard-v1.8.svg" alt="Weekly proof dashboard v1.8：兩張 feature card、每週 proof rows、source quality、approval gate 與最新優先資訊架構。">
+          <figcaption>v1.8 proof dashboard：用每週狀態追蹤 P0 量測、source quality、meaningful action、impact metric、growth experiment、partner trial 與網站導覽。</figcaption>
+        </figure>
+
+        <div class="artifact-grid">
+          <article>
+            <h3>Feature Cards JSON</h3>
+            <p>兩張 public-safe feature card 的機器可讀版本，含 inputs、outputs、acceptance criteria 與 stop conditions。</p>
+            <a href="weekly/public-safe-feature-cards-v1.8.json">開啟 feature cards JSON</a>
+          </article>
+          <article>
+            <h3>Feature Cards Brief</h3>
+            <p>人可讀說明，聚焦 measurement proof board 與 impact metric tree。</p>
+            <a href="docs/public-safe-feature-cards-v1.8.md">開啟 feature cards brief</a>
+          </article>
+          <article>
+            <h3 id="proof-dashboard-v18">Proof Dashboard JSON</h3>
+            <p>每週 proof dashboard，追蹤 planned、proven、missing、needs_review、no_op 等狀態。</p>
+            <a href="weekly/weekly-proof-dashboard-v1.8.json">開啟 dashboard JSON</a>
+          </article>
+          <article>
+            <h3>Proof Dashboard CSV</h3>
+            <p>Google Sheets / Notion 可轉用的 weekly proof workboard 欄位。</p>
+            <a href="workboards/weekly-proof-dashboard-v1.8.csv">開啟 dashboard CSV</a>
+          </article>
+          <article>
+            <h3>Proof Dashboard Brief</h3>
+            <p>說明 status labels、source-quality labels、每週檢查問題與 public-safe 邊界。</p>
+            <a href="docs/weekly-proof-dashboard-v1.8.md">開啟 dashboard brief</a>
+          </article>
+          <article>
+            <h3>Information Architecture</h3>
+            <p>網站過長的改版計畫：最新優先、版本索引、完整歷史 archive。</p>
+            <a href="docs/site-information-architecture-plan-v1.8.md">開啟 IA plan</a>
+          </article>
+          <article>
+            <h3>Agent Summary</h3>
+            <p>Agent OS 討論收斂摘要，保留採納、驗證與暫停項目。</p>
+            <a href="docs/agent-discussion-summary-v1.8.md">開啟 agent summary</a>
+          </article>
+          <article>
+            <h3>Taiwan Fit Gate</h3>
+            <p>確認 v1.8 的文字、操作習慣、approval boundary 與 public-review 呈現適合台灣讀者。</p>
+            <a href="docs/tool-update-taiwan-fit-gate-v1.8.md">開啟 Taiwan fit gate</a>
+          </article>
+          <article>
+            <h3>v1.8 SVG</h3>
+            <p>視覺化說明兩張 feature card、proof rows、approval gate 與資訊架構。</p>
+            <a href="assets/weekly-proof-dashboard-v1.8.svg">開啟 v1.8 SVG</a>
+          </article>
+          <article>
+            <h3>Governance Card</h3>
+            <p>確認 v1.8 是 public-safe proof-planning 與導覽改版，不是 private analytics 或 HR 系統。</p>
+            <a href="docs/governance-expansion-review-card-v1.8.md">開啟 v1.8 治理卡</a>
+          </article>
+          <article>
+            <h3>v1.8 Scan Report</h3>
+            <p>本版 public package 掃描報告，確認沒有敏感實值、私有來源或帳號資訊。</p>
+            <a href="reports/public-redaction-scan-report.v1.8.json">開啟 v1.8 掃描報告</a>
+          </article>
+        </div>
+
+        <div class="table-wrap compact-table-wrap">
+          <table class="weekly-dashboard-table">
+            <thead>
+              <tr>
+                <th>Proof area</th>
+                <th>本週狀態</th>
+                <th>下一步</th>
+                <th>公開邊界</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>P0 measurement proof</td>
+                <td>planned / missing</td>
+                <td>建立 redacted P0 event proof checklist。</td>
+                <td>不公開 account ID、container ID、private URL 或使用者層級資料。</td>
+              </tr>
+              <tr>
+                <td>Impact metric tree</td>
+                <td>planned / redacted summary</td>
+                <td>把每個項目標成 goal、early signal、verified 或 needs method review。</td>
+                <td>不把未驗證 claim 寫成 final proof。</td>
+              </tr>
+              <tr>
+                <td>Public site navigation</td>
+                <td>proven / manual review</td>
+                <td>部署後驗證桌機與手機能快速找到 v1.8 與歷史版本。</td>
+                <td>舊版本不刪除，只放入完整歷史 archive。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>v1.8 實作邊界：</strong>
+          這版只發布 public-safe feature cards、proof dashboard 與導覽改版；不建立 private dashboard、不改 GTM / GA4 / Ads、不接真實個案或候選人資料，也不移除 noindex。
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted version-index-section" aria-labelledby="version-index-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Version index</p>
+          <h2 id="version-index-title">版本索引與閱讀捷徑</h2>
+          <p>日常先看 v1.8；需要追溯脈絡時，再從這裡打開完整歷史。點舊版本捷徑時，完整歷史區會自動展開。</p>
+        </div>
+        <div class="version-grid">
+          <a href="#latest-title"><span>v1.8</span><strong>最新 proof dashboard</strong><em>feature cards、weekly proof、導覽改版</em></a>
+          <a href="#market-competitiveness-title"><span>v1.7</span><strong>市場競爭力定位</strong><em>L2.5 -> L3、90 天提升路線</em></a>
+          <a href="#finance-snapshot-title"><span>v1.6</span><strong>財務生活快照</strong><em>一般民眾工具 public-safe prototype</em></a>
+          <a href="#workboard-selection-title"><span>v1.5</span><strong>社工資源 workboard</strong><em>Sheets first、Notion later</em></a>
+          <a href="#resource-prototype-title"><span>v1.4</span><strong>社工公開資源查找</strong><em>prototype、QA、Taiwan fit gate</em></a>
+          <a href="#tool-line-title"><span>v1.3</span><strong>工具線與 no-op 模板</strong><em>社工工具、民眾工具、週更檢查</em></a>
+          <a href="#weekly-dashboard-title"><span>v1.2</span><strong>每週決策面板</strong><em>可交辦、可自動化、阻塞與下週行動</em></a>
+          <a href="#weekly-map-title"><span>v1.1</span><strong>週更能力地圖</strong><em>能力節點、工作線、分工 contract</em></a>
+          <a href="#hr-title"><span>v0.4-v1.0</span><strong>HR 評估與夥伴試作</strong><em>schema、trial task、feedback loop</em></a>
+          <a href="#map-title"><span>Base</span><strong>能力樹與工作版圖</strong><em>核心定位、人力架構、工作線分工</em></a>
+        </div>
+      </div>
+    </section>
+
+    <details class="archive-details" id="full-archive">
+      <summary>
+        <span>完整歷史與舊版細節</span>
+        <strong>展開 v1.7 以前的完整內容、表格與 artifacts</strong>
+      </summary>
+      <div class="archive-note wrap">
+        <p>這裡保留所有歷史版本與脈絡。日常查看建議先看上方 v1.8 最新工作區與版本索引。</p>
+      </div>
+
     <section class="section visual-section" aria-labelledby="map-title">
       <div class="wrap">
         <div class="section-heading">
@@ -2142,18 +2313,19 @@
         </div>
       </div>
     </section>
+    </details>
 
     <section class="section tinted" aria-labelledby="next-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">Next version / v1.8</p>
+          <p class="eyebrow">Next version / v1.9</p>
           <h2 id="next-title">下一版可補的內容</h2>
         </div>
         <ol class="next-list">
-          <li>把最高槓桿的兩個功能做成 public-safe feature card，包含資料流、驗收標準與 forbidden fields。</li>
-          <li>把 v1.7 的 90 天路線轉成 weekly proof dashboard，追蹤 direct-read、fallback、missing、no-op 與人工覆核狀態。</li>
-          <li>選一條低風險工作線，設計第一個 partner trial task packet 與 review rubric。</li>
-          <li>若 Kevin 核准，再另做 private-only companion template，承接更細的估值與任用討論。</li>
+          <li>把 weekly proof dashboard 跑一週 no-op / changed proof 範例，確認欄位是否夠用。</li>
+          <li>選一張 feature card 做 private implementation checklist，但需 Kevin 核准後才接真實資料或帳號。</li>
+          <li>把 impact metric tree 轉成 public-safe portfolio case，仍需標明 goal、early signal 與 needs method review。</li>
+          <li>評估是否把舊版本拆成獨立 version pages，讓首頁更短。</li>
         </ol>
         <div class="notice">
           <strong>公開安全邊界：</strong>
@@ -2168,5 +2340,23 @@
       <p>Kevin capability map public review · generated with Codex · noindex review build</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var archive = document.getElementById("full-archive");
+      function openArchiveForHash() {
+        if (!archive || !window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (target && archive.contains(target)) {
+          archive.open = true;
+          window.requestAnimationFrame(function () {
+            target.scrollIntoView({ block: "start" });
+          });
+        }
+      }
+      window.addEventListener("hashchange", openArchiveForHash);
+      openArchiveForHash();
+    })();
+  </script>
 </body>
 </html>

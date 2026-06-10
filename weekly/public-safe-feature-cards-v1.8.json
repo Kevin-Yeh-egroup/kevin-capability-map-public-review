@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.8",
+  "artifact_type": "public_safe_feature_cards",
+  "updated_at_public": "2026-06-10",
+  "selection_reason": "These two feature cards are the shortest route from v1.7 positioning to L3 proof: one proves measurement ownership, and the other connects product usage to social-impact evidence.",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_private_account_settings": false,
+    "contains_real_user_records": false,
+    "contains_candidate_personal_data": false,
+    "contains_private_source_paths": false,
+    "public_export_rule": "Publish only feature intent, public-safe fields, proof states, stop boundaries, and acceptance criteria. Keep account IDs, backend settings, raw screenshots, private reports, and identifiable records out of this repo."
+  },
+  "feature_cards": [
+    {
+      "feature_id": "measurement_proof_board",
+      "feature_name": "Production measurement proof board",
+      "why_critical": "Kevin needs to show that GTM / GA4 / Ads and funnel work is not only planning, but production-visible proof that can guide product and growth decisions.",
+      "target_users": ["Kevin", "Codex 作業支援", "資料 / 成長夥伴", "主管或合作方審閱者"],
+      "user_problem": "目前有 event plan and operating reports, but the proof state is scattered. A reviewer needs one place to see which events are planned, visible, blocked, missing, or no-op.",
+      "allowed_inputs": [
+        "Public-safe event names",
+        "Aggregate source-quality status",
+        "Redacted proof notes",
+        "Weekly dashboard status",
+        "Human review notes"
+      ],
+      "not_allowed_inputs": [
+        "GTM container IDs",
+        "GA4 property or account IDs",
+        "Ads account settings",
+        "Raw user identifiers",
+        "Sensitive assessment answers",
+        "Private report URLs"
+      ],
+      "expected_outputs": [
+        "P0 event proof status",
+        "source_quality label",
+        "current_proof summary",
+        "next_action",
+        "approval_gate",
+        "no_op reason when unchanged"
+      ],
+      "workflow": [
+        {
+          "step": "List P0 events",
+          "owner_tag": "Kevin + Codex 做",
+          "done_proof": "Each event has a public-safe name and purpose."
+        },
+        {
+          "step": "Attach proof state",
+          "owner_tag": "Codex 做",
+          "done_proof": "Each event is marked planned, staging, production_visible, blocked, missing, or no_op."
+        },
+        {
+          "step": "Review gaps",
+          "owner_tag": "Kevin 做",
+          "done_proof": "High-impact account changes remain approval-gated."
+        },
+        {
+          "step": "Update weekly proof dashboard",
+          "owner_tag": "自動化候選",
+          "done_proof": "Report-first update only; no external mutation."
+        }
+      ],
+      "acceptance_criteria": [
+        "Every P0 event has a proof state.",
+        "Every proof state has a source-quality label.",
+        "Blocked or missing states include the next safe action.",
+        "No private account IDs or user-level data appear.",
+        "No external account change is made by the public artifact."
+      ],
+      "stop_conditions": [
+        "The proof requires showing account identifiers.",
+        "The task would change GTM, GA4, Ads, production code, or backend settings.",
+        "A proof artifact contains user-level or sensitive answer data.",
+        "The dashboard starts treating missing data as zero."
+      ]
+    },
+    {
+      "feature_id": "impact_metric_tree",
+      "feature_name": "Impact metric tree and claim validation",
+      "why_critical": "Kevin's market positioning depends on connecting social-impact goals, early adoption signals, product usage, and validated claims without overstating evidence.",
+      "target_users": ["Kevin", "內容 / 研究夥伴", "主管或合作方審閱者", "Codex 作業支援"],
+      "user_problem": "Application content has goals, adoption signals, and benefit claims, but public explanation needs to separate goal, early signal, verified proof, and needs-method-review.",
+      "allowed_inputs": [
+        "Public mission statements",
+        "Aggregate adoption or training signals",
+        "Public-safe usage categories",
+        "Claim-method review notes",
+        "Human review decisions"
+      ],
+      "not_allowed_inputs": [
+        "Identifiable family or social-worker records",
+        "Raw private case notes",
+        "Unredacted survey data",
+        "Private contact information",
+        "Claims presented as verified without method review"
+      ],
+      "expected_outputs": [
+        "impact metric tree",
+        "claim_status label",
+        "proof_needed",
+        "method_review_question",
+        "portfolio-ready summary"
+      ],
+      "workflow": [
+        {
+          "step": "Classify each claim",
+          "owner_tag": "Kevin + Codex 做",
+          "done_proof": "Each item is labeled goal, early_signal, verified, or needs_method_review."
+        },
+        {
+          "step": "Map product usage to impact",
+          "owner_tag": "Kevin 做",
+          "done_proof": "Meaningful action is defined before impact is inferred."
+        },
+        {
+          "step": "Create proof questions",
+          "owner_tag": "內容 / 研究夥伴做",
+          "done_proof": "Each claim has a method question and source-quality label."
+        },
+        {
+          "step": "Package public-safe portfolio case",
+          "owner_tag": "Codex 做",
+          "done_proof": "The case says what is known, what is claimed, and what still needs validation."
+        }
+      ],
+      "acceptance_criteria": [
+        "Every claim has a claim_status label.",
+        "Impact claims are not treated as verified until method review is complete.",
+        "Meaningful action is defined separately from visitor or registration counts.",
+        "No identifiable case or private survey content appears.",
+        "The output can be reused in a public-safe portfolio case."
+      ],
+      "stop_conditions": [
+        "A claim is written as final proof without method review.",
+        "The task requires identifiable case details.",
+        "The metric would expose sensitive family, social-worker, or consultation data.",
+        "The output turns into individualized financial, legal, welfare, or HR advice."
+      ]
+    }
+  ],
+  "next_dashboard_dependency": "weekly-proof-dashboard-v1.8",
+  "next_version_candidates": [
+    {
+      "version": "v1.9",
+      "candidate": "Turn one feature card into a private implementation checklist after Kevin approval.",
+      "requires_approval": true
+    },
+    {
+      "version": "v1.9",
+      "candidate": "Add a public-safe portfolio case using the impact metric tree and proof dashboard.",
+      "requires_approval": false
+    }
+  ]
+}

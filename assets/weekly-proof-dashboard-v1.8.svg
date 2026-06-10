@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Weekly proof dashboard v1.8</title>
+  <desc id="desc">A public-safe dashboard showing two feature cards, weekly proof rows, source-quality states, approval gates, and a latest-first navigation model.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#17252B" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#627075"/>
+    </marker>
+    <style>
+      .bg { fill: #F7FAF9; }
+      .title { font: 700 34px Arial, sans-serif; fill: #18343B; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #536368; }
+      .card { filter: url(#shadow); }
+      .label { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .cardTitle { font: 700 19px Arial, sans-serif; fill: #18343B; }
+      .line { font: 400 14px Arial, sans-serif; fill: #33474D; }
+      .tiny { font: 400 12px Arial, sans-serif; fill: #5F6D72; }
+      .arrow { stroke: #627075; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .footer { font: 400 13px Arial, sans-serif; fill: #667174; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Weekly Proof Dashboard v1.8</text>
+  <text class="sub" x="60" y="88">Two feature cards plus weekly proof states. Public-safe, latest-first, archive-preserving.</text>
+
+  <g class="card">
+    <rect x="60" y="132" width="500" height="170" rx="8" fill="#FFFFFF"/>
+    <rect x="88" y="160" width="142" height="28" rx="8" fill="#0369A1"/>
+    <text class="label" x="159" y="179" text-anchor="middle">Feature card 1</text>
+    <text class="cardTitle" x="88" y="222">Measurement proof board</text>
+    <text class="line" x="88" y="252">P0 event proof, source quality, next action</text>
+    <text class="tiny" x="88" y="278">No account IDs, private URLs, or sensitive user data</text>
+  </g>
+
+  <g class="card">
+    <rect x="640" y="132" width="500" height="170" rx="8" fill="#FFFFFF"/>
+    <rect x="668" y="160" width="142" height="28" rx="8" fill="#0F766E"/>
+    <text class="label" x="739" y="179" text-anchor="middle">Feature card 2</text>
+    <text class="cardTitle" x="668" y="222">Impact metric tree</text>
+    <text class="line" x="668" y="252">Goal, early signal, verified, needs method review</text>
+    <text class="tiny" x="668" y="278">No identifiable case records or unverified effect claims</text>
+  </g>
+
+  <path class="arrow" d="M310 318 V370"/>
+  <path class="arrow" d="M890 318 V370"/>
+
+  <g class="card">
+    <rect x="60" y="386" width="1080" height="214" rx="8" fill="#FFFFFF"/>
+    <rect x="88" y="416" width="170" height="28" rx="8" fill="#18343B"/>
+    <text class="label" x="173" y="435" text-anchor="middle">Weekly proof rows</text>
+    <text class="line" x="88" y="478">P0 measurement proof | source-quality dashboard | meaningful action definition</text>
+    <text class="line" x="88" y="512">Impact metric tree | growth experiments | partner trial task | public site navigation</text>
+    <text class="line" x="88" y="546">Status: planned, in_progress, proven, blocked, missing, needs_review, no_op</text>
+    <text class="tiny" x="88" y="574">Each row keeps owner, source quality, current proof, next action, approval gate, and public boundary.</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="638" width="510" height="72" rx="8" fill="#EEF6F6"/>
+    <text class="cardTitle" x="88" y="674">Latest-first layout</text>
+    <text class="tiny" x="88" y="696">Quick nav + version index + collapsible full archive.</text>
+  </g>
+
+  <g class="card">
+    <rect x="630" y="638" width="510" height="72" rx="8" fill="#FFF8E8"/>
+    <text class="cardTitle" x="658" y="674">Approval boundary</text>
+    <text class="tiny" x="658" y="696">No external account, production, HR, or private-data action.</text>
+  </g>
+
+  <text class="footer" x="60" y="738">v1.8 · feature cards · weekly proof dashboard · information architecture · public review noindex</text>
+</svg>

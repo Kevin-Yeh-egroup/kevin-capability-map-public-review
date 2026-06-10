@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Weekly proof dashboard v1.8</title>
-  <desc id="desc">A public-safe dashboard showing two feature cards, weekly proof rows, source-quality states, approval gates, and a latest-first navigation model.</desc>
+  <title id="title">每週證據面板 v1.8</title>
+  <desc id="desc">公開安全面板，呈現兩張功能卡、每週證據列、來源品質狀態、核准門檻與最新內容優先的導覽方式。</desc>
   <defs>
     <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
       <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#17252B" flood-opacity="0.14"/>
@@ -23,25 +23,25 @@
   </defs>
 
   <rect class="bg" width="1200" height="760"/>
-  <text class="title" x="60" y="58">Weekly Proof Dashboard v1.8</text>
-  <text class="sub" x="60" y="88">Two feature cards plus weekly proof states. Public-safe, latest-first, archive-preserving.</text>
+  <text class="title" x="60" y="58">每週證據面板 v1.8</text>
+  <text class="sub" x="60" y="88">兩張功能卡加上每週證據狀態。公開安全、最新優先，並保留完整歷史。</text>
 
   <g class="card">
     <rect x="60" y="132" width="500" height="170" rx="8" fill="#FFFFFF"/>
     <rect x="88" y="160" width="142" height="28" rx="8" fill="#0369A1"/>
-    <text class="label" x="159" y="179" text-anchor="middle">Feature card 1</text>
-    <text class="cardTitle" x="88" y="222">Measurement proof board</text>
-    <text class="line" x="88" y="252">P0 event proof, source quality, next action</text>
-    <text class="tiny" x="88" y="278">No account IDs, private URLs, or sensitive user data</text>
+    <text class="label" x="159" y="179" text-anchor="middle">功能卡 1</text>
+    <text class="cardTitle" x="88" y="222">正式環境量測證據板</text>
+    <text class="line" x="88" y="252">P0 事件證據、來源品質、下一步</text>
+    <text class="tiny" x="88" y="278">不放帳號 ID、私人網址或敏感使用者資料</text>
   </g>
 
   <g class="card">
     <rect x="640" y="132" width="500" height="170" rx="8" fill="#FFFFFF"/>
     <rect x="668" y="160" width="142" height="28" rx="8" fill="#0F766E"/>
-    <text class="label" x="739" y="179" text-anchor="middle">Feature card 2</text>
-    <text class="cardTitle" x="668" y="222">Impact metric tree</text>
-    <text class="line" x="668" y="252">Goal, early signal, verified, needs method review</text>
-    <text class="tiny" x="668" y="278">No identifiable case records or unverified effect claims</text>
+    <text class="label" x="739" y="179" text-anchor="middle">功能卡 2</text>
+    <text class="cardTitle" x="668" y="222">影響力指標樹</text>
+    <text class="line" x="668" y="252">目標、早期訊號、已驗證、需方法檢核</text>
+    <text class="tiny" x="668" y="278">不放可識別個案或未驗證成效宣稱</text>
   </g>
 
   <path class="arrow" d="M310 318 V370"/>
@@ -50,24 +50,24 @@
   <g class="card">
     <rect x="60" y="386" width="1080" height="214" rx="8" fill="#FFFFFF"/>
     <rect x="88" y="416" width="170" height="28" rx="8" fill="#18343B"/>
-    <text class="label" x="173" y="435" text-anchor="middle">Weekly proof rows</text>
-    <text class="line" x="88" y="478">P0 measurement proof | source-quality dashboard | meaningful action definition</text>
-    <text class="line" x="88" y="512">Impact metric tree | growth experiments | partner trial task | public site navigation</text>
-    <text class="line" x="88" y="546">Status: planned, in_progress, proven, blocked, missing, needs_review, no_op</text>
-    <text class="tiny" x="88" y="574">Each row keeps owner, source quality, current proof, next action, approval gate, and public boundary.</text>
+    <text class="label" x="173" y="435" text-anchor="middle">每週證據列</text>
+    <text class="line" x="88" y="478">P0 量測證據 | 來源品質面板 | 有意義行動定義</text>
+    <text class="line" x="88" y="512">影響力指標樹 | 成長實驗 | 夥伴試作 | 公開網站導覽</text>
+    <text class="line" x="88" y="546">狀態：已規劃、進行中、已證明、阻塞、缺資料、需審閱、無變動</text>
+    <text class="tiny" x="88" y="574">每列保留負責人、來源品質、目前證據、下一步、核准門檻與公開邊界。</text>
   </g>
 
   <g class="card">
     <rect x="60" y="638" width="510" height="72" rx="8" fill="#EEF6F6"/>
-    <text class="cardTitle" x="88" y="674">Latest-first layout</text>
-    <text class="tiny" x="88" y="696">Quick nav + version index + collapsible full archive.</text>
+    <text class="cardTitle" x="88" y="674">最新內容優先</text>
+    <text class="tiny" x="88" y="696">捷徑列 + 版本索引 + 可展開完整歷史。</text>
   </g>
 
   <g class="card">
     <rect x="630" y="638" width="510" height="72" rx="8" fill="#FFF8E8"/>
-    <text class="cardTitle" x="658" y="674">Approval boundary</text>
-    <text class="tiny" x="658" y="696">No external account, production, HR, or private-data action.</text>
+    <text class="cardTitle" x="658" y="674">核准邊界</text>
+    <text class="tiny" x="658" y="696">不操作外部帳號、正式環境、HR 或私人資料。</text>
   </g>
 
-  <text class="footer" x="60" y="738">v1.8 · feature cards · weekly proof dashboard · information architecture · public review noindex</text>
+  <text class="footer" x="60" y="738">v1.8 · 功能卡 · 每週證據面板 · 資訊架構 · 搜尋封鎖公開審閱版</text>
 </svg>

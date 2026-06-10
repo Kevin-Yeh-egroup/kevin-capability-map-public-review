@@ -12,7 +12,7 @@ Updated: 2026-06-10 11:06:00 +08:00
 
 ## Production
 
-- Bootstrap deployment ID: `dpl_H28C8cTWaRPwSxaguWE8F5FVwy9U`
+- Bootstrap deployment ID: omitted from public log
 - Bootstrap deployment URL: https://kevin-capability-map-public-review-emopeii1a.vercel.app
 - Stable public URL: https://kevin-capability-map-public-review.vercel.app
 - Vercel inspect status: `Ready`

@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.7",
+  "artifact_type": "public_safe_market_competitiveness_positioning",
+  "updated_at_public": "2026-06-10",
+  "positioning_name": "Kevin social-impact AI product growth operator",
+  "core_thesis": "Kevin's strongest market position is not a single role title. It is a capability loop that connects social welfare financial problem definition, AI product specification, growth measurement, operating-data interpretation, social-impact evidence, and partner delegation.",
+  "public_safety": {
+    "mode": "public_review_noindex",
+    "contains_compensation_amounts": false,
+    "contains_candidate_personal_data": false,
+    "contains_private_source_paths": false,
+    "contains_private_messages": false,
+    "contains_account_identifiers": false,
+    "public_export_rule": "Publish only capability levels, evidence categories, proof gaps, and improvement tasks. Keep private estimates, local paths, candidate records, account settings, and raw private source files outside this repo."
+  },
+  "source_packets_summarized": [
+    {
+      "source_name": "IT Matters AI Selected application content",
+      "public_use": "Mission, product scope, impact ambition, social-worker pain points, AI capability claims, and validation gaps.",
+      "public_boundary": "No contact details, private attachments, raw file path, or unverified claim presented as final proof."
+    },
+    {
+      "source_name": "FamilyFin GTM and growth planning materials",
+      "public_use": "Event-layer, funnel, and measurement proof categories.",
+      "public_boundary": "No GTM, GA4, Ads, or account configuration details."
+    },
+    {
+      "source_name": "Operating report evidence categories",
+      "public_use": "Direct-read, fallback, missing, and no-op source-quality logic.",
+      "public_boundary": "No private report links, raw account identifiers, or unreviewed daily operating details."
+    },
+    {
+      "source_name": "Capability map public review v1.1-v1.6",
+      "public_use": "Existing public-safe work lines, governance cards, tool prototypes, and weekly update logic.",
+      "public_boundary": "No real HR record, private workboard, or automatic employment decision."
+    }
+  ],
+  "positioning_levels": [
+    {
+      "level": "L1",
+      "label": "Domain executor",
+      "market_meaning": "Can perform social welfare, family finance education, or project coordination work inside a known process.",
+      "kevin_status": "exceeded",
+      "proof_needed_to_hold": "Clear domain vocabulary, service-context understanding, and safe case-boundary language."
+    },
+    {
+      "level": "L2",
+      "label": "Cross-domain product operator",
+      "market_meaning": "Can translate social welfare problems into product workflows, reports, and partner tasks.",
+      "kevin_status": "mostly evidenced",
+      "proof_needed_to_hold": "Product-flow maps, operating dashboards, stakeholder briefs, and workboard-ready task packages."
+    },
+    {
+      "level": "L3",
+      "label": "AI product growth owner",
+      "market_meaning": "Can use measurement, experiments, and AI workflow design to improve activation, usage, and impact.",
+      "kevin_status": "target level",
+      "proof_needed_to_hold": "Production event proof, source-quality dashboard, growth experiments, and impact metric tree."
+    },
+    {
+      "level": "L4",
+      "label": "Social-impact product lead",
+      "market_meaning": "Can lead a repeatable service model, partner delegation system, and third-party validated impact story.",
+      "kevin_status": "future stretch",
+      "proof_needed_to_hold": "Cross-team adoption, repeatable operating model, partner handoff proof, and external validation."
+    }
+  ],
+  "current_public_position": {
+    "level_label": "L2.5 moving toward L3",
+    "why": "The evidence already shows domain depth, product planning, public-safe workflow governance, and measurement design. The next jump requires production measurement proof and repeatable improvement results.",
+    "risk_if_overclaimed": "Without verified production event evidence and repeatable experiments, the story may look like planning strength rather than operating ownership."
+  },
+  "capability_packages": [
+    {
+      "package_id": "domain_problem_definition",
+      "package_name": "Social welfare and family-finance problem definition",
+      "current_competitiveness": 4,
+      "target_competitiveness": 5,
+      "current_evidence_public": [
+        "Application content frames financially vulnerable families and social-worker financial knowledge gaps.",
+        "Public capability map keeps welfare, finance, tool, and governance lines visible."
+      ],
+      "next_skill_to_build": "Turn domain experience into reusable problem taxonomy and pain-point-to-feature map.",
+      "proof_to_collect": [
+        "Public-safe case pattern set",
+        "Pain point to function to metric matrix",
+        "Human-review and escalation boundary"
+      ]
+    },
+    {
+      "package_id": "ai_product_specification",
+      "package_name": "AI product and tool workflow specification",
+      "current_competitiveness": 3.5,
+      "target_competitiveness": 4.5,
+      "current_evidence_public": [
+        "Application content describes knowledge base, calculators, voice-to-text, risk assessment, family economic graph, and consultation flows.",
+        "Public review site already contains social-resource and finance-life prototype packages."
+      ],
+      "next_skill_to_build": "Write concise product cards with data flow, validation criteria, forbidden fields, and stop conditions.",
+      "proof_to_collect": [
+        "Two feature PRD cards",
+        "Event-spec pairing for each feature",
+        "Risk-boundary checklist"
+      ]
+    },
+    {
+      "package_id": "growth_measurement",
+      "package_name": "GTM, GA4, Ads, and funnel measurement",
+      "current_competitiveness": 3,
+      "target_competitiveness": 4.5,
+      "current_evidence_public": [
+        "Growth planning materials define event-layer and funnel categories.",
+        "Operating report practice separates direct-read, fallback, missing, and no-op states."
+      ],
+      "next_skill_to_build": "Close the loop from event plan to production proof to dashboard interpretation.",
+      "proof_to_collect": [
+        "P0 production event checklist",
+        "Realtime or DebugView proof summary",
+        "Funnel dashboard with source-quality labels"
+      ]
+    },
+    {
+      "package_id": "operating_data_interpretation",
+      "package_name": "Operating-data interpretation and growth diagnosis",
+      "current_competitiveness": 3.5,
+      "target_competitiveness": 4.5,
+      "current_evidence_public": [
+        "Daily report workflow preserves source-quality differences and fallback warnings.",
+        "Capability map uses no-op checkpoints instead of repeating stale work."
+      ],
+      "next_skill_to_build": "Move from reporting what changed to testing why it changed.",
+      "proof_to_collect": [
+        "Weekly meaningful-action definition",
+        "Two small growth experiments",
+        "Before, hypothesis, result, and next-step log"
+      ]
+    },
+    {
+      "package_id": "impact_story",
+      "package_name": "Social-impact story and metric tree",
+      "current_competitiveness": 4,
+      "target_competitiveness": 5,
+      "current_evidence_public": [
+        "Application content contains large impact ambition, early adoption signals, training scale, and cross-sector direction.",
+        "Public site now has tool and governance artifacts that can become a portfolio map."
+      ],
+      "next_skill_to_build": "Connect impact ambition to product usage and service outcomes without overstating unverified claims.",
+      "proof_to_collect": [
+        "Impact metric tree",
+        "Claim-method validation note",
+        "Public-safe portfolio case"
+      ]
+    },
+    {
+      "package_id": "partner_delegation",
+      "package_name": "Partner training, work architecture, and delegation",
+      "current_competitiveness": 3.5,
+      "target_competitiveness": 4.5,
+      "current_evidence_public": [
+        "HR schema, trial task, feedback loop, supervision profile, and workboard artifacts exist in public-safe form.",
+        "Work lines already separate Kevin, partner, Codex, and automation responsibilities."
+      ],
+      "next_skill_to_build": "Use one low-risk work line to prove onboarding, review queue, and handoff rhythm.",
+      "proof_to_collect": [
+        "One partner trial task packet",
+        "30/60/90 handoff evidence",
+        "Kevin coordination-load reduction note"
+      ]
+    }
+  ],
+  "ninety_day_roadmap": [
+    {
+      "period": "day_0_30",
+      "goal": "Turn measurement design into credible proof.",
+      "tasks": [
+        "Finish P0 event verification checklist.",
+        "Separate direct-read, fallback, missing, and no-op evidence in one view.",
+        "Draft two feature product cards with event specs."
+      ],
+      "proof_artifacts": [
+        "Production event proof summary",
+        "Source-quality dashboard draft",
+        "Two feature cards"
+      ],
+      "public_boundary": "Publish only screenshots or summaries that contain no account identifiers, private user data, or private URLs."
+    },
+    {
+      "period": "day_31_60",
+      "goal": "Connect growth funnel to impact story.",
+      "tasks": [
+        "Define meaningful action for the product.",
+        "Build weekly funnel and impact metric tree.",
+        "Create a claim-method validation note for application benefit claims."
+      ],
+      "proof_artifacts": [
+        "Meaningful-action definition",
+        "Impact metric tree",
+        "Claim-method validation note"
+      ],
+      "public_boundary": "Mark unverified effect-size claims as claims until methodology is reviewed."
+    },
+    {
+      "period": "day_61_90",
+      "goal": "Show improvement, not only planning.",
+      "tasks": [
+        "Run two low-risk growth experiments.",
+        "Package one public-safe portfolio case.",
+        "Pilot one partner trial task on a low-risk work line."
+      ],
+      "proof_artifacts": [
+        "Experiment logs",
+        "Portfolio case draft",
+        "Partner trial review note"
+      ],
+      "public_boundary": "No real candidate record, raw HR note, private financial record, or automatic people decision."
+    }
+  ],
+  "next_version_candidates": [
+    {
+      "version": "v1.8",
+      "candidate": "Create a public-safe product feature card pair for the two highest-leverage AI or measurement features.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.8",
+      "candidate": "Turn the 90-day roadmap into a weekly review dashboard with source-quality and proof status.",
+      "requires_approval": false
+    },
+    {
+      "version": "v1.8",
+      "candidate": "Prepare a private-only companion template for detailed compensation planning after Kevin approval.",
+      "requires_approval": true
+    }
+  ]
+}

@@ -112,3 +112,11 @@ Public review artifact for Kevin's capability tree, work portfolio, and people a
 - Citizen finance-life snapshot prototype visual v1.6: `assets/citizen-finance-life-snapshot-prototype-v1.6.svg`
 - v1.6 governance expansion review card: `docs/governance-expansion-review-card-v1.6.md`
 - v1.6 public redaction scan report: `reports/public-redaction-scan-report.v1.6.json`
+- Kevin market competitiveness positioning v1.7: `weekly/kevin-market-competitiveness-positioning-v1.7.json`
+- Kevin market competitiveness positioning brief v1.7: `docs/kevin-market-competitiveness-positioning-brief-v1.7.md`
+- Kevin market competitiveness roadmap v1.7: `workboards/kevin-market-competitiveness-roadmap-v1.7.csv`
+- Kevin market competitiveness evidence checklist v1.7: `weekly/kevin-market-competitiveness-evidence-checklist-v1.7.csv`
+- Kevin market competitiveness Taiwan fit gate v1.7: `docs/kevin-market-competitiveness-taiwan-fit-gate-v1.7.md`
+- Kevin market competitiveness positioning visual v1.7: `assets/kevin-market-competitiveness-positioning-v1.7.svg`
+- v1.7 governance expansion review card: `docs/governance-expansion-review-card-v1.7.md`
+- v1.7 public redaction scan report: `reports/public-redaction-scan-report.v1.7.json`

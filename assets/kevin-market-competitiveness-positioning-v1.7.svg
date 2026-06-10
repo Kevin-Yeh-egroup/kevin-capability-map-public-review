@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Kevin market competitiveness positioning v1.7</title>
+  <desc id="desc">A public-safe capability loop showing how Kevin moves from cross-domain product operation toward AI product growth ownership through evidence, measurement, impact, and delegation.</desc>
+  <defs>
+    <filter id="shadow" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#17252B" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#607076"/>
+    </marker>
+    <style>
+      .bg { fill: #F7FAF9; }
+      .title { font: 700 34px Arial, sans-serif; fill: #18343B; }
+      .sub { font: 400 16px Arial, sans-serif; fill: #536368; }
+      .card { filter: url(#shadow); }
+      .cardTitle { font: 700 18px Arial, sans-serif; fill: #18343B; }
+      .line { font: 400 13.5px Arial, sans-serif; fill: #33474D; }
+      .tiny { font: 400 12px Arial, sans-serif; fill: #5F6D72; }
+      .badge { font: 700 12px Arial, sans-serif; fill: #FFFFFF; }
+      .level { font: 800 22px Arial, sans-serif; fill: #FFFFFF; }
+      .arrow { stroke: #607076; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .footer { font: 400 13px Arial, sans-serif; fill: #667174; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="60" y="58">Kevin Market Competitiveness v1.7</text>
+  <text class="sub" x="60" y="88">Public-safe positioning: L2.5 moving toward L3 through proof, measurement, impact, and delegation.</text>
+
+  <g class="card">
+    <rect x="60" y="132" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="82" y="154" width="88" height="28" rx="8" fill="#0369A1"/>
+    <text class="badge" x="126" y="173" text-anchor="middle">Domain</text>
+    <text class="cardTitle" x="82" y="215">Social finance problem</text>
+    <text class="line" x="82" y="244">Pain points -> functions -> metrics</text>
+  </g>
+
+  <path class="arrow" d="M320 205 H382"/>
+
+  <g class="card">
+    <rect x="392" y="132" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="414" y="154" width="92" height="28" rx="8" fill="#0F766E"/>
+    <text class="badge" x="460" y="173" text-anchor="middle">Product</text>
+    <text class="cardTitle" x="414" y="215">AI workflow specs</text>
+    <text class="line" x="414" y="244">PRD, data flow, stop boundary</text>
+  </g>
+
+  <path class="arrow" d="M652 205 H714"/>
+
+  <g class="card">
+    <rect x="724" y="132" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="746" y="154" width="108" height="28" rx="8" fill="#7C3AED"/>
+    <text class="badge" x="800" y="173" text-anchor="middle">Measure</text>
+    <text class="cardTitle" x="746" y="215">GTM and funnel proof</text>
+    <text class="line" x="746" y="244">Production events + source quality</text>
+  </g>
+
+  <path class="arrow" d="M850 288 C850 342 756 342 756 390"/>
+
+  <g class="card">
+    <rect x="724" y="402" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="746" y="424" width="92" height="28" rx="8" fill="#BE123C"/>
+    <text class="badge" x="792" y="443" text-anchor="middle">Impact</text>
+    <text class="cardTitle" x="746" y="485">Metric tree</text>
+    <text class="line" x="746" y="514">Goals, early signals, verified proof</text>
+  </g>
+
+  <path class="arrow" d="M714 475 H652"/>
+
+  <g class="card">
+    <rect x="392" y="402" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="414" y="424" width="104" height="28" rx="8" fill="#B45309"/>
+    <text class="badge" x="466" y="443" text-anchor="middle">Improve</text>
+    <text class="cardTitle" x="414" y="485">Growth experiments</text>
+    <text class="line" x="414" y="514">Baseline, hypothesis, result, next</text>
+  </g>
+
+  <path class="arrow" d="M382 475 H320"/>
+
+  <g class="card">
+    <rect x="60" y="402" width="250" height="146" rx="8" fill="#FFFFFF"/>
+    <rect x="82" y="424" width="104" height="28" rx="8" fill="#475569"/>
+    <text class="badge" x="134" y="443" text-anchor="middle">Delegate</text>
+    <text class="cardTitle" x="82" y="485">Partner handoff</text>
+    <text class="line" x="82" y="514">Trial task, review queue, 30/60/90</text>
+  </g>
+
+  <path class="arrow" d="M185 390 C185 342 185 332 185 290"/>
+
+  <g class="card">
+    <rect x="1010" y="132" width="130" height="416" rx="8" fill="#18343B"/>
+    <text class="level" x="1075" y="178" text-anchor="middle">L1</text>
+    <text class="tiny" x="1036" y="206" style="fill:#DCE8E8">Domain</text>
+    <text class="tiny" x="1036" y="225" style="fill:#DCE8E8">executor</text>
+    <line x1="1032" y1="256" x2="1118" y2="256" stroke="#6A7A80"/>
+    <text class="level" x="1075" y="296" text-anchor="middle">L2</text>
+    <text class="tiny" x="1036" y="324" style="fill:#DCE8E8">Product</text>
+    <text class="tiny" x="1036" y="343" style="fill:#DCE8E8">operator</text>
+    <line x1="1032" y1="374" x2="1118" y2="374" stroke="#6A7A80"/>
+    <text class="level" x="1075" y="414" text-anchor="middle">L3</text>
+    <text class="tiny" x="1036" y="442" style="fill:#DCE8E8">Growth</text>
+    <text class="tiny" x="1036" y="461" style="fill:#DCE8E8">owner</text>
+    <line x1="1032" y1="492" x2="1118" y2="492" stroke="#6A7A80"/>
+    <text class="level" x="1075" y="532" text-anchor="middle">L4</text>
+  </g>
+
+  <g class="card">
+    <rect x="60" y="612" width="1080" height="80" rx="8" fill="#FFFFFF"/>
+    <rect x="88" y="636" width="112" height="28" rx="8" fill="#18343B"/>
+    <text class="badge" x="144" y="655" text-anchor="middle">v1.7 focus</text>
+    <text class="line" x="226" y="653">Current public position: L2.5. Next proof: production measurement, two experiments, impact metric tree, and one partner trial.</text>
+    <text class="tiny" x="226" y="676">Public boundary: no private estimates, candidate data, account settings, local paths, or unverified claims stated as final proof.</text>
+  </g>
+
+  <text class="footer" x="60" y="728">v1.7 · market competitiveness · capability maturity · public review noindex</text>
+</svg>

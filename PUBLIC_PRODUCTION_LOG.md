@@ -1,6 +1,6 @@
 # Public Production Log
 
-Updated: 2026-06-09 16:12:06 +08:00
+Updated: 2026-06-10 10:18:32 +08:00
 
 ## Artifact
 
@@ -36,6 +36,7 @@ Updated: 2026-06-09 16:12:06 +08:00
 - v1.4: Added a public-safe social-worker resource finder prototype package with prototype JSON, human-readable brief, empty record template, Sheet-ready CSV, QA checklist, Taiwan tool-fit gate proof, SVG, governance card, and v1.4 redaction scan report.
 - v1.5: Added a public-safe private workboard selection draft for the social-resource prototype, recommending Google Sheets first and Notion later, with tabs CSV, fields CSV, implementation checklist, Taiwan fit gate, SVG, governance card, and v1.5 redaction scan report.
 - v1.6: Added a public-safe citizen finance-life snapshot prototype package with prototype JSON, human-readable brief, empty record template, Sheet-ready CSV, QA checklist, Taiwan fit gate proof, SVG, governance card, and v1.6 redaction scan report.
+- v1.7: Added a public-safe market competitiveness and capability-growth positioning package with positioning JSON, human-readable brief, 90-day roadmap CSV, evidence checklist, Taiwan fit gate, SVG, governance card, and v1.7 redaction scan report.
 
 ## Indexing Controls
 

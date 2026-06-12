@@ -38,6 +38,27 @@
     </div>
   </nav>
 
+  <aside class="side-toc" aria-label="頁面目錄">
+    <nav class="side-toc-inner">
+      <p class="side-toc-title">頁面目錄</p>
+      <a href="#latest-title">最新重點</a>
+      <a href="#feature-cards-v18">v1.8 功能卡</a>
+      <a href="#proof-dashboard-v18">v1.8 每週證據面板</a>
+      <a href="#version-index-title">版本索引</a>
+      <a href="#full-archive">完整歷史</a>
+      <a href="#market-competitiveness-title">v1.7 市場競爭力</a>
+      <a href="#finance-snapshot-title">v1.6 財務生活快照</a>
+      <a href="#workboard-selection-title">v1.5 工作板選型</a>
+      <a href="#resource-prototype-title">v1.4 社工資源原型</a>
+      <a href="#tool-line-title">v1.3 工具線</a>
+      <a href="#weekly-dashboard-title">v1.2 決策面板</a>
+      <a href="#weekly-map-title">v1.1 能力地圖</a>
+      <a href="#hr-title">HR 評估模型</a>
+      <a href="#map-title">基礎能力地圖</a>
+      <a href="#next-title">下一版</a>
+    </nav>
+  </aside>
+
   <main id="main">
     <section class="section latest-section" aria-labelledby="latest-title">
       <div class="wrap">
@@ -2343,17 +2364,110 @@
   <script>
     (function () {
       var archive = document.getElementById("full-archive");
+      var navLinks = Array.prototype.slice.call(
+        document.querySelectorAll('.quick-nav a[href^="#"], .side-toc a[href^="#"]')
+      );
+      var targetIds = [];
+      var targets = navLinks
+        .map(function (link) {
+          return decodeURIComponent(link.getAttribute("href").slice(1));
+        })
+        .filter(function (id) {
+          if (!id || targetIds.indexOf(id) !== -1) return false;
+          targetIds.push(id);
+          return true;
+        })
+        .map(function (id) {
+          return document.getElementById(id);
+        })
+        .filter(Boolean);
+
+      function setActiveLink(id) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+        });
+      }
+
+      function setActiveHashIfVisible() {
+        if (!window.location.hash) return false;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return false;
+        var rect = target.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight) {
+          setActiveLink(id);
+          return true;
+        }
+        return false;
+      }
+
+      function openArchiveForTarget(target) {
+        if (archive && target && archive.contains(target)) {
+          archive.open = true;
+        }
+      }
+
+      function scrollToTarget(target) {
+        if (!target) return;
+        window.requestAnimationFrame(function () {
+          var root = document.documentElement;
+          var previousBehavior = root.style.scrollBehavior;
+          root.style.scrollBehavior = "auto";
+          target.scrollIntoView({ block: "start" });
+          root.style.scrollBehavior = previousBehavior;
+        });
+      }
+
       function openArchiveForHash() {
         if (!archive || !window.location.hash) return;
         var id = decodeURIComponent(window.location.hash.slice(1));
         var target = document.getElementById(id);
-        if (target && archive.contains(target)) {
-          archive.open = true;
-          window.requestAnimationFrame(function () {
-            target.scrollIntoView({ block: "start" });
-          });
+        if (target) {
+          openArchiveForTarget(target);
+          setActiveLink(id);
+          scrollToTarget(target);
         }
       }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          var id = decodeURIComponent(link.getAttribute("href").slice(1));
+          var target = document.getElementById(id);
+          openArchiveForTarget(target);
+          setActiveLink(id);
+          scrollToTarget(target);
+        });
+      });
+
+      if ("IntersectionObserver" in window && targets.length) {
+        var visibleTargets = {};
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                visibleTargets[entry.target.id] = entry.intersectionRatio;
+              } else {
+                delete visibleTargets[entry.target.id];
+              }
+            });
+
+            if (setActiveHashIfVisible()) return;
+
+            var activeId = Object.keys(visibleTargets).sort(function (a, b) {
+              return visibleTargets[b] - visibleTargets[a];
+            })[0];
+            if (activeId) setActiveLink(activeId);
+          },
+          {
+            rootMargin: "-20% 0px -65% 0px",
+            threshold: [0, 0.25, 0.5, 1]
+          }
+        );
+        targets.forEach(function (target) {
+          observer.observe(target);
+        });
+      }
+
       window.addEventListener("hashchange", openArchiveForHash);
       openArchiveForHash();
     })();
